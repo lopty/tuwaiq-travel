@@ -190,7 +190,7 @@ export function HomeView() {
             {/* Left Editorial Title & Single Focused CTA */}
             <div className="lg:col-span-7 space-y-4">
               <h1 className="text-[34px] sm:text-5xl lg:text-[60px] font-medium tracking-[-0.025em] leading-[1.08] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]">
-                Holidays from Dubai, planned properly
+                Bespoke Travel, Curated in Dubai
               </h1>
               <p className="text-sm sm:text-lg text-white/90 font-medium drop-shadow-[0_1px_10px_rgba(0,0,0,0.5)]">
                 Inbound UAE luxury stays, car rental &amp; outbound holidays across 70+ countries.

@@ -826,7 +826,7 @@ export function TrustPageView({
               <h2 className="text-2xl font-semibold text-[#111318]">The expert behind the work: Lopty Pascal</h2>
               <p>
                 Our AI search and GEO strategy is guided by{' '}
-                <a href="https://www.linkedin.com/posts/lopty-pascal-369a921a3_aiseo-digitalmarketing-aivisibility-activity-7505868042111717376-XA4w" target="_blank" rel="noopener" className="text-[#111318] font-semibold underline underline-offset-2">Lopty Pascal</a>, a Dubai-based AI SEO and GEO consultant and the CTO and co-founder of Prezlo. His approach starts from the questions real buyers ask and the evidence an AI assistant needs before it recommends a business, which is the method behind the structure described above.
+                <a href="https://loptypascal.com" target="_blank" rel="noopener" className="text-[#111318] font-semibold underline underline-offset-2">Lopty Pascal</a>, a Dubai-based AI SEO and GEO consultant and the CTO and co-founder of Prezlo. His approach starts from the questions real buyers ask and the evidence an AI assistant needs before it recommends a business, which is the method behind the structure described above.
               </p>
               <p>
                 The same approach runs across Al Basel Group, including our sister company{' '}

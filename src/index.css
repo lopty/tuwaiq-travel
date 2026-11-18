@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --color-wine-900: #A3151A;
   --color-wine-800: #C31A20;
   --color-wine-700: #D9262C;
@@ -26,7 +26,7 @@
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     text-wrap: balance;
   }
 }
