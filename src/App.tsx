@@ -17,6 +17,7 @@ import {
   TrustPageView,
 } from './components/IndexAndTrustViews';
 import { Layout } from './components/Layout';
+import { CarRentalView } from './components/CarRentalView';
 
 export default function App({ initialPath }: { initialPath?: string }) {
   const currentPath =
@@ -56,6 +57,9 @@ export default function App({ initialPath }: { initialPath?: string }) {
     case 'service-detail':
       return <ServiceDetailView service={route.service} breadcrumbs={route.meta.breadcrumbs} />;
     case 'buyer-query':
+      if (route.page.slug === 'dubai-car-rental-najd') {
+        return <CarRentalView page={route.page} breadcrumbs={route.meta.breadcrumbs} />;
+      }
       return <BuyerQueryView page={route.page} breadcrumbs={route.meta.breadcrumbs} />;
     case 'guide-detail':
       return <GuideDetailView guide={route.guide} breadcrumbs={route.meta.breadcrumbs} />;

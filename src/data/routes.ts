@@ -52,7 +52,8 @@ export type TrustSlug =
   | 'how-booking-works'
   | 'contact'
   | 'ai-visibility'
-  | 'photo-credits';
+  | 'photo-credits'
+  | 'privacy';
 
 export const TRUST_PAGES: Record<
   TrustSlug,
@@ -165,6 +166,15 @@ export const TRUST_PAGES: Record<
     imageAlt: 'Dubai skyline at twilight',
     breadcrumbLabel: 'Photo Credits',
   },
+  privacy: {
+    url: '/privacy/',
+    title: 'Privacy & Enquiries | Tuwaiq Travel & Tourism',
+    description: 'How Tuwaiq Travel uses the name, phone number and trip details you share when you send an enquiry, and how to ask us to update or delete them.',
+    h1: 'Privacy & Your Enquiry',
+    image: '/images/hero/dubai-skyline-twilight.webp',
+    imageAlt: 'Dubai skyline at twilight',
+    breadcrumbLabel: 'Privacy',
+  },
 };
 
 export function normalizePathname(raw: string): string {
@@ -181,8 +191,8 @@ export function resolveRoute(rawPath: string): ResolvedRoute {
       kind: 'home',
       meta: {
         path: '/',
-        title: 'Tuwaiq Travel & Tourism Dubai | Holiday Packages',
-        description: 'Discover holiday packages from Dubai starting AED 1,499, flights, hotels, visas, desert safaris, and VIP concierge by Tuwaiq Travel.',
+        title: 'Tuwaiq Travel Dubai | Bespoke & VIP Travel Agency',
+        description: 'Bespoke and VIP travel, curated in Dubai since 2014. Tailored holidays, luxury hotels, flights, visas, concierge and chauffeur-driven cars by Tuwaiq Travel.',
         image: '/images/hero/dubai-skyline-twilight.webp',
         imageAlt: 'Dubai skyline at sunset with Burj Khalifa overlooking Business Bay',
         breadcrumbs: [{ name: 'Home', url: '/' }],

@@ -217,7 +217,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
           </div>
 
           <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-white/70">
-            <p>&copy; 2026 {COMPANY.legalName}. Business Bay, Dubai, United Arab Emirates. <a href="/photo-credits/" className="underline hover:text-white">Photo credits</a></p>
+            <p>&copy; 2026 {COMPANY.legalName}. Business Bay, Dubai, United Arab Emirates. <a href="/photo-credits/" className="underline hover:text-white">Photo credits</a> · <a href="/privacy/" className="underline hover:text-white">Privacy</a></p>
             <p>
               Mobility partner:{' '}
               <a

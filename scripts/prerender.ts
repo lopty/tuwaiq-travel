@@ -78,8 +78,8 @@ async function prerender() {
     'Applebot',
   ];
   const robotsTxt =
-    allowedAgents.map((ua) => `User-agent: ${ua}\nAllow: /`).join('\n\n') +
-    `\n\nUser-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
+    allowedAgents.map((ua) => `User-agent: ${ua}\nAllow: /\nDisallow: /admin/`).join('\n\n') +
+    `\n\nUser-agent: *\nAllow: /\nDisallow: /admin/\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsTxt, 'utf-8');
 
   // Generate llms.txt summarizing verified facts, packages, services, destinations & key pages

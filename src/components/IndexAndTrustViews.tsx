@@ -923,6 +923,23 @@ export function TrustPageView({
           </div>
         )}
 
+        {slug === 'privacy' && (
+          <div className="max-w-[68ch] space-y-10">
+            {[
+              ['What we collect', 'When you press Book, Request a quote or a WhatsApp button, we ask for your name and mobile number. You can also add your email, travel dates, who is travelling and any notes. We also record the page you were on and how you reached our website, for example a search engine or an advert.'],
+              ['Why we keep it', 'So our travel team can reply to your enquiry, follow up if a WhatsApp message does not reach us, and prepare the quote you asked for. We do not sell your details or share them for other companies’ marketing.'],
+              ['Where it is stored', 'Enquiries are saved in a private Google spreadsheet that only our team can open. WhatsApp, phone and email then work under their own privacy terms.'],
+              ['How long we keep it', 'We keep enquiry details for as long as we need them to handle your trip and our business records, then delete them.'],
+              ['Your choices', `To see, correct or delete the details you gave us, email ${COMPANY.contact.generalEmail} or call ${COMPANY.contact.officeDisplay}.`],
+            ].map(([heading, body]) => (
+              <section key={heading}>
+                <h2 className="text-[22px] sm:text-[24px] font-semibold tracking-[-0.02em] text-[#111318]">{heading}</h2>
+                <p className="mt-3 text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">{body}</p>
+              </section>
+            ))}
+          </div>
+        )}
+
         {slug === 'photo-credits' && (
           <div className="space-y-6">
             <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
