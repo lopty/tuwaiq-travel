@@ -3,14 +3,14 @@
 @theme {
   --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --color-wine-900: #9E1419;
+  --color-wine-900: #A3151A;
   --color-wine-800: #C31A20;
   --color-wine-700: #D9262C;
-  --color-wine-100: #FDF2F2;
-  --color-gold-600: #8C6822;
-  --color-gold-500: #B88E3D;
-  --color-gold-300: #E2CC96;
-  --color-warm-50: #F8F6F5;
+  --color-wine-100: #FDEDED;
+  --color-gold-600: #7A808C;
+  --color-gold-500: #C31A20;
+  --color-gold-300: #FFFFFF;
+  --color-warm-50: #F6F7F9;
   --color-warm-100: #F1EDEB;
 }
 
@@ -18,7 +18,7 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    color: #1B1718;
+    color: #111318;
     background-color: #FFFFFF;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

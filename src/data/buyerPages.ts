@@ -313,7 +313,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     imageAlt: 'Turquoise Thailand bay lined with limestone peaks and longtail boats',
     faqs: [
       { question: 'How much does the 6N/7D Phuket and Bangkok package cost?', answer: 'Prices start From AED 2,699 per person, based on two sharing.' },
-      { question: 'Are flights between Phuket and Bangkok arranged?', answer: 'Yes, we structure seamless domestic connections alongside your UAE return airfare.' },
+      { question: 'Are flights between Phuket and Bangkok arranged?', answer: 'Yes, we structure domestic connections alongside your UAE return airfare.' },
       { question: 'Can we upgrade to beachfront 5-star resorts or pool villas?', answer: 'Yes, message us on WhatsApp for 4-star, 5-star, or private pool villa resort quotes.' },
       { question: 'When is Phuket weather driest?', answer: 'November through April brings calm seas and sunny days; Koh Samui is a strong alternative from June to August.' },
       { question: 'Do UAE residents need a Thailand visa?', answer: 'Visa exemptions and digital arrival rules depend on passport nationality. Always check current requirements prior to travel.' },
@@ -327,7 +327,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     seoTitle: 'Malaysia Packages From Dubai (5N/6D AED 2,599) | Tuwaiq',
     seoDescription: 'Book 5N/6D Kuala Lumpur Malaysia family holidays from Dubai starting AED 2,599 per person on two sharing. Flights, hotel, breakfast, transfers.',
     h1: 'Malaysia Packages From Dubai',
-    intro: 'Enjoy effortless family travel with direct flights from Dubai, certified Halal cuisine everywhere, cool highland cable cars, and landmark city shopping in Kuala Lumpur.',
+    intro: 'Enjoy easy family travel with direct flights from Dubai, certified Halal cuisine everywhere, cool highland cable cars, and landmark city shopping in Kuala Lumpur.',
     bodySections: [
       {
         heading: 'City Stays & Island Add-Ons',
@@ -359,9 +359,9 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     targetQuery: 'maldives honeymoon package from dubai',
     categoryLabel: 'Couples & Honeymoon',
     seoTitle: 'Maldives Honeymoon Packages From Dubai | Tuwaiq Travel',
-    seoDescription: 'Plan bespoke Maldives overwater villa honeymoon packages from Dubai with direct flights, meal plans, and speedboat or seaplane transfers.',
+    seoDescription: 'Plan tailor-made Maldives overwater villa honeymoon packages from Dubai with direct flights, meal plans, and speedboat or seaplane transfers.',
     h1: 'Maldives Honeymoon Packages From Dubai',
-    intro: 'Four hours from Dubai International Airport, private-island lagoons and overwater pool villas set the stage for effortless honeymoons, anniversaries, and secluded luxury retreats.',
+    intro: 'Four hours from Dubai International Airport, private-island lagoons and overwater pool villas set the stage for easy honeymoons, anniversaries, and secluded luxury retreats.',
     bodySections: [
       {
         heading: 'Choosing the Right Atoll, Transfer & Meal Plan',
@@ -466,7 +466,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     seoTitle: 'Desert Safari Dubai: Evening, Morning & Private | Tuwaiq',
     seoDescription: 'Book morning, evening BBQ, overnight, or private 4x4 Dubai desert safaris with hotel pick-up, camel rides, and sandboarding via Tuwaiq Travel.',
     h1: 'Desert Safari Dubai',
-    intro: 'Step out of the city skyline into rolling red-gold Arabian dunes within an hour. Choose a crisp morning adventure, a sunset BBQ evening safari, or an exclusive private 4x4 for your family.',
+    intro: 'Step out of the city skyline into rolling red-gold Arabian dunes within an hour. Choose a crisp morning adventure, a sunset BBQ evening safari, or a private 4x4 for your family.',
     bodySections: [
       {
         heading: 'Shared Camps vs Private 4x4 Comfort',
@@ -518,7 +518,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     image: '/images/services/dhow-cruise.webp',
     imageWidth: 1200,
     imageHeight: 896,
-    imageAlt: 'Traditional wooden dhow cruise boat illuminated along Dubai Creek at night',
+    imageAlt: 'Traditional wooden dhow moored on Dubai Creek',
     faqs: [
       { question: 'How long is a Dubai dhow dinner cruise?', answer: 'Cruising normally lasts approximately two hours in the evening, typically boarding around 8:00 PM.' },
       { question: 'Which is better: Dubai Marina or Dubai Creek dhow cruise?', answer: 'Choose Marina for modern skyscraper vistas and JBR lights; choose Creek for traditional Old Dubai heritage and calmer pricing.' },
@@ -641,7 +641,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     intro: 'Built on hospitality leadership dating back to Burj Al Arab and led by Omar Al Kasem, Tuwaiq\'s VIP desk serves executives, royal delegations, distinguished families, and high-profile guests.',
     bodySections: [
       {
-        heading: 'Seamless Arrival to Departure Discretion',
+        heading: 'Discretion From Arrival to Departure',
         paragraphs: [
           'From DXB fast-track airport meet-and-greet and waiting chauffeur limousines to penthouse suites at partner properties such as Mandarin Oriental and Corinthia Hotel London, every detail flows through one senior account manager.',
         ],
@@ -671,9 +671,9 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     categoryLabel: 'GCC Nationals Desk',
     audienceTag: 'audience',
     seoTitle: 'Dubai & Global Travel for GCC Nationals | Tuwaiq',
-    seoDescription: 'VIP Dubai family suites, private chauffeur fleets via Najd Rent a Car, and outbound European summer escapes curated for GCC citizens and families.',
-    h1: 'Bespoke Travel for GCC Nationals',
-    intro: 'Tailored for Saudi, Kuwaiti, Qatari, Bahraini, and Omani families seeking effortless privacy, connected suites in Dubai, chauffeur-driven SUVs, and bespoke European or Asian getaways.',
+    seoDescription: 'VIP Dubai family suites, private chauffeur fleets via Najd Rent a Car, and outbound European summer escapes planned for GCC citizens and families.',
+    h1: 'Tailor-Made Travel for GCC Nationals',
+    intro: 'Tailored for Saudi, Kuwaiti, Qatari, Bahraini, and Omani families seeking privacy, connected suites in Dubai, chauffeur-driven SUVs, and tailor-made European or Asian getaways.',
     bodySections: [
       {
         heading: 'Dubai Family Suites & Private Mobility',
@@ -694,16 +694,16 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     relatedGuideSlugs: ['private-yacht-charter-dubai-planning-guide', 'dubai-stopover-and-airport-transfer-guide'],
     whatsappSubject: 'GCC Nationals Travel & VIP Concierge',
     defaultDirection: 'Both / Multi-Country',
-    image: '/images/hotels/jumeirah-gulf-suite.webp',
+    image: '/images/hotels/burj-al-arab-night.webp',
     imageWidth: 1200,
     imageHeight: 896,
-    imageAlt: 'Luxury cream marble Jumeirah coastline suite tailored for GCC families visiting Dubai',
+    imageAlt: 'Burj Al Arab lit at night on the Jumeirah coastline, Dubai',
     faqs: [
       { question: 'Can Tuwaiq arrange multi-bedroom suites and connecting rooms in Dubai?', answer: 'Yes, we reserve interconnecting oceanfront suites, family villas, and serviced residences across Palm Jumeirah, Jumeirah, and Downtown.' },
       { question: 'Do you organize private SUVs or chauffeur vans for GCC families?', answer: 'Yes, through our sister company Najd Rent a Car, we arrange airport pick-ups, full-day chauffeurs, and self-drive 4x4 SUVs.' },
       { question: 'Which summer destinations do GCC nationals book most with Tuwaiq?', answer: 'Switzerland, London (including Corinthia Hotel London), Georgia, Baku, Istanbul, and private island resorts in the Maldives.' },
       { question: 'Are Arabic-speaking senior VIP consultants available?', answer: 'Yes, our leadership and VIP desk provide direct bilingual support on WhatsApp and telephone throughout your journey.' },
-      { question: 'Can we bundle yacht charters and desert dinners for visiting relatives?', answer: 'Yes, private Marina yachts, Yas Island passes, and private 4x4 desert safaris are booked seamlessly under one itinerary.' },
+      { question: 'Can we bundle yacht charters and desert dinners for visiting relatives?', answer: 'Yes, private Marina yachts, Yas Island passes, and private 4x4 desert safaris are booked under one itinerary.' },
     ],
   },
   {
@@ -713,14 +713,14 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     categoryLabel: 'Europe Inbound Desk',
     audienceTag: 'audience',
     seoTitle: 'Dubai & UAE Holidays for European Visitors | Tuwaiq',
-    seoDescription: 'Curated winter sun holidays in Dubai and Abu Dhabi for European travellers, pairing 5-star coastal resorts, desert safaris, and Najd car rentals.',
+    seoDescription: 'Winter sun holidays in Dubai and Abu Dhabi for European travellers, pairing 5-star coastal resorts, desert safaris, and Najd car rentals.',
     h1: 'Inbound UAE Holidays for European Travellers',
     intro: 'Trade grey northern winters for dependable sunshine six hours from Europe. We craft complete Dubai and Abu Dhabi stays blending coastal resorts, architectural landmarks, and Indian Ocean extensions.',
     bodySections: [
       {
         heading: 'Winter Sun, Architecture & Desert Culture',
         paragraphs: [
-          'European guests travelling between October and April enjoy seamless DXB and AUH airport transfers, beachfront resorts across Jumeirah and Palm Jumeirah, Louvre Abu Dhabi cultural tours, and private golden-dune safaris away from crowded coach groups.',
+          'European guests travelling between October and April enjoy DXB and AUH airport transfers, beachfront resorts across Jumeirah and Palm Jumeirah, Louvre Abu Dhabi cultural tours, and private golden-dune safaris away from crowded coach groups.',
         ],
       },
       {
@@ -742,7 +742,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     imageAlt: 'Aerial coastline view of Burj Al Arab and Arabian Gulf beaches in Dubai',
     faqs: [
       { question: 'Do most European citizens receive visa on arrival in the UAE?', answer: 'Passport holders from most European nations qualify for visa-free arrival in the UAE, though travellers should confirm validity rules before departure.' },
-      { question: 'Can Tuwaiq arrange winter sun Dubai plus Maldives stopovers?', answer: 'Yes, splitting winter trips between 3 or 4 nights in Dubai and 5 nights in the Maldives or Seychelles is a signature itinerary.' },
+      { question: 'Can Tuwaiq arrange winter sun Dubai plus Maldives stopovers?', answer: 'Yes, splitting winter trips between 3 or 4 nights in Dubai and 5 nights in the Maldives or Seychelles is a popular combination.' },
       { question: 'Can I rent a self-drive car in Dubai with a European licence?', answer: 'Drivers holding eligible European licences can rent directly through Najd Rent a Car; check RTA country lists or carry an IDP where required.' },
       { question: 'Are private Dubai and Abu Dhabi city tours guided in English or European languages?', answer: 'Licensed English-speaking guides are standard, and requests for French, German, Italian, or Spanish guides can be coordinated ahead of arrival.' },
       { question: 'What is the ideal month for European visitors to visit the UAE?', answer: 'November through March provides warm beach sunshine, mild evenings, and peak outdoor desert comfort.' },
@@ -757,12 +757,12 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     seoTitle: 'Dubai & Middle East Tours for Americans | Tuwaiq',
     seoDescription: 'Custom Dubai stopovers, Abu Dhabi cultural itineraries, Oman and Egypt extensions, and private chauffeurs for US and Canadian travellers.',
     h1: 'Inbound Dubai & Arabia Journeys for Americans',
-    intro: 'Crossing continents deserves seamless coordination on the ground. Our Business Bay specialists design end-to-end Dubai stopovers and multi-country Arabian journeys tailored for US and Canadian visitors.',
+    intro: 'Crossing continents deserves coordination on the ground. Our Business Bay specialists design end-to-end Dubai stopovers and multi-country Arabian journeys tailored for US and Canadian visitors.',
     bodySections: [
       {
         heading: 'Direct Airport Care & 5-Star City Suites',
         paragraphs: [
-          'After long-haul flights into DXB or AUH, step straight into a flight-tracked chauffeur vehicle arranged with Najd Rent a Car, fast-track immigration options, and hand-picked suites overlooking Burj Khalifa, Downtown Dubai, or Palm Jumeirah.',
+          'After long-haul flights into DXB or AUH, step straight into a flight-tracked chauffeur vehicle arranged with Najd Rent a Car, fast-track immigration options, and suites overlooking Burj Khalifa, Downtown Dubai, or Palm Jumeirah.',
         ],
       },
       {
@@ -778,7 +778,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     relatedGuideSlugs: ['dubai-stopover-and-airport-transfer-guide', 'dubai-desert-safari-morning-vs-evening-vs-overnight'],
     whatsappSubject: 'US & Canada Inbound Dubai Holiday',
     defaultDirection: 'Inbound to UAE / Dubai',
-    image: '/images/hero/dubai-highways-night.webp',
+    image: '/images/hero/palm-jumeirah-aerial.webp',
     imageWidth: 1800,
     imageHeight: 1012,
     imageAlt: 'Illuminated Downtown Dubai skyscrapers and Sheikh Zayed Road at twilight',
@@ -852,7 +852,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
       {
         heading: 'Paired Directly With Najd Rent a Car',
         paragraphs: [
-          'Whether you want a chauffeur waiting at DXB terminal or a self-drive SUV delivered to your Jumeirah hotel to visit Abu Dhabi and Hatta at your own pace, our group partner Najd Rent a Car handles your wheels effortlessly.',
+          'Whether you want a chauffeur waiting at DXB terminal or a self-drive SUV delivered to your Jumeirah hotel to visit Abu Dhabi and Hatta at your own pace, our group partner Najd Rent a Car handles your wheels.',
         ],
       },
     ],
@@ -862,10 +862,10 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     relatedGuideSlugs: ['dubai-desert-safari-morning-vs-evening-vs-overnight', 'dubai-stopover-and-airport-transfer-guide'],
     whatsappSubject: 'Inbound UAE & Dubai Holiday Proposal',
     defaultDirection: 'Inbound to UAE / Dubai',
-    image: '/images/hotels/palm-terrace-suite.webp',
+    image: '/images/hotels/atlantis-the-palm.webp',
     imageWidth: 1200,
     imageHeight: 896,
-    imageAlt: 'Palm Jumeirah terrace suite overlooking Dubai lagoon waters for inbound visitors',
+    imageAlt: 'Atlantis The Palm resort on Palm Jumeirah, Dubai',
     faqs: [
       { question: 'Does Tuwaiq Travel handle both inbound UAE holidays and outbound packages?', answer: 'Yes. We plan both holidays departing Dubai for 70+ countries and full inbound Dubai and Abu Dhabi programmes for arriving international travellers.' },
       { question: 'Can inbound itineraries cover Abu Dhabi and Ras Al Khaimah too?', answer: 'Yes, we include Abu Dhabi landmarks like Sheikh Zayed Grand Mosque and Yas Island, plus Jebel Jais mountain stays in Ras Al Khaimah.' },
@@ -881,7 +881,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     categoryLabel: 'Vacations & Escapes',
     audienceTag: 'purpose',
     seoTitle: 'Tailored Vacation Packages & Escapes | Tuwaiq Dubai',
-    seoDescription: 'Curated seasonal vacations, long-weekend getaways, beach retreats, and alpine road trips departing Dubai or arriving in the UAE via Tuwaiq Travel.',
+    seoDescription: 'Seasonal vacations, long-weekend getaways, beach retreats, and alpine road trips departing Dubai or arriving in the UAE via Tuwaiq Travel.',
     h1: 'Tailored Vacation Packages & Multi-City Escapes',
     intro: 'Plan long weekends, school-break adventures, or celebratory winter-sun getaways with live consultant guidance replacing impersonal search algorithms.',
     bodySections: [
@@ -892,7 +892,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
         ],
       },
       {
-        heading: 'Seamless Flights, Transfers & Optional Car Hire',
+        heading: 'Flights, Transfers and Optional Car Hire',
         paragraphs: [
           'Every vacation proposal aligns airline connections, hotel breakfasts, private sightseeing, and optional airport pick-up or car rental via Najd Rent a Car so your holiday begins without friction.',
         ],
@@ -923,14 +923,14 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     categoryLabel: 'Couples & Wellness',
     audienceTag: 'purpose',
     seoTitle: 'Luxury Honeymoons & Wellness Escapes | Tuwaiq Dubai',
-    seoDescription: 'Private pool villas in Bali and Maldives, Alpine spa retreats, desert sanctuaries, and Dubai sunset yachts crafted for couples and wellness seekers.',
+    seoDescription: 'Private pool villas in Bali and Maldives, Alpine spa retreats, desert retreats, and Dubai sunset yachts crafted for couples and wellness seekers.',
     h1: 'Honeymoons, Couples & Wellness Escapes',
     intro: 'Celebrate milestones in tranquil privacy across overwater lagoons, clifftop rainforest villas, serene desert resorts, and European spa capitals arranged directly by our Dubai consultants.',
     bodySections: [
       {
         heading: 'Privacy-First Resorts & Honeymoon Touches',
         paragraphs: [
-          'From secluded walled pool villas in Ubud and beachfront sanctuaries in the Seychelles to romantic sunset yacht charters past Atlantis The Palm, we negotiate quiet room locations, celebratory credits, and smooth private transfers.',
+          'From secluded walled pool villas in Ubud and beachfront retreats in the Seychelles to romantic sunset yacht charters past Atlantis The Palm, we negotiate quiet room locations, celebratory credits, and smooth private transfers.',
         ],
       },
     ],
@@ -940,10 +940,10 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     relatedGuideSlugs: ['maldives-honeymoon-planning-from-dubai', 'private-yacht-charter-dubai-planning-guide'],
     whatsappSubject: 'Honeymoon & Luxury Wellness Retreat',
     defaultDirection: 'Both / Multi-Country',
-    image: '/images/hotels/downtown-skyline-suite.webp',
+    image: '/images/hotels/mandarin-oriental-singapore.webp',
     imageWidth: 1200,
     imageHeight: 896,
-    imageAlt: 'Five-star Downtown Dubai corner suite with twilight skyline views for couples',
+    imageAlt: 'Mandarin Oriental Singapore beside Marina Bay',
     faqs: [
       { question: 'Which destinations offer maximum privacy for Muslim honeymooners?', answer: 'Secluded private-pool villas in Bali, select Maldives water villas, and private walled beachfront resorts in Seychelles provide high privacy.' },
       { question: 'Can Tuwaiq pair a honeymoon overseas with two luxury nights in Dubai?', answer: 'Yes, combining a Dubai beachfront or Downtown penthouse stay with Maldives or Seychelles is ideal for relaxing stopovers.' },
@@ -961,10 +961,10 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     seoTitle: 'Dubai Car Rental via Najd Rent a Car | Tuwaiq',
     seoDescription: 'Travelling to Dubai and need a car? Arrange self-drive sedans, 4x4 SUVs, luxury vehicles, and chauffeur airport transfers via sister company Najd Rent a Car.',
     h1: 'Dubai Car Rental & Chauffeurs via Najd Rent a Car',
-    intro: 'Travelling to Dubai or landing at DXB and need reliable wheels? Under the same Al Basel Group umbrella, Tuwaiq Travel partners directly with Najd Rent a Car so your flights, hotel, and car move together seamlessly.',
+    intro: 'Travelling to Dubai or landing at DXB and need reliable wheels? Under the same Al Basel Group umbrella, Tuwaiq Travel partners directly with Najd Rent a Car so your flights, hotel, and car move together.',
     bodySections: [
       {
-        heading: 'Same Group Umbrella, Seamless Holiday Pairing',
+        heading: 'One Group, One Holiday Plan',
         paragraphs: [
           'Instead of dealing with separate unknown brokers on arrival, pair your Tuwaiq holiday or hotel stay with Najd Rent a Car (najdrentacar.com). Choose self-drive sedans for city errands, rugged 4x4 SUVs for Hatta and Jebel Jais drives, sports models, or uniformed chauffeurs.',
         ],

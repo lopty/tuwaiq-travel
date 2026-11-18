@@ -1,326 +1,141 @@
-import { useState } from 'react';
-import { Car, Check, ExternalLink, Phone, Sparkles } from 'lucide-react';
+import { useId, useState } from 'react';
+import { Phone } from 'lucide-react';
 import { COMPANY } from '../data/siteConfig';
-import { GENERAL_PACKAGES, NATIONAL_DAY_OFFERS } from '../data/packages';
-import { DESTINATIONS } from '../data/destinations';
-import { SERVICES } from '../data/services';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 interface WhatsAppEnquiryBuilderProps {
   defaultSubject: string;
   contextLabel?: string;
   fixedSelection?: boolean;
+  /** Kept for compatibility with existing call sites; no longer shown as a field. */
   defaultDirection?: 'Outbound from Dubai' | 'Inbound to UAE / Dubai' | 'Both / Multi-Country';
   defaultCarRental?: boolean;
   darkSurface?: boolean;
 }
 
-const VEHICLE_OPTIONS = [
-  'Economy / Daily Sedan',
-  'Family 4x4 SUV',
-  'Luxury / Sports Car',
-  'Chauffeur Limousine + Airport Transfer',
-] as const;
+const PLANNING_OPTIONS = [
+  'A holiday package',
+  'Flights',
+  'Hotel booking',
+  'Visa help',
+  'Tours and experiences in the UAE',
+  'Corporate or VIP travel',
+  'Something else',
+];
 
-const GUEST_OPTIONS = [
-  '2 Adults (Couple)',
-  'Family (Adults + Children)',
-  'Solo Traveller',
-  'Small Group (4 to 8 Guests)',
-  'Corporate / VIP Delegation',
-] as const;
+const TRAVELLER_OPTIONS = ['Two adults', 'Family with children', 'Just me', 'A group of four or more', 'Corporate or VIP delegation'];
 
+/**
+ * Short enquiry form. Nothing is submitted to a server: the answers are turned into a
+ * WhatsApp message that opens in the visitor's own WhatsApp.
+ */
 export function WhatsAppEnquiryBuilder({
   defaultSubject,
-  contextLabel = 'Package or Service',
+  contextLabel = 'What are you planning?',
   fixedSelection = false,
-  defaultDirection = 'Outbound from Dubai',
   defaultCarRental = false,
   darkSurface = false,
 }: WhatsAppEnquiryBuilderProps) {
-  const [selectedService, setSelectedService] = useState<string>(defaultSubject);
-  const [selectedPackageOrDest, setSelectedPackageOrDest] = useState<string>('');
-  const [direction, setDirection] = useState<string>(defaultDirection);
-  const [dates, setDates] = useState<string>('');
-  const [guests, setGuests] = useState<string>(GUEST_OPTIONS[0]);
-  const [needCarRental, setNeedCarRental] = useState<boolean>(defaultCarRental);
-  const [vehicleType, setVehicleType] = useState<string>(VEHICLE_OPTIONS[1]);
-  const [notes, setNotes] = useState<string>('');
+  const id = useId();
+  const options = PLANNING_OPTIONS.includes(defaultSubject) ? PLANNING_OPTIONS : [defaultSubject, ...PLANNING_OPTIONS];
+  const [subject, setSubject] = useState(defaultSubject);
+  const [dates, setDates] = useState('');
+  const [travellers, setTravellers] = useState(TRAVELLER_OPTIONS[0]);
+  const [car, setCar] = useState(defaultCarRental);
+  const [notes, setNotes] = useState('');
 
-  const allPackages = [...GENERAL_PACKAGES, ...NATIONAL_DAY_OFFERS];
+  const message = [
+    'Hello Tuwaiq Travel, I would like a quote.',
+    `Planning: ${subject}`,
+    `Dates: ${dates.trim() || 'Flexible'}`,
+    `Travellers: ${travellers}`,
+    ...(car ? ['Also need: a car or chauffeur in the UAE (Najd Rent a Car)'] : []),
+    ...(notes.trim() ? [`Notes: ${notes.trim()}`] : []),
+  ].join('\n');
+  const href = `https://wa.me/${COMPANY.contact.whatsappDigits}?text=${encodeURIComponent(message)}`;
 
-  const buildWhatsAppMessage = (): string => {
-    const lines = [
-      'Hello Tuwaiq Travel, I would like to request a quote with the following details:',
-      `- Primary Interest: ${selectedService || defaultSubject}`,
-      `- Travel Direction: ${direction}`,
-    ];
-
-    if (selectedPackageOrDest) {
-      lines.push(`- Preferred Package / Destination: ${selectedPackageOrDest}`);
-    }
-
-    lines.push(`- Guests: ${guests}`);
-    lines.push(`- Preferred Dates: ${dates.trim() ? dates.trim() : 'Flexible dates'}`);
-    lines.push(
-      needCarRental
-        ? `- Car Rental Needed: Yes, ${vehicleType} (via Najd Rent a Car)`
-        : '- Car Rental Needed: No'
-    );
-
-    if (notes.trim()) {
-      lines.push(`- Additional Inquiries: ${notes.trim()}`);
-    }
-
-    return lines.join('\n');
-  };
-
-  const fullMessage = buildWhatsAppMessage();
-  const href = `https://wa.me/${COMPANY.contact.whatsappDigits}?text=${encodeURIComponent(fullMessage)}`;
-
-  const cardSurface = darkSurface
-    ? 'bg-[#1D1719] border-white/10 text-white'
-    : 'bg-[#F8F6F5] border-[#EAE3DF] text-[#1B1718]';
-
-  const inputSurface = darkSurface
-    ? 'bg-black/40 border-white/15 text-white placeholder:text-white/45 focus:border-[#E2CC96]'
-    : 'bg-white border-[#DED6D2] text-[#1B1718] placeholder:text-[#766D71] focus:border-[#C31A20]';
-
-  const labelTone = darkSurface ? 'text-white/75' : 'text-[#574F52]';
+  const surface = darkSurface ? 'bg-[#17181C] border-white/10 text-white' : 'bg-white border-[#E8EAEE] text-[#111318] shadow-sm';
+  const field = darkSurface
+    ? 'bg-white/5 border-white/15 text-white placeholder:text-white/45 focus:border-[#FFFFFF]'
+    : 'bg-[#F7F8FA] border-[#E5E7EB] text-[#111318] placeholder:text-[#8A8185] focus:border-[#C31A20]';
+  const label = `block text-xs font-medium mb-1.5 ${darkSurface ? 'text-white/70' : 'text-[#5B6170]'}`;
+  const input = `w-full h-12 px-4 rounded-2xl border text-sm focus:outline-none transition-colors ${field}`;
 
   return (
-    <div id="enquire" className={`rounded-[22px] border p-5 sm:p-7 scroll-mt-24 ${cardSurface}`}>
-      <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-current/10">
-        <div>
-          <p className={`text-[11px] font-semibold uppercase tracking-wider ${darkSurface ? 'text-[#E2CC96]' : 'text-[#8C6822]'}`}>
-            Instant WhatsApp Concierge
-          </p>
-          <h3 className="text-lg sm:text-xl font-semibold mt-0.5">
-            Build Your Enquiry Brief
-          </h3>
-        </div>
-        <span className={`inline-flex items-center gap-1.5 text-xs font-medium ${darkSurface ? 'text-white/70' : 'text-[#6B6266]'}`}>
-          <Sparkles className="w-3.5 h-3.5 text-[#B88E3D]" aria-hidden="true" />
-          <span>Full context sent to our Dubai desk</span>
-        </span>
-      </div>
+    <div id="enquire" className={`rounded-[24px] border p-5 sm:p-8 scroll-mt-24 ${surface}`}>
+      <h3 className="text-xl sm:text-2xl font-semibold">Plan your trip</h3>
+      <p className={`mt-1 text-sm ${darkSurface ? 'text-white/70' : 'text-[#5B6170]'}`}>
+        Share the basics. A consultant replies on WhatsApp with options and prices.
+      </p>
 
-      <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {/* Service / Primary Subject */}
+      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className={`block text-xs font-medium mb-1.5 ${labelTone}`}>
-            {contextLabel}
-          </label>
+          <label htmlFor={`${id}-subject`} className={label}>{contextLabel}</label>
           {fixedSelection ? (
-            <div className={`h-11 px-3.5 rounded-xl border flex items-center text-sm font-medium truncate ${darkSurface ? 'bg-black/30 border-white/15 text-white' : 'bg-white/80 border-[#DED6D2] text-[#1B1718]'}`}>
-              {selectedService}
-            </div>
+            <p id={`${id}-subject`} className={`${input} flex items-center font-medium truncate`}>{subject}</p>
           ) : (
-            <select
-              value={selectedService}
-              onChange={(e) => setSelectedService(e.target.value)}
-              className={`w-full h-11 px-3.5 rounded-xl border text-sm focus:outline-none ${inputSurface}`}
-            >
-              <option value="Custom Holiday Package">Custom Holiday Package</option>
-              <option value="Inbound UAE & Dubai Holiday">Inbound UAE &amp; Dubai Holiday</option>
-              <option value="Dubai Car Rental & Transfers (Najd Rent a Car)">Car Rental &amp; Chauffeur (Najd Rent a Car)</option>
-              {SERVICES.map((s) => (
-                <option key={s.slug} value={s.name}>
-                  {s.name}
-                </option>
+            <select id={`${id}-subject`} value={subject} onChange={(e) => setSubject(e.target.value)} className={input}>
+              {options.map((o) => (
+                <option key={o} value={o}>{o}</option>
               ))}
             </select>
           )}
         </div>
-
-        {/* Inbound vs Outbound */}
         <div>
-          <label className={`block text-xs font-medium mb-1.5 ${labelTone}`}>
-            Travel Direction
-          </label>
-          <select
-            value={direction}
-            onChange={(e) => setDirection(e.target.value)}
-            className={`w-full h-11 px-3.5 rounded-xl border text-sm focus:outline-none ${inputSurface}`}
-          >
-            <option value="Outbound from Dubai">Outbound from Dubai / UAE</option>
-            <option value="Inbound to UAE / Dubai">Inbound Visit to UAE / Dubai</option>
-            <option value="Both / Multi-Country">Multi-Country / Stopover</option>
+          <label htmlFor={`${id}-dates`} className={label}>When</label>
+          <input
+            id={`${id}-dates`}
+            type="text"
+            value={dates}
+            onChange={(e) => setDates(e.target.value)}
+            placeholder="e.g. 10 to 15 March, or flexible"
+            className={input}
+          />
+        </div>
+        <div>
+          <label htmlFor={`${id}-travellers`} className={label}>Who is travelling</label>
+          <select id={`${id}-travellers`} value={travellers} onChange={(e) => setTravellers(e.target.value)} className={input}>
+            {TRAVELLER_OPTIONS.map((o) => (
+              <option key={o} value={o}>{o}</option>
+            ))}
           </select>
         </div>
-
-        {/* Optional Package or Destination Pairing */}
         <div>
-          <label className={`block text-xs font-medium mb-1.5 ${labelTone}`}>
-            {fixedSelection ? 'Add Another Package or Destination (Optional)' : 'Preferred Package or Destination (Optional)'}
-          </label>
-          <select
-            value={selectedPackageOrDest}
-            onChange={(e) => setSelectedPackageOrDest(e.target.value)}
-            className={`w-full h-11 px-3.5 rounded-xl border text-sm focus:outline-none ${inputSurface}`}
-          >
-            <option value="">None / Discuss with consultant</option>
-            <optgroup label="Priced Packages">
-              {allPackages.map((p) => (
-                <option key={p.slug} value={`${p.shortTitle} (From AED ${p.priceAed})`}>
-                  {p.shortTitle} (From AED {p.priceAed.toLocaleString('en-US')})
-                </option>
-              ))}
-            </optgroup>
-            <optgroup label="Destinations">
-              {DESTINATIONS.map((d) => (
-                <option key={d.slug} value={d.name}>
-                  {d.name}
-                </option>
-              ))}
-            </optgroup>
-          </select>
-        </div>
-
-        {/* Guests & Dates */}
-        <div className="grid grid-cols-2 gap-3">
-          <div>
-            <label className={`block text-xs font-medium mb-1.5 ${labelTone}`}>
-              Travellers
-            </label>
-            <select
-              value={guests}
-              onChange={(e) => setGuests(e.target.value)}
-              className={`w-full h-11 px-3 rounded-xl border text-sm focus:outline-none ${inputSurface}`}
-            >
-              {GUEST_OPTIONS.map((opt) => (
-                <option key={opt} value={opt}>
-                  {opt}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div>
-            <label className={`block text-xs font-medium mb-1.5 ${labelTone}`}>
-              Travel Dates
-            </label>
-            <input
-              type="text"
-              value={dates}
-              onChange={(e) => setDates(e.target.value)}
-              placeholder="e.g. Dec 2026"
-              className={`w-full h-11 px-3 rounded-xl border text-sm focus:outline-none ${inputSurface}`}
-            />
-          </div>
+          <label htmlFor={`${id}-notes`} className={label}>Anything else (optional)</label>
+          <input
+            id={`${id}-notes`}
+            type="text"
+            value={notes}
+            onChange={(e) => setNotes(e.target.value)}
+            placeholder="Budget, hotel style, visa questions"
+            className={input}
+          />
         </div>
       </div>
 
-      {/* Najd Rent a Car Add-on Checkbox */}
-      <div className={`mt-4 rounded-2xl border p-4 transition-colors ${
-        needCarRental
-          ? darkSurface
-            ? 'bg-[#C31A20]/15 border-[#C31A20]'
-            : 'bg-white border-[#C31A20] shadow-xs'
-          : darkSurface
-          ? 'bg-black/25 border-white/15'
-          : 'bg-white border-[#DED6D2]'
-      }`}>
-        <label className="flex items-start gap-3 cursor-pointer select-none">
-          <span className={`mt-0.5 w-5 h-5 rounded-md border flex items-center justify-center shrink-0 transition-colors ${
-            needCarRental
-              ? 'bg-[#C31A20] border-[#C31A20] text-white'
-              : darkSurface
-              ? 'border-white/35 bg-transparent'
-              : 'border-[#B8B0AD] bg-white'
-          }`}>
-            <input
-              type="checkbox"
-              checked={needCarRental}
-              onChange={(e) => setNeedCarRental(e.target.checked)}
-              className="sr-only"
-            />
-            {needCarRental && <Check className="w-3.5 h-3.5" aria-hidden="true" />}
-          </span>
-          <span className="flex-1 min-w-0">
-            <span className="flex flex-wrap items-center gap-2 text-sm font-semibold">
-              <Car className="w-4 h-4 text-[#C31A20]" aria-hidden="true" />
-              <span>I need a car for rent (via Najd Rent a Car)</span>
-            </span>
-            <span className={`block text-xs mt-1 ${labelTone}`}>
-              Visiting Dubai or heading to the airport? Add a self-drive car, 4x4 SUV, or chauffeur limousine under our Al Basel Group sister company.
-            </span>
-          </span>
-        </label>
+      <label className={`mt-4 flex items-center gap-2.5 text-sm cursor-pointer ${darkSurface ? 'text-white/80' : 'text-[#2F3440]'}`}>
+        <input type="checkbox" checked={car} onChange={(e) => setCar(e.target.checked)} className="w-4 h-4 accent-[#C31A20]" />
+        Add a car or chauffeur in the UAE, through our sister company Najd Rent a Car
+      </label>
 
-        {needCarRental && (
-          <div className="mt-3.5 pt-3.5 border-t border-current/10 space-y-3">
-            <div className="flex flex-wrap gap-2">
-              {VEHICLE_OPTIONS.map((v) => {
-                const selected = vehicleType === v;
-                return (
-                  <button
-                    key={v}
-                    type="button"
-                    onClick={() => setVehicleType(v)}
-                    className={`h-8 px-3 rounded-full text-xs font-medium transition-colors cursor-pointer ${
-                      selected
-                        ? 'bg-[#1B1718] text-white'
-                        : darkSurface
-                        ? 'bg-white/10 text-white/85 hover:bg-white/20'
-                        : 'bg-[#F8F6F5] text-[#4A4245] hover:bg-[#EFEAE8]'
-                    }`}
-                  >
-                    {v}
-                  </button>
-                );
-              })}
-            </div>
-            <p className={`text-xs ${labelTone}`}>
-              Direct fleet partner:{' '}
-              <a
-                href="https://najdrentacar.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center gap-1 font-semibold underline ${darkSurface ? 'text-[#E2CC96]' : 'text-[#C31A20]'}`}
-              >
-                <span>najdrentacar.com</span>
-                <ExternalLink className="w-3 h-3" aria-hidden="true" />
-              </a>
-            </p>
-          </div>
-        )}
-      </div>
-
-      {/* Additional Inquiries */}
-      <div className="mt-4">
-        <label className={`block text-xs font-medium mb-1.5 ${labelTone}`}>
-          Additional Inquiries (Hotel tier, visas, pickup airport, suites, or requests)
-        </label>
-        <textarea
-          rows={2}
-          value={notes}
-          onChange={(e) => setNotes(e.target.value)}
-          placeholder="Example: Need UAE visit visas for 2 adults, connecting 5-star hotel rooms, and Dubai airport pick-up."
-          className={`w-full px-3.5 py-2.5 rounded-xl border text-sm focus:outline-none resize-y ${inputSurface}`}
-        />
-      </div>
-
-      {/* Actions */}
-      <div className="mt-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+      <div className="mt-6 flex flex-col sm:flex-row gap-3">
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-[#118444] hover:bg-[#0D6B37] text-white font-semibold text-sm transition-colors shadow-sm"
+          className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-[#118444] hover:bg-[#0D6B37] text-white text-sm font-semibold transition-colors"
         >
           <WhatsAppIcon className="w-4 h-4 shrink-0" />
-          <span>Send Full Enquiry on WhatsApp</span>
+          Send on WhatsApp
         </a>
         <a
           href={`tel:${COMPANY.contact.officeTel}`}
-          className={`inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full border font-semibold text-sm transition-colors ${
-            darkSurface
-              ? 'border-white/25 text-white hover:bg-white/10'
-              : 'border-[#D8D0CC] text-[#1B1718] hover:border-[#1B1718]'
+          className={`inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full border text-sm font-semibold transition-colors ${
+            darkSurface ? 'border-white/25 text-white hover:border-white/60' : 'border-[#D9DCE1] text-[#111318] hover:border-[#111318]'
           }`}
         >
-          <Phone className="w-4 h-4 text-[#C31A20]" aria-hidden="true" />
-          <span>Call {COMPANY.contact.officeDisplay}</span>
+          <Phone className="w-4 h-4" aria-hidden="true" />
+          Call {COMPANY.contact.officeDisplay}
         </a>
       </div>
     </div>

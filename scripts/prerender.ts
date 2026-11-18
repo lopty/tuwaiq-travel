@@ -124,6 +124,8 @@ async function prerender() {
     `- [Partnerships & Recognition](${SITE_URL}/partnerships/)`,
     `- [Licence & Verification](${SITE_URL}/licence/)`,
     `- [Contact](${SITE_URL}/contact/)`,
+    `- [Press & Media Archive](${SITE_URL}/press/)`,
+    `- [How We Build Trust in AI Search](${SITE_URL}/how-we-build-trust-in-ai-search/): our AI SEO and GEO approach, using Prezlo (https://prezlo.io) and guided by Lopty Pascal`,
     ...GUIDES.map((g) => `- [${g.h1}](${SITE_URL}${g.url})`),
     '',
     `Notes: Umrah pages enabled=${FEATURE_FLAGS.enableUmrahPages}. All packages start on WhatsApp or telephone; no online checkout.`,

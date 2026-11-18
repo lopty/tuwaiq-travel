@@ -63,20 +63,20 @@ export default function App({ initialPath }: { initialPath?: string }) {
       return (
         <Layout currentPath={currentPath}>
           <section className="max-w-3xl mx-auto px-4 py-20 text-center space-y-4">
-            <h1 className="text-3xl font-semibold text-[#1B1718]">Page Not Found</h1>
-            <p className="text-base text-[#574F52]">
+            <h1 className="text-3xl font-semibold text-[#111318]">Page Not Found</h1>
+            <p className="text-base text-[#5B6170]">
               The page you requested could not be found. Browse our holiday packages, 16 destinations, or 15 services from Dubai.
             </p>
             <div className="pt-2 flex flex-wrap justify-center gap-3">
               <a
                 href="/"
-                className="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full bg-[#C31A20] hover:bg-[#9E1419] text-white text-sm font-semibold transition-colors"
+                className="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full bg-[#C31A20] hover:bg-[#A3151A] text-white text-sm font-semibold transition-colors"
               >
                 Return Home
               </a>
               <a
                 href="/packages/"
-                className="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full border border-[#C31A20] text-[#C31A20] hover:bg-[#FDF2F2] text-sm font-semibold transition-colors"
+                className="min-h-[44px] inline-flex items-center px-6 py-2.5 rounded-full border border-[#C31A20] text-[#111318] hover:bg-[#FDEDED] text-sm font-semibold transition-colors"
               >
                 Browse Packages
               </a>

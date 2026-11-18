@@ -8,14 +8,14 @@ import type { BreadcrumbItem } from '../lib/seo';
 
 export function Breadcrumbs({ items, light = false }: { items: BreadcrumbItem[]; light?: boolean }) {
   return (
-    <nav aria-label="Breadcrumb" className={`flex flex-wrap items-center gap-1.5 text-xs ${light ? 'text-white/80' : 'text-[#6B6266]'}`}>
+    <nav aria-label="Breadcrumb" className={`flex flex-wrap items-center gap-1.5 text-xs ${light ? 'text-white/80' : 'text-[#6B7180]'}`}>
       {items.map((item, index) => {
         const isLast = index === items.length - 1;
         return (
           <span key={item.url} className="inline-flex items-center gap-1.5">
             {index > 0 && <ChevronRight className="w-3.5 h-3.5 opacity-55" aria-hidden="true" />}
             {isLast ? (
-              <span className={light ? 'text-white font-medium' : 'text-[#1B1718] font-medium'} aria-current="page">
+              <span className={light ? 'text-white font-medium' : 'text-[#111318] font-medium'} aria-current="page">
                 {item.name}
               </span>
             ) : (
@@ -37,9 +37,9 @@ export function PackageCard({ pkg, lazy = true }: { pkg: TravelPackage; lazy?: b
       data-filter-card="package"
       data-region={pkg.region}
       data-search={`${pkg.name} ${pkg.destinationName} ${pkg.cities} ${pkg.region} ${pkg.idealFor}`.toLowerCase()}
-      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#EFEAE8] shadow-[0_4px_20px_rgba(27,23,24,0.035)] hover:shadow-[0_14px_34px_rgba(27,23,24,0.08)] hover:border-[#DCD4D0] transition-all duration-300"
+      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.035)] hover:shadow-[0_14px_34px_rgba(27,23,24,0.08)] hover:border-[#DCDFE4] transition-all duration-300"
     >
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#F8F6F5]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#F6F7F9]">
         <img
           src={pkg.image}
           alt={pkg.imageAlt}
@@ -58,25 +58,25 @@ export function PackageCard({ pkg, lazy = true }: { pkg: TravelPackage; lazy?: b
 
       <div className="p-5 flex-1 flex flex-col justify-between gap-4">
         <div>
-          <p className="text-xs font-medium text-[#766D71] truncate">
+          <p className="text-xs font-medium text-[#7A808C] truncate">
             {pkg.destinationName}
             {pkg.departureDate ? ' · Departs 2 Dec 2026' : ''}
           </p>
-          <h3 className="mt-1 text-base font-semibold text-[#1B1718] group-hover:text-[#C31A20] transition-colors leading-snug line-clamp-1">
+          <h3 className="mt-1 text-base font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors leading-snug line-clamp-1">
             {pkg.shortTitle}
           </h3>
         </div>
 
-        <div className="pt-3.5 border-t border-[#F3EFED] flex items-center justify-between gap-2">
+        <div className="pt-3.5 border-t border-[#F3F4F6] flex items-center justify-between gap-2">
           <div>
-            <p className="text-base font-semibold text-[#1B1718] tabular-nums">
+            <p className="text-base font-semibold text-[#111318] tabular-nums">
               From AED {pkg.priceAed.toLocaleString('en-US')}
             </p>
-            <p className="text-[11px] text-[#766D71]">per person</p>
+            <p className="text-[11px] text-[#7A808C]">per person</p>
           </div>
           <span
             aria-hidden="true"
-            className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E6DFDC] text-[#1B1718] group-hover:bg-[#C31A20] group-hover:border-[#C31A20] group-hover:text-white transition-colors shrink-0"
+            className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#E5E7EB] text-[#111318] group-hover:bg-[#C31A20] group-hover:border-[#C31A20] group-hover:text-white transition-colors shrink-0"
           >
             <ArrowRight className="w-4 h-4" />
           </span>
@@ -93,7 +93,7 @@ export function DestinationCard({ destination, compact = false, lazy = true }: {
       data-filter-card="destination"
       data-region={destination.filterRegion}
       data-search={`${destination.name} ${destination.regionLabel} ${destination.filterRegion} ${destination.idealFor} ${destination.highlights.join(' ')}`.toLowerCase()}
-      className={`group relative block rounded-[20px] overflow-hidden shadow-[0_6px_24px_rgba(27,23,24,0.06)] bg-[#1B1718] ${
+      className={`group relative block rounded-[20px] overflow-hidden shadow-[0_6px_24px_rgba(27,23,24,0.06)] bg-[#111318] ${
         compact ? 'w-[240px] sm:w-[264px] shrink-0 snap-start aspect-[4/5]' : 'aspect-[4/5]'
       }`}
     >
@@ -136,9 +136,9 @@ export function ServiceCard({ service, lazy = true }: { service: ServiceItem; la
   return (
     <a
       href={service.url}
-      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#EFEAE8] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCD4D0] transition-all duration-300"
+      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCDFE4] transition-all duration-300"
     >
-      <div className="aspect-[16/10] overflow-hidden bg-[#F8F6F5]">
+      <div className="aspect-[16/10] overflow-hidden bg-[#F6F7F9]">
         <img
           src={service.image}
           alt={service.imageAlt}
@@ -150,14 +150,14 @@ export function ServiceCard({ service, lazy = true }: { service: ServiceItem; la
       </div>
       <div className="p-5 flex items-center justify-between gap-4">
         <div className="min-w-0">
-          <h3 className="text-base font-semibold text-[#1B1718] group-hover:text-[#C31A20] transition-colors truncate">
+          <h3 className="text-base font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors truncate">
             {service.name}
           </h3>
-          <p className="mt-1 text-sm text-[#6B6266] truncate">{service.tagline}</p>
+          <p className="mt-1 text-sm text-[#6B7180] truncate">{service.tagline}</p>
         </div>
         <span
           aria-hidden="true"
-          className="w-9 h-9 rounded-full border border-[#E6DFDC] text-[#1B1718] group-hover:bg-[#C31A20] group-hover:border-[#C31A20] group-hover:text-white flex items-center justify-center shrink-0 transition-colors"
+          className="w-9 h-9 rounded-full border border-[#E5E7EB] text-[#111318] group-hover:bg-[#C31A20] group-hover:border-[#C31A20] group-hover:text-white flex items-center justify-center shrink-0 transition-colors"
         >
           <ArrowRight className="w-4 h-4" />
         </span>
@@ -170,9 +170,9 @@ export function GuideCard({ guide, lazy = true }: { guide: GuideArticle; lazy?: 
   return (
     <a
       href={guide.url}
-      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#EFEAE8] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCD4D0] transition-all duration-300"
+      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCDFE4] transition-all duration-300"
     >
-      <div className="aspect-[16/10] overflow-hidden bg-[#F8F6F5]">
+      <div className="aspect-[16/10] overflow-hidden bg-[#F6F7F9]">
         <img
           src={guide.image}
           alt={guide.imageAlt}
@@ -184,14 +184,14 @@ export function GuideCard({ guide, lazy = true }: { guide: GuideArticle; lazy?: 
       </div>
       <div className="p-5 flex-1 flex flex-col justify-between gap-4">
         <div>
-          <p className="text-xs font-medium text-[#766D71] mb-1.5">
+          <p className="text-xs font-medium text-[#7A808C] mb-1.5">
             {guide.category} · {guide.readTime}
           </p>
-          <h3 className="text-base font-semibold text-[#1B1718] group-hover:text-[#C31A20] transition-colors leading-snug line-clamp-2">
+          <h3 className="text-base font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors leading-snug line-clamp-2">
             {guide.h1}
           </h3>
         </div>
-        <div className="flex items-center justify-between pt-3 border-t border-[#F3EFED] text-xs font-semibold text-[#1B1718] group-hover:text-[#C31A20] transition-colors">
+        <div className="flex items-center justify-between pt-3 border-t border-[#F3F4F6] text-xs font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors">
           <span>Read guide</span>
           <ArrowRight className="w-4 h-4" aria-hidden="true" />
         </div>
@@ -202,13 +202,13 @@ export function GuideCard({ guide, lazy = true }: { guide: GuideArticle; lazy?: 
 
 export function FaqSection({ faqs, id = 'faqs' }: { faqs: PackageFaq[]; id?: string }) {
   return (
-    <section id={id} className="scroll-mt-24 pt-8 border-t border-[#EFEAE8]">
-      <h2 className="text-2xl font-semibold text-[#1B1718] mb-2">Frequently Asked Questions</h2>
-      <div className="divide-y divide-[#EFEAE8]">
+    <section id={id} className="scroll-mt-24 pt-8 border-t border-[#ECEEF2]">
+      <h2 className="text-2xl font-semibold text-[#111318] mb-2">Frequently Asked Questions</h2>
+      <div className="divide-y divide-[#ECEEF2]">
         {faqs.map((faq) => (
           <div key={faq.question} className="py-5">
-            <h3 className="text-base font-semibold text-[#1B1718] mb-1.5">{faq.question}</h3>
-            <p className="text-sm text-[#574F52] leading-relaxed">{faq.answer}</p>
+            <h3 className="text-base font-semibold text-[#111318] mb-1.5">{faq.question}</h3>
+            <p className="text-sm text-[#5B6170] leading-relaxed">{faq.answer}</p>
           </div>
         ))}
       </div>
@@ -226,18 +226,18 @@ export function StatChips({
   idealFor: string;
 }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-4 my-6 border-y border-[#EFEAE8] sm:divide-x sm:divide-[#EFEAE8]">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 py-4 my-6 border-y border-[#ECEEF2] sm:divide-x sm:divide-[#ECEEF2]">
       <div>
-        <p className="text-[11px] font-medium uppercase tracking-wider text-[#766D71]">Duration</p>
-        <p className="mt-0.5 text-sm font-semibold text-[#1B1718]">{duration}</p>
+        <p className="text-[11px] font-medium uppercase tracking-wider text-[#7A808C]">Duration</p>
+        <p className="mt-0.5 text-sm font-semibold text-[#111318]">{duration}</p>
       </div>
       <div className="sm:pl-6">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-[#766D71]">Best time</p>
-        <p className="mt-0.5 text-sm font-semibold text-[#1B1718]">{bestTime}</p>
+        <p className="text-[11px] font-medium uppercase tracking-wider text-[#7A808C]">Best time</p>
+        <p className="mt-0.5 text-sm font-semibold text-[#111318]">{bestTime}</p>
       </div>
       <div className="sm:pl-6">
-        <p className="text-[11px] font-medium uppercase tracking-wider text-[#766D71]">Ideal for</p>
-        <p className="mt-0.5 text-sm font-semibold text-[#1B1718]">{idealFor}</p>
+        <p className="text-[11px] font-medium uppercase tracking-wider text-[#7A808C]">Ideal for</p>
+        <p className="mt-0.5 text-sm font-semibold text-[#111318]">{idealFor}</p>
       </div>
     </div>
   );

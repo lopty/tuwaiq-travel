@@ -42,27 +42,25 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#1B1718]">
+    <div className="min-h-screen flex flex-col bg-white text-[#111318]">
       {/* Top Bar */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EFEAE8]">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#ECEEF2]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-4 sm:gap-8">
           <a
             href="/"
             className="inline-flex items-center shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C31A20] rounded-lg"
             aria-label="Tuwaiq Travel & Tourism LLC Home"
           >
-            <span className="block h-9 sm:h-10 aspect-[581/151] overflow-hidden rounded-sm">
-              <img
-                src={COMPANY.logos.colour}
-                alt="Tuwaiq Travel and Tourism LLC"
-                width={COMPANY.logos.width}
-                height={COMPANY.logos.height}
-                className="w-full h-full object-cover object-center scale-[1.03]"
-              />
-            </span>
+            <img
+              src={COMPANY.logos.colour}
+              alt="Tuwaiq Travel and Tourism LLC"
+              width={COMPANY.logos.width}
+              height={COMPANY.logos.height}
+              className="block h-8 sm:h-9 w-auto"
+            />
           </a>
 
-          <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-6 text-sm font-medium text-[#4A4245]">
+          <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-6 text-sm font-medium text-[#4B5160]">
             {navLinks.map((link) => {
               const isActive =
                 currentPath === link.href ||
@@ -73,7 +71,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
                   href={link.href}
                   className={`whitespace-nowrap shrink-0 py-2 transition-colors border-b-2 ${
                     isActive
-                      ? 'text-[#C31A20] border-[#B88E3D] font-semibold'
+                      ? 'text-[#C31A20] border-[#C31A20] font-semibold'
                       : 'border-transparent hover:text-[#C31A20]'
                   }`}
                 >
@@ -86,7 +84,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
           <div className="flex items-center gap-3 shrink-0">
             <a
               href={`tel:${COMPANY.contact.officeTel}`}
-              className="hidden lg:inline-flex items-center gap-1.5 text-xs font-medium text-[#574F52] hover:text-[#C31A20] whitespace-nowrap shrink-0 px-3 py-2 rounded-full transition-colors"
+              className="hidden lg:inline-flex items-center gap-1.5 text-xs font-medium text-[#5B6170] hover:text-[#C31A20] whitespace-nowrap shrink-0 px-3 py-2 rounded-full transition-colors"
             >
               <Phone className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{COMPANY.contact.officeDisplay}</span>
@@ -106,30 +104,24 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
 
       <main className="flex-1">{children}</main>
 
-      {/* Rich Structured Footer: Brand crimson surface with uploaded logo plaque */}
-      <footer className={`bg-[#9E1419] text-white mt-16 ${hideBottomNav ? 'pb-24 md:pb-12' : 'pb-24 md:pb-12'}`}>
+      {/* Footer */}
+      <footer className={`bg-[#0E0F12] text-white mt-20 ${hideBottomNav ? 'pb-24 md:pb-12' : 'pb-24 md:pb-12'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
             <div>
-              <a
-                href="/"
-                className="inline-flex items-center justify-center bg-white rounded-2xl px-4 py-2.5 mb-4 shadow-sm"
-                aria-label="Tuwaiq Travel & Tourism LLC Home"
-              >
-                <span className="block h-10 aspect-[581/151] overflow-hidden">
-                  <img
-                    src={COMPANY.logos.colour}
-                    alt="Tuwaiq Travel and Tourism LLC"
-                    width={COMPANY.logos.width}
-                    height={COMPANY.logos.height}
-                    loading="lazy"
-                    className="w-full h-full object-cover object-center scale-[1.03]"
-                  />
-                </span>
+              <a href="/" className="inline-flex mb-5 bg-white rounded-2xl px-4 py-3" aria-label="Tuwaiq Travel & Tourism LLC Home">
+                <img
+                  src={COMPANY.logos.colour}
+                  alt="Tuwaiq Travel and Tourism LLC"
+                  width={COMPANY.logos.width}
+                  height={COMPANY.logos.height}
+                  loading="lazy"
+                  className="block h-8 w-auto"
+                />
               </a>
               <p className="text-sm text-white/85 leading-relaxed mb-4">
                 Dubai travel agency established in {COMPANY.foundedYear} by Basel Al Kasem. Member of{' '}
-                <a href="/al-basel-group/" className="underline decoration-[#E2CC96]/60 hover:text-[#E2CC96]">
+                <a href="/al-basel-group/" className="underline decoration-[#FFFFFF]/60 hover:text-[#FFFFFF]">
                   Al Basel Group
                 </a>{' '}
                 (est. {COMPANY.parentGroup.establishedYear}).
@@ -157,7 +149,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
             </div>
 
             <div>
-              <h2 className="text-sm font-semibold text-[#E2CC96] tracking-wide mb-4">Explore Travel</h2>
+              <h2 className="text-sm font-semibold text-[#FFFFFF] tracking-wide mb-4">Explore Travel</h2>
               <ul className="space-y-2.5 text-sm text-white/85">
                 <li><a href="/packages/" className="hover:text-white hover:underline">Holiday Packages</a></li>
                 <li><a href="/offers/" className="hover:text-white hover:underline">UAE National Day 2026 Offers</a></li>
@@ -172,7 +164,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
             </div>
 
             <div>
-              <h2 className="text-sm font-semibold text-[#E2CC96] tracking-wide mb-4">Company &amp; Trust</h2>
+              <h2 className="text-sm font-semibold text-[#FFFFFF] tracking-wide mb-4">Company &amp; Trust</h2>
               <ul className="space-y-2.5 text-sm text-white/85">
                 <li><a href="/about/" className="hover:text-white hover:underline">About Tuwaiq Travel</a></li>
                 <li><a href="/founder/" className="hover:text-white hover:underline">Our Founder: Basel Al Kasem</a></li>
@@ -182,14 +174,15 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
                 <li><a href="/press/" className="hover:text-white hover:underline">Press Archive</a></li>
                 <li><a href="/licence/" className="hover:text-white hover:underline">Licence &amp; Verification</a></li>
                 <li><a href="/how-booking-works/" className="hover:text-white hover:underline">How Booking Works</a></li>
+                <li><a href="/how-we-build-trust-in-ai-search/" className="hover:text-white hover:underline">How We Build Trust in AI Search</a></li>
               </ul>
             </div>
 
             <div>
-              <h2 className="text-sm font-semibold text-[#E2CC96] tracking-wide mb-4">Dubai Office &amp; Bookings</h2>
+              <h2 className="text-sm font-semibold text-[#FFFFFF] tracking-wide mb-4">Dubai Office &amp; Bookings</h2>
               <ul className="space-y-3 text-sm text-white/85">
                 <li className="flex items-start gap-2.5">
-                  <MapPin className="w-4 h-4 text-[#E2CC96] shrink-0 mt-0.5" aria-hidden="true" />
+                  <MapPin className="w-4 h-4 text-[#FFFFFF] shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{COMPANY.address.full}</span>
                 </li>
                 <li className="flex items-center gap-2.5">
@@ -199,19 +192,19 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
                   </a>
                 </li>
                 <li className="flex items-center gap-2.5">
-                  <Phone className="w-4 h-4 text-[#E2CC96] shrink-0" aria-hidden="true" />
+                  <Phone className="w-4 h-4 text-[#FFFFFF] shrink-0" aria-hidden="true" />
                   <a href={`tel:${COMPANY.contact.officeTel}`} className="hover:text-white hover:underline">
                     Office: {COMPANY.contact.officeDisplay}
                   </a>
                 </li>
                 <li className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-[#E2CC96] shrink-0" aria-hidden="true" />
+                  <Mail className="w-4 h-4 text-[#FFFFFF] shrink-0" aria-hidden="true" />
                   <a href={`mailto:${COMPANY.contact.bookingsEmail}`} className="hover:text-white hover:underline">
                     {COMPANY.contact.bookingsEmail}
                   </a>
                 </li>
                 <li className="pt-1">
-                  <a href="/contact/" className="inline-flex items-center text-[#E2CC96] font-medium hover:underline">
+                  <a href="/contact/" className="inline-flex items-center text-[#FFFFFF] font-medium hover:underline">
                     Contact page &amp; map details
                   </a>
                 </li>
@@ -220,14 +213,14 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
           </div>
 
           <div className="pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-white/70">
-            <p>&copy; 2026 {COMPANY.legalName}. Business Bay, Dubai, United Arab Emirates.</p>
+            <p>&copy; 2026 {COMPANY.legalName}. Business Bay, Dubai, United Arab Emirates. <a href="/photo-credits/" className="underline hover:text-white">Photo credits</a></p>
             <p>
               Mobility partner:{' '}
               <a
                 href="https://najdrentacar.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#E2CC96] hover:underline"
+                className="text-[#FFFFFF] hover:underline"
               >
                 Najd Rent a Car
               </a>
@@ -240,7 +233,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
       {!hideBottomNav && (
         <nav
           aria-label="Mobile navigation"
-          className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EFEAE8]"
+          className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECEEF2]"
         >
           <div className="grid grid-cols-4 h-15">
             {mobileTabs.map((tab) => {
@@ -250,7 +243,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
                   key={tab.href}
                   href={tab.href}
                   className={`flex flex-col items-center justify-center min-h-[44px] text-[11px] font-medium transition-colors ${
-                    tab.active ? 'text-[#C31A20] font-semibold' : 'text-[#574F52]'
+                    tab.active ? 'text-[#C31A20] font-semibold' : 'text-[#5B6170]'
                   }`}
                 >
                   <Icon className="w-5 h-5 mb-0.5" aria-hidden="true" />

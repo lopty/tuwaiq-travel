@@ -423,7 +423,7 @@ export const GENERAL_PACKAGES: TravelPackage[] = [
     seoDescription: 'Book 6N/7D Thailand holidays covering Phuket and Bangkok from AED 2,699 per person on two sharing. Flights, hotels, daily breakfast, and transfers.',
     h1: 'Thailand (Phuket & Bangkok) 6N/7D Package',
     overview: 'Get the best of Thailand in one balanced seven-day itinerary: turquoise Andaman beaches and island-hopping from Phuket paired with Bangkok\'s riverside temples, night markets, and renowned shopping malls.',
-    consultantNote: 'From November to April, the Andaman Sea off Phuket and Phi Phi is at its calmest and sunniest. We align your domestic Phuket-Bangkok connections seamlessly with your UAE return flight.',
+    consultantNote: 'From November to April, the Andaman Sea off Phuket and Phi Phi is at its calmest and sunniest. We align your domestic Phuket-Bangkok connections with your UAE return flight.',
     included: [
       'Return international flights from the UAE plus Phuket-Bangkok connectivity',
       '6 nights hotel accommodation split between Phuket and Bangkok (two sharing)',
@@ -482,7 +482,7 @@ export const GENERAL_PACKAGES: TravelPackage[] = [
     seoTitle: 'Malaysia Package From Dubai (5N/6D) AED 2,599 | Tuwaiq',
     seoDescription: 'Book our 5N/6D Kuala Lumpur Malaysia family holiday from AED 2,599 per person on two sharing. Flights, hotel, breakfast, and airport transfers.',
     h1: 'Malaysia (Kuala Lumpur) 5N/6D Package',
-    overview: 'Malaysia is one of the easiest, most family-friendly and Halal-friendly destinations from Dubai. Spend five nights in Kuala Lumpur enjoying the Petronas Twin Towers, Batu Caves, cool Genting Highlands, and world-class shopping.',
+    overview: 'Malaysia is one of the easiest, most family-friendly and Halal-friendly destinations from Dubai. Spend five nights in Kuala Lumpur enjoying the Petronas Twin Towers, Batu Caves, cool Genting Highlands, and big-name shopping.',
     consultantNote: 'Families often pair Kuala Lumpur with two extra nights in Langkawi or Penang. Ask our team if you would like to upgrade to a twin-centre Malaysia itinerary.',
     included: [
       'Return flights from the UAE to Kuala Lumpur',

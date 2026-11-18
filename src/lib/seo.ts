@@ -26,7 +26,7 @@ export function buildTravelAgencySchema(): Record<string, unknown> {
     '@id': `${SITE_URL}/#organization`,
     name: COMPANY.legalName,
     url: `${SITE_URL}/`,
-    logo: `${SITE_URL}${COMPANY.logos.colour}`,
+    logo: `${SITE_URL}${COMPANY.logos.square}`,
     image: `${SITE_URL}/images/hero/dubai-skyline-twilight.webp`,
     foundingDate: String(COMPANY.foundedYear),
     telephone: COMPANY.contact.officeTel,

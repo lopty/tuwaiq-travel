@@ -112,7 +112,7 @@ export const SERVICES: ServiceItem[] = [
     imageHeight: 1280,
     imageAlt: 'White sandy tropical beach with palm tree and calm turquoise bay',
     seoTitle: 'Holiday Packages From Dubai (70+ Countries) | Tuwaiq',
-    seoDescription: 'Explore ready-made holiday packages from AED 1,499 per person and bespoke global itineraries across 70+ countries from Dubai with Tuwaiq Travel.',
+    seoDescription: 'Explore ready-made holiday packages from AED 1,499 per person and tailor-made global itineraries across 70+ countries from Dubai with Tuwaiq Travel.',
     h1: 'Holiday Packages From Dubai (70+ Countries)',
     faqs: [
       { question: 'Which destinations have fixed starting prices right now?', answer: 'We currently feature priced packages for Armenia (AED 1,499), Azerbaijan (AED 1,599), Georgia (AED 1,699), Kyrgyzstan (AED 1,799), Uzbekistan (AED 1,999), Istanbul (AED 2,099), Malaysia (AED 2,599), and Thailand (AED 2,699) per person on two sharing.' },
@@ -211,7 +211,7 @@ export const SERVICES: ServiceItem[] = [
     faqs: [
       { question: 'Which UAE landmark tickets can Tuwaiq Travel issue?', answer: 'We book Burj Khalifa At The Top, Sky Views Observatory, Museum of the Future, Dubai Frame, The View at The Palm, Louvre Abu Dhabi, and Qasr Al Watan.' },
       { question: 'Should I book Museum of the Future and Burj Khalifa sunset slots in advance?', answer: 'Yes, timed prime slots sell out quickly, especially from November through March.' },
-      { question: 'Can you pair attraction tickets with private transfers?', answer: 'Yes, we can add hotel pick-up and drop-off for seamless multi-stop sightseeing days.' },
+      { question: 'Can you pair attraction tickets with private transfers?', answer: 'Yes, we can add hotel pick-up and drop-off for multi-stop sightseeing days.' },
       { question: 'Do you offer combo pricing for multiple landmarks?', answer: 'Ask our WhatsApp desk for multi-attraction combinations tailored to your travel party.' },
       { question: 'How are tickets delivered?', answer: 'Digital e-tickets and timed QR vouchers are delivered straight to your WhatsApp and email.' },
     ],
@@ -381,7 +381,7 @@ export const SERVICES: ServiceItem[] = [
     number: '12',
     name: 'Events & Shows',
     shortName: 'Events',
-    iconKey: 'Sparkles',
+    iconKey: 'Ticket',
     tagline: 'Tickets and hospitality for Dubai and Abu Dhabi\'s live calendar.',
     bullets: [
       'Comedy and theatre nights',
@@ -493,7 +493,7 @@ export const SERVICES: ServiceItem[] = [
       'Chauffeured limousines and yacht access',
       'Dedicated VIP account manager',
     ],
-    overview: 'Led by Omar Al Kasem with over 15 years managing GCC high-net-worth and VIP travel, our concierge desk coordinates discreet airport fast-track, luxury suite reservations, private villa stays, chauffeur fleets, and bespoke leisure access.',
+    overview: 'Led by Omar Al Kasem with over 15 years managing GCC high-net-worth and VIP travel, our concierge desk coordinates discreet airport fast-track, luxury suite reservations, private villa stays, chauffeur fleets, and tailor-made leisure access.',
     consultantNote: 'Every VIP itinerary is handled offline by a dedicated senior specialist on one private WhatsApp thread, ensuring confidentiality and fast itinerary adjustments.',
     relatedBuyerUrl: '/vip-concierge-dubai/',
     image: '/images/services/vip-concierge.webp',

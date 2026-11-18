@@ -50,7 +50,9 @@ export type TrustSlug =
   | 'press'
   | 'licence'
   | 'how-booking-works'
-  | 'contact';
+  | 'contact'
+  | 'ai-visibility'
+  | 'photo-credits';
 
 export const TRUST_PAGES: Record<
   TrustSlug,
@@ -96,14 +98,14 @@ export const TRUST_PAGES: Record<
     title: 'Al Basel Group & Sister Companies | Tuwaiq Travel',
     description: 'Tuwaiq Travel is a member of Al Basel Group (est. 2007) alongside Najd Rent a Car, Al Basel Consultancy, Al Basel Real Estate, Amani, and Zallaqa.',
     h1: 'Al Basel Group & Sister Companies',
-    image: '/images/hero/dubai-highways-night.webp',
+    image: '/images/hero/palm-jumeirah-aerial.webp',
     imageAlt: 'Illuminated Dubai road network and Downtown skyline at night',
     breadcrumbLabel: 'Al Basel Group',
   },
   partnerships: {
     url: '/partnerships/',
     title: 'Partnerships & Recognition | Tuwaiq Travel Dubai',
-    description: 'Hospitality partnerships with Mandarin Oriental and Corinthia Hotel London, 2015 royal collaboration, and group awards at Al Basel Consultancy.',
+    description: 'Four Seasons Washington DC, Mandarin Oriental and Corinthia London relationships, a 2015 royal collaboration, and group recognition at Al Basel Consultancy.',
     h1: 'Partnerships & Recognition',
     image: '/images/services/hotel-bookings.webp',
     imageAlt: 'Coastal five-star resort infinity pool and ocean horizon',
@@ -112,7 +114,7 @@ export const TRUST_PAGES: Record<
   press: {
     url: '/press/',
     title: 'Press & Media Archive | Tuwaiq Travel & Al Basel Group',
-    description: 'Read verified press coverage for Tuwaiq Travel & Tourism LLC and Al Basel Group including Arabian Travel News 2014 and regional hospitality features.',
+    description: 'Read press coverage for Tuwaiq Travel & Tourism LLC and Al Basel Group including Arabian Travel News 2014 and regional hospitality features.',
     h1: 'Press & Media Archive',
     image: '/images/hero/burj-al-arab-aerial.webp',
     imageAlt: 'Dubai hospitality skyline featured in regional travel press',
@@ -141,9 +143,27 @@ export const TRUST_PAGES: Record<
     title: 'Contact Tuwaiq Travel Dubai | WhatsApp & Business Bay',
     description: 'Contact Tuwaiq Travel & Tourism LLC at Fifty One Tower, Office 301, Business Bay, Dubai on WhatsApp +971 55 915 8517 or +971 4 276 1133.',
     h1: 'Contact Tuwaiq Travel Dubai',
-    image: '/images/hero/dubai-highways-night.webp',
+    image: '/images/hero/palm-jumeirah-aerial.webp',
     imageAlt: 'Business Bay and Sheikh Zayed Road illuminated in Dubai',
     breadcrumbLabel: 'Contact',
+  },
+  'ai-visibility': {
+    url: '/how-we-build-trust-in-ai-search/',
+    title: 'How We Build Trust in AI Search | Tuwaiq Travel',
+    description: 'How Tuwaiq Travel structures its website so Google and AI assistants can find, check and recommend our packages, with the tools and experts behind the work.',
+    h1: 'How We Build Trust in AI Search',
+    image: '/images/hero/dubai-skyline-twilight.webp',
+    imageAlt: 'Dubai skyline at twilight',
+    breadcrumbLabel: 'AI Search & Trust',
+  },
+  'photo-credits': {
+    url: '/photo-credits/',
+    title: 'Photo Credits | Tuwaiq Travel & Tourism',
+    description: 'Sources and licences for the photographs on the Tuwaiq Travel website, including openly licensed images from Wikimedia Commons.',
+    h1: 'Photo Credits',
+    image: '/images/hero/dubai-skyline-twilight.webp',
+    imageAlt: 'Dubai skyline at twilight',
+    breadcrumbLabel: 'Photo Credits',
   },
 };
 
@@ -162,7 +182,7 @@ export function resolveRoute(rawPath: string): ResolvedRoute {
       meta: {
         path: '/',
         title: 'Tuwaiq Travel & Tourism Dubai | Holiday Packages',
-        description: 'Discover curated holiday packages from Dubai starting AED 1,499, flights, hotels, visas, desert safaris, and VIP concierge by Tuwaiq Travel.',
+        description: 'Discover holiday packages from Dubai starting AED 1,499, flights, hotels, visas, desert safaris, and VIP concierge by Tuwaiq Travel.',
         image: '/images/hero/dubai-skyline-twilight.webp',
         imageAlt: 'Dubai skyline at sunset with Burj Khalifa overlooking Business Bay',
         breadcrumbs: [{ name: 'Home', url: '/' }],

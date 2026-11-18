@@ -261,7 +261,7 @@ export const GUIDES: GuideArticle[] = [
     imageHeight: 1280,
     imageAlt: 'Longtail boats and limestone cliffs in Thailand bay',
     faqs: [
-      { question: 'Should I visit Bangkok first or Phuket first?', answer: 'Starting in Phuket for beach rest and finishing in Bangkok for shopping keeps baggage handling effortless.' },
+      { question: 'Should I visit Bangkok first or Phuket first?', answer: 'Starting in Phuket for beach rest and finishing in Bangkok for shopping keeps baggage handling easy.' },
       { question: 'How much is Tuwaiq\'s 6N/7D Phuket and Bangkok package?', answer: 'It starts From AED 2,699 per person, based on two sharing.' },
       { question: 'How long is the domestic flight between Phuket and Bangkok?', answer: 'Around 1 hour and 25 minutes with frequent daily departures.' },
       { question: 'Can families easily find Halal food in Phuket and Bangkok?', answer: 'Yes, both cities offer wide Halal restaurant choices, especially around Bang Tao, Patong, Kamala, and central Bangkok.' },
@@ -385,7 +385,7 @@ export const GUIDES: GuideArticle[] = [
     imageAlt: 'Caucasus hillside skyline and traditional architecture',
     faqs: [
       { question: 'Which Caucasus package is most affordable from Dubai?', answer: 'Armenia (Yerevan) starts From AED 1,499, followed by Baku From AED 1,599 and Georgia From AED 1,699 per person on two sharing.' },
-      { question: 'Which is best for young families and Halal dining?', answer: 'Baku, Azerbaijan makes family dining and stroller-friendly promenade walks particularly effortless.' },
+      { question: 'Which is best for young families and Halal dining?', answer: 'Baku, Azerbaijan makes family dining and stroller-friendly promenade walks particularly easy.' },
       { question: 'Which offers the tallest snow-capped mountain passes?', answer: 'Georgia\'s Military Highway to Kazbegi and Armenia\'s Mount Ararat vistas stand out for high mountain scenery.' },
       { question: 'Can two countries be combined on one 7-night holiday?', answer: 'Yes, overnight rail links Tbilisi and Baku smoothly without needing an extra flight.' },
       { question: 'Do all three require the same visa?', answer: 'No. Georgia, Azerbaijan, and Armenia operate separate residency and eVisa policies; check current requirements for your passport.' },
@@ -628,7 +628,7 @@ export const GUIDES: GuideArticle[] = [
     seoTitle: 'Dubai Stopover & DXB Airport Transfer Guide | Tuwaiq',
     seoDescription: 'Turn a 24 to 72 hour Dubai layover at DXB, DWC, or AUH into a smooth city stay with flight-tracked transfers and attraction tickets.',
     h1: 'Dubai Stopover & Airport Transfer Guide (DXB, DWC & AUH)',
-    summary: 'Turn a 24 to 72 hour Dubai layover at DXB, DWC, or AUH into an effortless city stay with tracked pick-ups.',
+    summary: 'Turn a 24 to 72 hour Dubai layover at DXB, DWC, or AUH into an easy city stay with tracked pick-ups.',
     sections: [
       {
         heading: 'Pre-Booked Flight-Tracked Pick-Ups',

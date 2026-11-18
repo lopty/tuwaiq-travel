@@ -86,7 +86,7 @@ export const DESTINATIONS: DestinationItem[] = [
       'Muscat and the green Salalah monsoon season in Oman',
       'Doha and Bahrain weekend city breaks',
     ],
-    overview: 'Explore neighbouring GCC gems only a short flight from Dubai. Whether you want sandstone tombs in AlUla, Salalah\'s lush Khareef waterfalls, or boutique luxury in Doha and Riyadh, our consultants build seamless short-haul escapes.',
+    overview: 'Explore neighbouring GCC gems only a short flight from Dubai. Whether you want sandstone tombs in AlUla, Salalah\'s lush Khareef waterfalls, or boutique luxury in Doha and Riyadh, our consultants build short-haul escapes.',
     consultantNote: 'Salalah turns emerald green during July to September while winter (October to April) suits Riyadh, Jeddah, AlUla, Muscat, and Doha.',
     matchingPackageSlugs: [],
     relatedGuideSlugs: [
@@ -369,7 +369,7 @@ export const DESTINATIONS: DestinationItem[] = [
       'Spice plantation tours and sunset dhow sails',
       'Mainland Tanzania safari add-ons (Serengeti & Ngorongoro)',
     ],
-    overview: 'Zanzibar pairs Swahili and Omani architectural history in Stone Town with calm turquoise tides on the northern beaches of Nungwi and Kendwa. Add a three-night mainland Tanzania wildlife safari for an unforgettable bush-and-beach trip.',
+    overview: 'Zanzibar pairs Swahili and Omani architectural history in Stone Town with calm turquoise tides on the northern beaches of Nungwi and Kendwa. Add a three-night mainland Tanzania wildlife safari for an bush-and-beach trip.',
     consultantNote: 'Northern beaches around Kendwa and Nungwi have milder tidal swings than the east coast, making swimming easy throughout the day.',
     matchingPackageSlugs: [],
     relatedGuideSlugs: [
@@ -439,7 +439,7 @@ export const DESTINATIONS: DestinationItem[] = [
     countryCode: 'MY',
     regionLabel: 'Southeast Asia',
     filterRegion: 'Asia',
-    tagline: 'Modern skylines, cool highlands, tropical islands, and effortless family travel.',
+    tagline: 'Modern skylines, cool highlands, tropical islands, and easy family travel.',
     bestTime: 'Year-round (Langkawi Nov to Apr)',
     idealFor: 'Families, Halal-Friendly & Value',
     startingPriceAed: 2599,
@@ -507,7 +507,7 @@ export const DESTINATIONS: DestinationItem[] = [
       { question: 'Should we stay in one area or split Ubud and the coast?', answer: 'We recommend 2 to 3 nights in Ubud\'s jungle valleys paired with 3 to 4 nights on the coast in Nusa Dua, Seminyak, or Uluwatu.' },
       { question: 'Are private pool villas available for couples and Muslim families?', answer: 'Yes, Bali offers secluded walled one-bedroom and multi-bedroom pool villas with Halal dining options nearby.' },
       { question: 'Do UAE residents need a visa for Bali?', answer: 'Many passport holders use Indonesia\'s e-VOA or visa on arrival plus Bali tourist levy; check current requirements before flying.' },
-      { question: 'Can Tuwaiq arrange private drivers in Bali?', answer: 'Yes, private air-conditioned vehicles with English-speaking drivers make day touring across Bali effortless.' },
+      { question: 'Can Tuwaiq arrange private drivers in Bali?', answer: 'Yes, private air-conditioned vehicles with English-speaking drivers make day touring across Bali easy.' },
     ],
   },
   {
@@ -567,7 +567,7 @@ export const DESTINATIONS: DestinationItem[] = [
       'Sun Moon Lake cycling routes and boat cruises',
     ],
     overview: 'Taiwan blends modern high-speed rail convenience with dramatic east-coast canyons, misty tea villages like Jiufen, and warm local hospitality. Direct flights from Dubai put Taipei within easy reach.',
-    consultantNote: 'Taiwan\'s High Speed Rail links Taipei with central and southern cities in under two hours, making multi-stop cultural itineraries effortless.',
+    consultantNote: 'Taiwan\'s High Speed Rail links Taipei with central and southern cities in under two hours, making multi-stop cultural itineraries easy.',
     matchingPackageSlugs: [],
     relatedGuideSlugs: [
       'best-time-to-visit-our-16-destinations',
@@ -579,7 +579,7 @@ export const DESTINATIONS: DestinationItem[] = [
     imageAlt: 'Taipei 101 skyscraper rising above the city skyline and green hills in Taiwan',
     seoTitle: 'Taiwan Holidays & Taipei Tours From Dubai | Tuwaiq Travel',
     seoDescription: 'Custom Taiwan itineraries from Dubai covering Taipei, Jiufen, Sun Moon Lake, and Taroko Gorge with Tuwaiq Travel & Tourism.',
-    h1: 'Taiwan & Taipei Curated Holidays',
+    h1: 'Taiwan & Taipei Holidays',
     faqs: [
       { question: 'When is the best time to visit Taiwan from Dubai?', answer: 'October through April brings cooler, less humid temperatures ideal for Taipei city walks and mountain excursions.' },
       { question: 'How many days are recommended for a Taiwan trip?', answer: 'Six to eight nights allows comfortable coverage of Taipei, Jiufen, Sun Moon Lake, and coastal scenery.' },
@@ -644,7 +644,7 @@ export const DESTINATIONS: DestinationItem[] = [
       'Barbados and Aruba powdery beachfront stays',
       'Multi-island Caribbean cruise holidays',
     ],
-    overview: 'For honeymooners and seasoned travellers seeking winter sun across the Atlantic, Tuwaiq Travel plans seamless flights, luxury island resorts, and multi-island Caribbean cruise sailings.',
+    overview: 'For honeymooners and seasoned travellers seeking winter sun across the Atlantic, Tuwaiq Travel plans flights, luxury island resorts, and multi-island Caribbean cruise sailings.',
     consultantNote: 'December through April offers dry trade-wind sunshine across the Caribbean, making it a strong winter-sun alternative to the Indian Ocean.',
     matchingPackageSlugs: [],
     relatedGuideSlugs: [

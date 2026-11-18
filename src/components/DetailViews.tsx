@@ -35,7 +35,7 @@ export function PackageDetailView({
   return (
     <Layout currentPath={pkg.url} hideBottomNav>
       {/* Atmospheric Full-bleed Hero Photo */}
-      <div className="relative h-[340px] sm:h-[420px] lg:h-[460px] w-full overflow-hidden bg-[#120D0E]">
+      <div className="relative h-[340px] sm:h-[420px] lg:h-[460px] w-full overflow-hidden bg-[#0E0F12]">
         <img
           src={pkg.image}
           alt={pkg.imageAlt}
@@ -44,7 +44,7 @@ export function PackageDetailView({
           loading="eager"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1020]/75 via-[#0A1020]/10 to-[#0A1020]/25" />
         <div className="absolute top-5 left-0 right-0 max-w-5xl mx-auto px-4 sm:px-6 flex items-center">
           <a
             href={backHref}
@@ -58,90 +58,90 @@ export function PackageDetailView({
 
       {/* Overlapping White Sheet */}
       <div className="max-w-5xl mx-auto px-0 sm:px-6 -mt-12 relative z-10 pb-12">
-        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#EFEAE8] px-5 py-7 sm:p-10">
+        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#ECEEF2] px-5 py-7 sm:p-10">
           <Breadcrumbs items={breadcrumbs} />
 
           <div className="mt-5 flex flex-col md:flex-row md:items-start justify-between gap-4">
             <div>
-              <p className="inline-flex items-center gap-2 text-xs font-medium text-[#766D71] mb-1.5">
+              <p className="inline-flex items-center gap-2 text-xs font-medium text-[#7A808C] mb-1.5">
                 <CountryFlag code={pkg.countryCode} className="w-5 h-3.5" />
                 <span>{pkg.destinationName} · {pkg.cities}</span>
               </p>
-              <h1 className="text-2xl sm:text-4xl font-semibold text-[#1B1718] leading-tight">
+              <h1 className="text-2xl sm:text-4xl font-semibold text-[#111318] leading-tight">
                 {pkg.h1}
               </h1>
             </div>
             <div className="md:text-right shrink-0">
               {isDeparted ? (
-                <p className="text-sm font-semibold text-[#574F52]">Departed (2 Dec 2026)</p>
+                <p className="text-sm font-semibold text-[#5B6170]">Departed (2 Dec 2026)</p>
               ) : (
                 <>
-                  <p className="text-xl sm:text-2xl font-semibold text-[#8C6822] tabular-nums">
+                  <p className="text-xl sm:text-2xl font-semibold text-[#7A808C] tabular-nums">
                     From AED {pkg.priceAed.toLocaleString('en-US')}
                   </p>
-                  <p className="text-xs text-[#766D71]">per person, based on two sharing</p>
+                  <p className="text-xs text-[#7A808C]">per person, based on two sharing</p>
                 </>
               )}
             </div>
           </div>
 
           {pkg.departureDate && !isDeparted && (
-            <p className="mt-4 text-sm font-medium text-[#C31A20]">
+            <p className="mt-4 text-sm font-medium text-[#111318]">
               UAE National Day Departure: 2 December 2026
             </p>
           )}
 
           <StatChips duration={pkg.durationLabel} bestTime={pkg.bestTime} idealFor={pkg.idealFor} />
 
-          <nav aria-label="Package sections" className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 border-b border-[#EFEAE8] mb-8">
-            <a href="#overview" className="h-10 px-4 rounded-full bg-[#1B1718] text-white text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+          <nav aria-label="Package sections" className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 border-b border-[#ECEEF2] mb-8">
+            <a href="#overview" className="h-10 px-4 rounded-full bg-[#111318] text-white text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               Overview
             </a>
-            <a href="#itinerary" className="h-10 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#EFEAE8] text-[#1B1718] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+            <a href="#itinerary" className="h-10 px-4 rounded-full bg-[#F6F7F9] hover:bg-[#ECEEF2] text-[#111318] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               Itinerary
             </a>
-            <a href="#included" className="h-10 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#EFEAE8] text-[#1B1718] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+            <a href="#included" className="h-10 px-4 rounded-full bg-[#F6F7F9] hover:bg-[#ECEEF2] text-[#111318] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               Included
             </a>
             <a href="#enquire" className="h-10 px-4 rounded-full bg-[#118444] text-white text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               Enquire + Car
             </a>
-            <a href="#faqs" className="h-10 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#EFEAE8] text-[#1B1718] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+            <a href="#faqs" className="h-10 px-4 rounded-full bg-[#F6F7F9] hover:bg-[#ECEEF2] text-[#111318] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               FAQs
             </a>
           </nav>
 
           {/* Section 1: Overview */}
           <section id="overview" className="scroll-mt-24 space-y-5">
-            <h2 className="text-xl font-semibold text-[#1B1718]">Overview</h2>
-            <p className="text-base text-[#352F31] leading-relaxed">{pkg.overview}</p>
+            <h2 className="text-xl font-semibold text-[#111318]">Overview</h2>
+            <p className="text-base text-[#2F3440] leading-relaxed">{pkg.overview}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
-              <div className="rounded-[18px] bg-[#F8F6F5] p-5 text-sm text-[#4A4245] leading-relaxed">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#8C6822] mb-1.5">Consultant note</p>
+              <div className="rounded-[18px] bg-[#F6F7F9] p-5 text-sm text-[#4B5160] leading-relaxed">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-1.5">Consultant note</p>
                 <p>{pkg.consultantNote}</p>
               </div>
-              <div className="rounded-[18px] border border-[#EFEAE8] p-5 text-sm text-[#4A4245] leading-relaxed">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#1B1718] mb-1.5">UAE resident visas</p>
+              <div className="rounded-[18px] border border-[#ECEEF2] p-5 text-sm text-[#4B5160] leading-relaxed">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#111318] mb-1.5">UAE resident visas</p>
                 <p>{pkg.visaNote}</p>
               </div>
             </div>
           </section>
 
           {/* Section 2: Sample Itinerary */}
-          <section id="itinerary" className="scroll-mt-24 pt-9 mt-9 border-t border-[#EFEAE8]">
+          <section id="itinerary" className="scroll-mt-24 pt-9 mt-9 border-t border-[#ECEEF2]">
             <div className="flex flex-wrap items-baseline justify-between gap-2 mb-5">
-              <h2 className="text-xl font-semibold text-[#1B1718]">Day-by-Day Itinerary</h2>
-              <span className="text-xs text-[#766D71]">Adjustable to flight timings</span>
+              <h2 className="text-xl font-semibold text-[#111318]">Day-by-Day Itinerary</h2>
+              <span className="text-xs text-[#7A808C]">Adjustable to flight timings</span>
             </div>
-            <div className="divide-y divide-[#EFEAE8]">
+            <div className="divide-y divide-[#ECEEF2]">
               {pkg.sampleItinerary.map((item) => (
                 <div key={item.day} className="py-5 first:pt-2 last:pb-2 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6">
-                  <p className="sm:col-span-2 text-xs font-semibold uppercase tracking-wider text-[#8C6822] pt-0.5">
+                  <p className="sm:col-span-2 text-xs font-semibold uppercase tracking-wider text-[#7A808C] pt-0.5">
                     {item.day}
                   </p>
                   <div className="sm:col-span-10">
-                    <h3 className="text-base font-semibold text-[#1B1718]">{item.title}</h3>
-                    <p className="mt-1.5 text-sm text-[#574F52] leading-relaxed">{item.details}</p>
+                    <h3 className="text-base font-semibold text-[#111318]">{item.title}</h3>
+                    <p className="mt-1.5 text-sm text-[#5B6170] leading-relaxed">{item.details}</p>
                   </div>
                 </div>
               ))}
@@ -149,26 +149,26 @@ export function PackageDetailView({
           </section>
 
           {/* Section 3: Included / Not Included */}
-          <section id="included" className="scroll-mt-24 pt-9 mt-9 border-t border-[#EFEAE8]">
-            <h2 className="text-xl font-semibold text-[#1B1718] mb-5">Inclusions &amp; Exclusions</h2>
+          <section id="included" className="scroll-mt-24 pt-9 mt-9 border-t border-[#ECEEF2]">
+            <h2 className="text-xl font-semibold text-[#111318] mb-5">Inclusions &amp; Exclusions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-[20px] bg-[#F8F6F5] p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-[#1B1718] mb-4">Included</h3>
-                <ul className="space-y-3 text-sm text-[#352F31]">
+              <div className="rounded-[20px] bg-[#F6F7F9] p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-[#111318] mb-4">Included</h3>
+                <ul className="space-y-3 text-sm text-[#2F3440]">
                   {pkg.included.map((inc) => (
                     <li key={inc} className="flex items-start gap-2.5">
-                      <Check className="w-4 h-4 text-[#C31A20] shrink-0 mt-0.5" aria-hidden="true" />
+                      <Check className="w-4 h-4 text-[#111318] shrink-0 mt-0.5" aria-hidden="true" />
                       <span>{inc}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="rounded-[20px] border border-[#EFEAE8] p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-[#6B6266] mb-4">Not Included</h3>
-                <ul className="space-y-3 text-sm text-[#574F52]">
+              <div className="rounded-[20px] border border-[#ECEEF2] p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-wider text-[#6B7180] mb-4">Not Included</h3>
+                <ul className="space-y-3 text-sm text-[#5B6170]">
                   {pkg.notIncluded.map((exc) => (
                     <li key={exc} className="flex items-start gap-2.5">
-                      <X className="w-4 h-4 text-[#8C6822] shrink-0 mt-0.5" aria-hidden="true" />
+                      <X className="w-4 h-4 text-[#7A808C] shrink-0 mt-0.5" aria-hidden="true" />
                       <span>{exc}</span>
                     </li>
                   ))}
@@ -192,19 +192,19 @@ export function PackageDetailView({
           </div>
 
           {/* Sideways & Upward Internal Links */}
-          <section className="pt-8 mt-8 border-t border-[#EFEAE8] space-y-8">
+          <section className="pt-8 mt-8 border-t border-[#ECEEF2] space-y-8">
             <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-semibold">
               {matchingDestination && (
-                <a href={matchingDestination.url} className="inline-flex items-center gap-1.5 text-[#C31A20] hover:underline">
+                <a href={matchingDestination.url} className="inline-flex items-center gap-1.5 text-[#111318] hover:underline">
                   <span>{matchingDestination.name} Guide</span>
                   <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </a>
               )}
-              <a href="/how-booking-works/" className="inline-flex items-center gap-1.5 text-[#1B1718] hover:text-[#C31A20]">
+              <a href="/how-booking-works/" className="inline-flex items-center gap-1.5 text-[#111318] hover:text-[#C31A20]">
                 <span>How Booking Works</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </a>
-              <a href="/licence/" className="inline-flex items-center gap-1.5 text-[#1B1718] hover:text-[#C31A20]">
+              <a href="/licence/" className="inline-flex items-center gap-1.5 text-[#111318] hover:text-[#C31A20]">
                 <span>Licence &amp; Verification</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
               </a>
@@ -212,7 +212,7 @@ export function PackageDetailView({
 
             {matchingGuides.length > 0 && (
               <div>
-                <h2 className="text-xl font-semibold text-[#1B1718] mb-5">Planning Guides</h2>
+                <h2 className="text-xl font-semibold text-[#111318] mb-5">Planning Guides</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {matchingGuides.map((g) => (
                     <GuideCard key={g.slug} guide={g} />
@@ -222,7 +222,7 @@ export function PackageDetailView({
             )}
 
             <div>
-              <h2 className="text-xl font-semibold text-[#1B1718] mb-5">Related Packages</h2>
+              <h2 className="text-xl font-semibold text-[#111318] mb-5">Related Packages</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                 {relatedPackages.map((rel) => (
                   <PackageCard key={rel.slug} pkg={rel} />
@@ -234,10 +234,10 @@ export function PackageDetailView({
       </div>
 
       {/* Mobile Sticky Booking Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EFEAE8] px-4 py-2.5 flex items-center gap-3">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECEEF2] px-4 py-2.5 flex items-center gap-3">
         <a
           href={`tel:${COMPANY.contact.officeTel}`}
-          className="h-11 px-4 rounded-full border border-[#D8D0CC] text-[#1B1718] text-xs font-semibold inline-flex items-center justify-center shrink-0 tabular-nums"
+          className="h-11 px-4 rounded-full border border-[#D9DCE1] text-[#111318] text-xs font-semibold inline-flex items-center justify-center shrink-0 tabular-nums"
         >
           From AED {pkg.priceAed.toLocaleString('en-US')}
         </a>
@@ -271,7 +271,7 @@ export function DestinationDetailView({
 
   return (
     <Layout currentPath={destination.url} hideBottomNav>
-      <div className="relative h-[340px] sm:h-[420px] lg:h-[460px] w-full overflow-hidden bg-[#120D0E]">
+      <div className="relative h-[340px] sm:h-[420px] lg:h-[460px] w-full overflow-hidden bg-[#0E0F12]">
         <img
           src={destination.image}
           alt={destination.imageAlt}
@@ -280,7 +280,7 @@ export function DestinationDetailView({
           loading="eager"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1020]/75 via-[#0A1020]/10 to-[#0A1020]/25" />
         <div className="absolute top-5 left-0 right-0 max-w-5xl mx-auto px-4 sm:px-6 flex items-center">
           <a
             href="/destinations/"
@@ -293,33 +293,33 @@ export function DestinationDetailView({
       </div>
 
       <div className="max-w-5xl mx-auto px-0 sm:px-6 -mt-12 relative z-10 pb-12">
-        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#EFEAE8] px-5 py-7 sm:p-10">
+        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#ECEEF2] px-5 py-7 sm:p-10">
           <Breadcrumbs items={breadcrumbs} />
 
           <div className="mt-5 flex flex-col md:flex-row md:items-start justify-between gap-4">
             <div>
-              <p className="inline-flex items-center gap-2 text-xs font-medium text-[#766D71] mb-1.5">
+              <p className="inline-flex items-center gap-2 text-xs font-medium text-[#7A808C] mb-1.5">
                 <CountryFlag code={destination.countryCode} className="w-5 h-3.5" />
                 {destination.secondaryCountryCode && (
                   <CountryFlag code={destination.secondaryCountryCode} className="w-5 h-3.5 -ml-0.5" />
                 )}
                 <span>{destination.regionLabel}</span>
               </p>
-              <h1 className="text-2xl sm:text-4xl font-semibold text-[#1B1718] leading-tight">
+              <h1 className="text-2xl sm:text-4xl font-semibold text-[#111318] leading-tight">
                 {destination.h1}
               </h1>
-              <p className="mt-2 text-base text-[#574F52]">{destination.tagline}</p>
+              <p className="mt-2 text-base text-[#5B6170]">{destination.tagline}</p>
             </div>
             <div className="md:text-right shrink-0">
               {destination.startingPriceAed ? (
                 <>
-                  <p className="text-xl sm:text-2xl font-semibold text-[#8C6822] tabular-nums">
+                  <p className="text-xl sm:text-2xl font-semibold text-[#7A808C] tabular-nums">
                     From AED {destination.startingPriceAed.toLocaleString('en-US')}
                   </p>
-                  <p className="text-xs text-[#766D71]">per person, based on two sharing</p>
+                  <p className="text-xs text-[#7A808C]">per person, based on two sharing</p>
                 </>
               ) : (
-                <p className="text-sm font-semibold text-[#C31A20]">
+                <p className="text-sm font-semibold text-[#111318]">
                   Tailored package on request
                 </p>
               )}
@@ -332,44 +332,44 @@ export function DestinationDetailView({
             idealFor={destination.idealFor}
           />
 
-          <nav aria-label="Destination sections" className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 border-b border-[#EFEAE8] mb-8">
-            <a href="#overview" className="h-10 px-4 rounded-full bg-[#1B1718] text-white text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+          <nav aria-label="Destination sections" className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 border-b border-[#ECEEF2] mb-8">
+            <a href="#overview" className="h-10 px-4 rounded-full bg-[#111318] text-white text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               Overview
             </a>
-            <a href="#highlights" className="h-10 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#EFEAE8] text-[#1B1718] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+            <a href="#highlights" className="h-10 px-4 rounded-full bg-[#F6F7F9] hover:bg-[#ECEEF2] text-[#111318] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               Highlights
             </a>
-            <a href="#packages" className="h-10 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#EFEAE8] text-[#1B1718] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+            <a href="#packages" className="h-10 px-4 rounded-full bg-[#F6F7F9] hover:bg-[#ECEEF2] text-[#111318] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               Packages
             </a>
-            <a href="#faqs" className="h-10 px-4 rounded-full bg-[#F8F6F5] hover:bg-[#EFEAE8] text-[#1B1718] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
+            <a href="#faqs" className="h-10 px-4 rounded-full bg-[#F6F7F9] hover:bg-[#ECEEF2] text-[#111318] text-xs font-semibold whitespace-nowrap shrink-0 inline-flex items-center">
               FAQs
             </a>
           </nav>
 
           <section id="overview" className="scroll-mt-24 space-y-5">
-            <h2 className="text-xl font-semibold text-[#1B1718]">Destination Overview</h2>
-            <p className="text-base text-[#352F31] leading-relaxed">{destination.overview}</p>
-            <div className="rounded-[18px] bg-[#F8F6F5] p-5 text-sm text-[#4A4245] leading-relaxed">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#8C6822] mb-1.5">Consultant note</p>
+            <h2 className="text-xl font-semibold text-[#111318]">Destination Overview</h2>
+            <p className="text-base text-[#2F3440] leading-relaxed">{destination.overview}</p>
+            <div className="rounded-[18px] bg-[#F6F7F9] p-5 text-sm text-[#4B5160] leading-relaxed">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-1.5">Consultant note</p>
               <p>{destination.consultantNote}</p>
             </div>
           </section>
 
-          <section id="highlights" className="scroll-mt-24 pt-9 mt-9 border-t border-[#EFEAE8]">
-            <h2 className="text-xl font-semibold text-[#1B1718] mb-4">Key Highlights</h2>
+          <section id="highlights" className="scroll-mt-24 pt-9 mt-9 border-t border-[#ECEEF2]">
+            <h2 className="text-xl font-semibold text-[#111318] mb-4">Key Highlights</h2>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
               {destination.highlights.map((item) => (
-                <li key={item} className="py-2 border-b border-[#F3EFED] flex items-start gap-2.5 text-sm text-[#1B1718]">
-                  <Check className="w-4 h-4 text-[#C31A20] shrink-0 mt-0.5" aria-hidden="true" />
+                <li key={item} className="py-2 border-b border-[#F3F4F6] flex items-start gap-2.5 text-sm text-[#111318]">
+                  <Check className="w-4 h-4 text-[#111318] shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </section>
 
-          <section id="packages" className="scroll-mt-24 pt-9 mt-9 border-t border-[#EFEAE8]">
-            <h2 className="text-xl font-semibold text-[#1B1718] mb-5">
+          <section id="packages" className="scroll-mt-24 pt-9 mt-9 border-t border-[#ECEEF2]">
+            <h2 className="text-xl font-semibold text-[#111318] mb-5">
               {matchingPackages.length > 0
                 ? `Matching ${destination.name} Packages`
                 : `Tailored ${destination.name} Holidays`}
@@ -382,10 +382,10 @@ export function DestinationDetailView({
                 ))}
               </div>
             ) : (
-              <div className="rounded-[20px] bg-[#F8F6F5] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="rounded-[20px] bg-[#F6F7F9] p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-semibold text-[#1B1718]">Custom {destination.name} itinerary</h3>
-                  <p className="mt-1 text-sm text-[#574F52]">
+                  <h3 className="text-lg font-semibold text-[#111318]">Custom {destination.name} itinerary</h3>
+                  <p className="mt-1 text-sm text-[#5B6170]">
                     Share your dates and preferred hotel tier on WhatsApp for a tailored proposal.
                   </p>
                 </div>
@@ -416,8 +416,8 @@ export function DestinationDetailView({
           </div>
 
           {matchingGuides.length > 0 && (
-            <section className="pt-8 mt-8 border-t border-[#EFEAE8]">
-              <h2 className="text-xl font-semibold text-[#1B1718] mb-5">Related Travel Guides</h2>
+            <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
+              <h2 className="text-xl font-semibold text-[#111318] mb-5">Related Travel Guides</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {matchingGuides.map((g) => (
                   <GuideCard key={g.slug} guide={g} />
@@ -426,22 +426,22 @@ export function DestinationDetailView({
             </section>
           )}
 
-          <section className="pt-8 mt-8 border-t border-[#EFEAE8]">
-            <h2 className="text-lg font-semibold text-[#1B1718] mb-4">Other Destinations</h2>
+          <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
+            <h2 className="text-lg font-semibold text-[#111318] mb-4">Other Destinations</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
               {otherDestinations.map((d) => (
                 <a
                   key={d.slug}
                   href={d.url}
-                  className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-medium text-[#1B1718] hover:text-[#C31A20]"
+                  className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-medium text-[#111318] hover:text-[#C31A20]"
                 >
                   <span>{d.name}</span>
-                  <ArrowRight className="w-4 h-4 text-[#B8B0AD] group-hover:text-[#C31A20]" aria-hidden="true" />
+                  <ArrowRight className="w-4 h-4 text-[#B4B8BF] group-hover:text-[#C31A20]" aria-hidden="true" />
                 </a>
               ))}
               <a
                 href="/destinations/"
-                className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-semibold text-[#C31A20]"
+                className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-semibold text-[#111318]"
               >
                 <span>All 16 destinations</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -452,10 +452,10 @@ export function DestinationDetailView({
       </div>
 
       {/* Mobile Sticky Booking Bar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EFEAE8] px-4 py-2.5 flex items-center gap-3">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECEEF2] px-4 py-2.5 flex items-center gap-3">
         <a
           href={`tel:${COMPANY.contact.officeTel}`}
-          className="h-11 px-4 rounded-full border border-[#D8D0CC] text-[#1B1718] text-xs font-semibold inline-flex items-center justify-center shrink-0 tabular-nums"
+          className="h-11 px-4 rounded-full border border-[#D9DCE1] text-[#111318] text-xs font-semibold inline-flex items-center justify-center shrink-0 tabular-nums"
         >
           {destination.startingPriceAed
             ? `From AED ${destination.startingPriceAed.toLocaleString('en-US')}`
@@ -486,7 +486,7 @@ export function ServiceDetailView({
 
   return (
     <Layout currentPath={service.url} hideBottomNav>
-      <div className="relative h-[300px] sm:h-[380px] lg:h-[420px] w-full overflow-hidden bg-[#120D0E]">
+      <div className="relative h-[300px] sm:h-[380px] lg:h-[420px] w-full overflow-hidden bg-[#0E0F12]">
         <img
           src={service.image}
           alt={service.imageAlt}
@@ -495,7 +495,7 @@ export function ServiceDetailView({
           loading="eager"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1020]/75 via-[#0A1020]/10 to-[#0A1020]/25" />
         <div className="absolute top-5 left-0 right-0 max-w-5xl mx-auto px-4 sm:px-6 flex items-center">
           <a
             href="/services/"
@@ -508,45 +508,45 @@ export function ServiceDetailView({
       </div>
 
       <div className="max-w-5xl mx-auto px-0 sm:px-6 -mt-12 relative z-10 pb-12">
-        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#EFEAE8] px-5 py-7 sm:p-10">
+        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#ECEEF2] px-5 py-7 sm:p-10">
           <Breadcrumbs items={breadcrumbs} />
-          <h1 className="mt-5 text-2xl sm:text-4xl font-semibold text-[#1B1718] leading-tight">
+          <h1 className="mt-5 text-2xl sm:text-4xl font-semibold text-[#111318] leading-tight">
             {service.h1}
           </h1>
-          <p className="mt-2 text-base text-[#574F52]">{service.tagline}</p>
+          <p className="mt-2 text-base text-[#5B6170]">{service.tagline}</p>
 
           <div className="mt-6 space-y-6">
-            <p className="text-base text-[#352F31] leading-relaxed">{service.overview}</p>
+            <p className="text-base text-[#2F3440] leading-relaxed">{service.overview}</p>
 
-            <div className="rounded-[18px] bg-[#F8F6F5] p-6">
-              <h2 className="text-base font-semibold text-[#1B1718] mb-3">What We Arrange</h2>
+            <div className="rounded-[18px] bg-[#F6F7F9] p-6">
+              <h2 className="text-base font-semibold text-[#111318] mb-3">What We Arrange</h2>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {service.bullets.map((bullet) => (
-                  <li key={bullet} className="flex items-start gap-2.5 text-sm text-[#1B1718]">
-                    <Check className="w-4 h-4 text-[#C31A20] shrink-0 mt-0.5" aria-hidden="true" />
+                  <li key={bullet} className="flex items-start gap-2.5 text-sm text-[#111318]">
+                    <Check className="w-4 h-4 text-[#111318] shrink-0 mt-0.5" aria-hidden="true" />
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="rounded-[18px] border border-[#EFEAE8] p-5 text-sm text-[#4A4245] leading-relaxed">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#8C6822] mb-1.5">Consultant note</p>
+            <div className="rounded-[18px] border border-[#ECEEF2] p-5 text-sm text-[#4B5160] leading-relaxed">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-1.5">Consultant note</p>
               <p>{service.consultantNote}</p>
             </div>
 
             {service.slug === 'hotel-bookings' && (
               <section className="pt-4">
-                <h2 className="text-xl font-semibold text-[#1B1718] mb-5">
-                  Signature Hotels &amp; Suites We Arrange
+                <h2 className="text-xl font-semibold text-[#111318] mb-5">
+                  Hotels we book
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {HOTEL_SHOWCASE.map((hotel) => (
                     <div
                       key={hotel.slug}
-                      className="flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#EFEAE8] shadow-[0_4px_20px_rgba(27,23,24,0.03)]"
+                      className="flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.03)]"
                     >
-                      <div className="aspect-[4/3] overflow-hidden bg-[#F8F6F5]">
+                      <div className="aspect-[4/3] overflow-hidden bg-[#F6F7F9]">
                         <img
                           src={hotel.image}
                           alt={hotel.imageAlt}
@@ -558,11 +558,11 @@ export function ServiceDetailView({
                       </div>
                       <div className="p-5 flex-1 flex flex-col justify-between gap-4">
                         <div>
-                          <p className="text-xs font-medium text-[#766D71] truncate">{hotel.locationLabel}</p>
-                          <h3 className="mt-1 text-base font-semibold text-[#1B1718] leading-snug line-clamp-1">
+                          <p className="text-xs font-medium text-[#7A808C] truncate">{hotel.locationLabel}</p>
+                          <h3 className="mt-1 text-base font-semibold text-[#111318] leading-snug line-clamp-1">
                             {hotel.brandGroup}
                           </h3>
-                          <p className="mt-1.5 text-xs text-[#574F52] line-clamp-2 leading-relaxed">
+                          <p className="mt-1.5 text-xs text-[#5B6170] line-clamp-2 leading-relaxed">
                             {hotel.roomSummary}
                           </p>
                         </div>
@@ -583,17 +583,17 @@ export function ServiceDetailView({
             )}
 
             {service.externalPartner && (
-              <div className="rounded-[18px] bg-[#F8F6F5] border border-[#EFEAE8] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div className="rounded-[18px] bg-[#F6F7F9] border border-[#ECEEF2] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-[#8C6822]">Al Basel Group</p>
-                  <h2 className="text-lg font-semibold text-[#1B1718] mt-0.5">{service.externalPartner.name}</h2>
-                  <p className="text-sm text-[#574F52] mt-1">{service.externalPartner.note}</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C]">Al Basel Group</p>
+                  <h2 className="text-lg font-semibold text-[#111318] mt-0.5">{service.externalPartner.name}</h2>
+                  <p className="text-sm text-[#5B6170] mt-1">{service.externalPartner.note}</p>
                 </div>
                 <a
                   href={service.externalPartner.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-[#1B1718] hover:bg-[#C31A20] text-white text-sm font-semibold whitespace-nowrap shrink-0 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-[#111318] hover:bg-[#C31A20] text-white text-sm font-semibold whitespace-nowrap shrink-0 transition-colors"
                 >
                   <span>Visit najdrentacar.com</span>
                   <ExternalLink className="w-4 h-4" aria-hidden="true" />
@@ -605,7 +605,7 @@ export function ServiceDetailView({
               {service.relatedBuyerUrl && (
                 <a
                   href={service.relatedBuyerUrl}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#C31A20] hover:underline"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#111318] hover:underline"
                 >
                   <span>Explore dedicated booking guide</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -635,22 +635,22 @@ export function ServiceDetailView({
             <FaqSection faqs={service.faqs} />
           </div>
 
-          <section className="pt-8 mt-8 border-t border-[#EFEAE8]">
-            <h2 className="text-lg font-semibold text-[#1B1718] mb-4">More Services</h2>
+          <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
+            <h2 className="text-lg font-semibold text-[#111318] mb-4">More Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
               {otherServices.map((s) => (
                 <a
                   key={s.slug}
                   href={s.url}
-                  className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-medium text-[#1B1718] hover:text-[#C31A20]"
+                  className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-medium text-[#111318] hover:text-[#C31A20]"
                 >
                   <span>{s.name}</span>
-                  <ArrowRight className="w-4 h-4 text-[#B8B0AD] group-hover:text-[#C31A20]" aria-hidden="true" />
+                  <ArrowRight className="w-4 h-4 text-[#B4B8BF] group-hover:text-[#C31A20]" aria-hidden="true" />
                 </a>
               ))}
               <a
                 href="/services/"
-                className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-semibold text-[#C31A20]"
+                className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-semibold text-[#111318]"
               >
                 <span>All 15 services</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -660,10 +660,10 @@ export function ServiceDetailView({
         </div>
       </div>
 
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EFEAE8] px-4 py-2.5 flex items-center gap-3">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECEEF2] px-4 py-2.5 flex items-center gap-3">
         <a
           href={`tel:${COMPANY.contact.officeTel}`}
-          className="h-11 px-4 rounded-full border border-[#D8D0CC] text-[#1B1718] text-xs font-semibold inline-flex items-center justify-center shrink-0"
+          className="h-11 px-4 rounded-full border border-[#D9DCE1] text-[#111318] text-xs font-semibold inline-flex items-center justify-center shrink-0"
         >
           Call Desk
         </a>
@@ -698,7 +698,7 @@ export function BuyerQueryView({
 
   return (
     <Layout currentPath={page.url} hideBottomNav>
-      <div className="relative h-[300px] sm:h-[380px] lg:h-[420px] w-full overflow-hidden bg-[#120D0E]">
+      <div className="relative h-[300px] sm:h-[380px] lg:h-[420px] w-full overflow-hidden bg-[#0E0F12]">
         <img
           src={page.image}
           alt={page.imageAlt}
@@ -707,7 +707,7 @@ export function BuyerQueryView({
           loading="eager"
           className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A1020]/75 via-[#0A1020]/10 to-[#0A1020]/25" />
         <div className="absolute top-5 left-0 right-0 max-w-5xl mx-auto px-4 sm:px-6 flex items-center">
           <a
             href="/packages/"
@@ -720,19 +720,19 @@ export function BuyerQueryView({
       </div>
 
       <div className="max-w-5xl mx-auto px-0 sm:px-6 -mt-12 relative z-10 pb-12">
-        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#EFEAE8] px-5 py-7 sm:p-10">
+        <div className="bg-white rounded-t-[28px] sm:rounded-[28px] shadow-[0_18px_48px_rgba(27,23,24,0.08)] border border-[#ECEEF2] px-5 py-7 sm:p-10">
           <Breadcrumbs items={breadcrumbs} />
-          <p className="mt-5 text-xs font-medium text-[#766D71]">{page.categoryLabel}</p>
-          <h1 className="mt-1 text-2xl sm:text-4xl font-semibold text-[#1B1718] leading-tight">
+          <p className="mt-5 text-xs font-medium text-[#7A808C]">{page.categoryLabel}</p>
+          <h1 className="mt-1 text-2xl sm:text-4xl font-semibold text-[#111318] leading-tight">
             {page.h1}
           </h1>
-          <p className="mt-3 text-base text-[#352F31] leading-relaxed">{page.intro}</p>
+          <p className="mt-3 text-base text-[#2F3440] leading-relaxed">{page.intro}</p>
 
-          <div className="mt-8 divide-y divide-[#EFEAE8] border-t border-[#EFEAE8]">
+          <div className="mt-8 divide-y divide-[#ECEEF2] border-t border-[#ECEEF2]">
             {page.bodySections.map((sec) => (
               <section key={sec.heading} className="py-6">
-                <h2 className="text-lg font-semibold text-[#1B1718] mb-2">{sec.heading}</h2>
-                <div className="space-y-3 text-sm sm:text-base text-[#4A4245] leading-relaxed">
+                <h2 className="text-lg font-semibold text-[#111318] mb-2">{sec.heading}</h2>
+                <div className="space-y-3 text-sm sm:text-base text-[#4B5160] leading-relaxed">
                   {sec.paragraphs.map((p) => (
                     <p key={p}>{p}</p>
                   ))}
@@ -742,8 +742,8 @@ export function BuyerQueryView({
           </div>
 
           {matchedPackages.length > 0 && (
-            <section className="pt-8 mt-4 border-t border-[#EFEAE8]">
-              <h2 className="text-xl font-semibold text-[#1B1718] mb-5">Available Packages</h2>
+            <section className="pt-8 mt-4 border-t border-[#ECEEF2]">
+              <h2 className="text-xl font-semibold text-[#111318] mb-5">Available Packages</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {matchedPackages.map((pkg) => (
                   <PackageCard key={pkg.slug} pkg={pkg} />
@@ -753,24 +753,24 @@ export function BuyerQueryView({
           )}
 
           {(matchedDestinations.length > 0 || matchedServices.length > 0) && (
-            <section className="pt-8 mt-8 border-t border-[#EFEAE8]">
-              <h2 className="text-lg font-semibold text-[#1B1718] mb-4">Related Destinations &amp; Services</h2>
+            <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
+              <h2 className="text-lg font-semibold text-[#111318] mb-4">Related Destinations &amp; Services</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
                 {matchedDestinations.map((d) => (
                   <a
                     key={d.slug}
                     href={d.url}
-                    className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-medium text-[#1B1718] hover:text-[#C31A20]"
+                    className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-medium text-[#111318] hover:text-[#C31A20]"
                   >
                     <span>{d.name}</span>
-                    <ArrowRight className="w-4 h-4 text-[#B8B0AD] group-hover:text-[#C31A20]" aria-hidden="true" />
+                    <ArrowRight className="w-4 h-4 text-[#B4B8BF] group-hover:text-[#C31A20]" aria-hidden="true" />
                   </a>
                 ))}
                 {matchedServices.map((s) => (
                   <a
                     key={s.slug}
                     href={s.url}
-                    className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-medium text-[#C31A20]"
+                    className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-medium text-[#111318]"
                   >
                     <span>{s.name}</span>
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -781,9 +781,9 @@ export function BuyerQueryView({
           )}
 
           {page.slug === 'dubai-car-rental-najd' && (
-            <section className="mt-8 rounded-[22px] bg-[#141011] text-white p-6 sm:p-8 border-t-4 border-[#C31A20] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+            <section className="mt-8 rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 border-t-4 border-[#C31A20] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               <div className="space-y-2 max-w-xl">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#E2CC96]">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#FFFFFF]">
                   Al Basel Group Mobility Partner
                 </p>
                 <h2 className="text-xl font-semibold text-white">
@@ -797,10 +797,10 @@ export function BuyerQueryView({
                 href="https://najdrentacar.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-white text-[#1B1718] hover:bg-[#FDF2F2] text-sm font-semibold whitespace-nowrap shrink-0 transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-white text-[#111318] hover:bg-[#FDEDED] text-sm font-semibold whitespace-nowrap shrink-0 transition-colors"
               >
                 <span>Visit najdrentacar.com</span>
-                <ExternalLink className="w-4 h-4 text-[#C31A20]" aria-hidden="true" />
+                <ExternalLink className="w-4 h-4 text-[#111318]" aria-hidden="true" />
               </a>
             </section>
           )}
@@ -820,8 +820,8 @@ export function BuyerQueryView({
           </div>
 
           {matchedGuides.length > 0 && (
-            <section className="pt-8 mt-8 border-t border-[#EFEAE8]">
-              <h2 className="text-xl font-semibold text-[#1B1718] mb-5">Planning Guides</h2>
+            <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
+              <h2 className="text-xl font-semibold text-[#111318] mb-5">Planning Guides</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {matchedGuides.map((g) => (
                   <GuideCard key={g.slug} guide={g} />
@@ -832,10 +832,10 @@ export function BuyerQueryView({
         </div>
       </div>
 
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#EFEAE8] px-4 py-2.5 flex items-center gap-3">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECEEF2] px-4 py-2.5 flex items-center gap-3">
         <a
           href={`tel:${COMPANY.contact.officeTel}`}
-          className="h-11 px-4 rounded-full border border-[#D8D0CC] text-[#1B1718] text-xs font-semibold inline-flex items-center justify-center shrink-0"
+          className="h-11 px-4 rounded-full border border-[#D9DCE1] text-[#111318] text-xs font-semibold inline-flex items-center justify-center shrink-0"
         >
           Call Desk
         </a>
@@ -873,16 +873,16 @@ export function GuideDetailView({
         <Breadcrumbs items={breadcrumbs} />
 
         <header className="mt-5">
-          <p className="text-xs font-medium text-[#766D71]">
+          <p className="text-xs font-medium text-[#7A808C]">
             {guide.category} · {guide.readTime} · Updated {guide.publishedDate}
           </p>
-          <h1 className="mt-2 text-2xl sm:text-4xl font-semibold text-[#1B1718] leading-tight">
+          <h1 className="mt-2 text-2xl sm:text-4xl font-semibold text-[#111318] leading-tight">
             {guide.h1}
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-[#574F52] leading-relaxed">{guide.summary}</p>
+          <p className="mt-3 text-base sm:text-lg text-[#5B6170] leading-relaxed">{guide.summary}</p>
         </header>
 
-        <div className="mt-6 rounded-[22px] overflow-hidden aspect-[16/9] bg-[#F8F6F5]">
+        <div className="mt-6 rounded-[22px] overflow-hidden aspect-[16/9] bg-[#F6F7F9]">
           <img
             src={guide.image}
             alt={guide.imageAlt}
@@ -896,9 +896,9 @@ export function GuideDetailView({
         <div className="mt-8 space-y-6">
           {guide.sections.map((sec) => (
             <section key={sec.heading} className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-[#1B1718]">{sec.heading}</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#111318]">{sec.heading}</h2>
               {sec.paragraphs.map((p) => (
-                <p key={p} className="text-base text-[#352F31] leading-relaxed">
+                <p key={p} className="text-base text-[#2F3440] leading-relaxed">
                   {p}
                 </p>
               ))}
@@ -907,24 +907,24 @@ export function GuideDetailView({
         </div>
 
         {(matchedDestinations.length > 0 || matchedServices.length > 0) && (
-          <section className="mt-8 pt-6 border-t border-[#EFEAE8]">
-            <h2 className="text-lg font-semibold text-[#1B1718] mb-3">Relevant Services &amp; Destinations</h2>
+          <section className="mt-8 pt-6 border-t border-[#ECEEF2]">
+            <h2 className="text-lg font-semibold text-[#111318] mb-3">Relevant Services &amp; Destinations</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
               {matchedDestinations.map((d) => (
                 <a
                   key={d.slug}
                   href={d.url}
-                  className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-medium text-[#1B1718] hover:text-[#C31A20]"
+                  className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-medium text-[#111318] hover:text-[#C31A20]"
                 >
                   <span>{d.name}</span>
-                  <ArrowRight className="w-4 h-4 text-[#B8B0AD] group-hover:text-[#C31A20]" aria-hidden="true" />
+                  <ArrowRight className="w-4 h-4 text-[#B4B8BF] group-hover:text-[#C31A20]" aria-hidden="true" />
                 </a>
               ))}
               {matchedServices.map((s) => (
                 <a
                   key={s.slug}
                   href={s.url}
-                  className="group flex items-center justify-between py-3 border-b border-[#EFEAE8] text-sm font-medium text-[#C31A20]"
+                  className="group flex items-center justify-between py-3 border-b border-[#ECEEF2] text-sm font-medium text-[#111318]"
                 >
                   <span>{s.name}</span>
                   <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -935,8 +935,8 @@ export function GuideDetailView({
         )}
 
         {matchedPackages.length > 0 && (
-          <section className="mt-8 pt-6 border-t border-[#EFEAE8]">
-            <h2 className="text-xl font-semibold text-[#1B1718] mb-5">Matching Packages</h2>
+          <section className="mt-8 pt-6 border-t border-[#ECEEF2]">
+            <h2 className="text-xl font-semibold text-[#111318] mb-5">Matching Packages</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {matchedPackages.map((pkg) => (
                 <PackageCard key={pkg.slug} pkg={pkg} />
@@ -949,7 +949,7 @@ export function GuideDetailView({
           <FaqSection faqs={guide.faqs} />
         </div>
 
-        <div className="mt-10 rounded-[22px] bg-[#141011] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t-4 border-[#C31A20]">
+        <div className="mt-10 rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t-4 border-[#C31A20]">
           <div>
             <h2 className="text-xl font-semibold">Need advice on your travel dates?</h2>
             <p className="text-sm text-white/75 mt-1">

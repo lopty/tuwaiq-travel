@@ -29,6 +29,7 @@ import {
   SEASONAL_PLANNER,
   TRAVEL_STYLES,
 } from '../data/siteConfig';
+import { FOUR_SEASONS_LETTER, GROUP_TEAM_PHOTO, LEADER_PHOTOS, PRESS_ITEMS } from '../data/trustMedia';
 import { GENERAL_PACKAGES, NATIONAL_DAY_OFFERS } from '../data/packages';
 import { DESTINATIONS } from '../data/destinations';
 import { SERVICES } from '../data/services';
@@ -168,18 +169,20 @@ export function HomeView() {
   return (
     <Layout currentPath="/">
       {/* Rich Twilight Dubai Skyline Hero */}
-      <section className="relative bg-[#130D0E] text-white overflow-hidden">
+      <section className="relative bg-[#0A1020] text-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
-            src="/images/hero/dubai-highways-night.webp"
-            alt="Dubai Business Bay and Burj Khalifa illuminated beneath pink twilight clouds"
-            width={1800}
-            height={1012}
+            src="/images/hero/palm-jumeirah-aerial.webp"
+            alt="Aerial view of Palm Jumeirah, Atlantis The Palm and the Dubai Marina skyline"
+            width={2000}
+            height={1082}
             loading="eager"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/25 to-[#130D0E]/95" />
-          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-[#12080A]/65 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1020]/80 via-[#0A1020]/40 to-[#0A1020]/5" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A1020]/35 via-transparent to-[#0A1020]/45" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white" />
+          
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-9 pb-14 sm:pt-14 sm:pb-20">
@@ -187,7 +190,7 @@ export function HomeView() {
             {/* Left Editorial Title & Single Focused CTA */}
             <div className="lg:col-span-7 space-y-4">
               <h1 className="text-[34px] sm:text-5xl lg:text-[60px] font-medium tracking-[-0.025em] leading-[1.08] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.5)]">
-                Bespoke Travel, Curated in Dubai
+                Holidays from Dubai, planned properly
               </h1>
               <p className="text-sm sm:text-lg text-white/90 font-medium drop-shadow-[0_1px_10px_rgba(0,0,0,0.5)]">
                 Inbound UAE luxury stays, car rental &amp; outbound holidays across 70+ countries.
@@ -196,10 +199,10 @@ export function HomeView() {
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <a
                   href="/packages/"
-                  className="inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-6 rounded-full bg-white text-[#1B1718] hover:bg-[#FDF2F2] font-semibold text-sm shadow-lg transition-colors whitespace-nowrap shrink-0"
+                  className="inline-flex items-center justify-center gap-2 h-11 sm:h-12 px-6 rounded-full bg-white text-[#111318] hover:bg-[#FDEDED] font-semibold text-sm shadow-lg transition-colors whitespace-nowrap shrink-0"
                 >
-                  <span>Explore Journeys</span>
-                  <ArrowRight className="w-4 h-4 text-[#C31A20]" aria-hidden="true" />
+                  <span>See packages</span>
+                  <ArrowRight className="w-4 h-4 text-[#111318]" aria-hidden="true" />
                 </a>
                 <a
                   href="/inbound-uae-holidays/"
@@ -236,7 +239,7 @@ export function HomeView() {
                 href={activeSpotlight.href}
                 className="group block w-full max-w-[300px] rounded-[24px] bg-white p-1.5 shadow-[0_24px_60px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
               >
-                <div className="relative rounded-[18px] overflow-hidden aspect-[4/4.2] bg-[#1B1718]">
+                <div className="relative rounded-[18px] overflow-hidden aspect-[4/4.2] bg-[#111318]">
                   <img
                     src={activeSpotlight.image}
                     alt={activeSpotlight.alt}
@@ -246,7 +249,7 @@ export function HomeView() {
                     className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-[11px] font-semibold text-[#E2CC96]">
+                  <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-[11px] font-semibold text-[#FFFFFF]">
                     {activeSpotlight.price}
                   </span>
                 </div>
@@ -254,13 +257,13 @@ export function HomeView() {
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
                       <CountryFlag code={activeSpotlight.countryCode} className="w-4 h-3" />
-                      <p className="text-base font-semibold text-[#1B1718] truncate group-hover:text-[#C31A20] transition-colors">
+                      <p className="text-base font-semibold text-[#111318] truncate group-hover:text-[#C31A20] transition-colors">
                         {activeSpotlight.title}
                       </p>
                     </div>
-                    <p className="text-xs text-[#6B6266] truncate">{activeSpotlight.subtitle}</p>
+                    <p className="text-xs text-[#6B7180] truncate">{activeSpotlight.subtitle}</p>
                   </div>
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#1B1718] group-hover:bg-[#C31A20] text-white shrink-0 transition-colors">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#111318] group-hover:bg-[#C31A20] text-white shrink-0 transition-colors">
                     <ArrowRight className="w-4 h-4" aria-hidden="true" />
                   </span>
                 </div>
@@ -273,12 +276,12 @@ export function HomeView() {
             <div className="flex items-center justify-between gap-4 mb-3.5">
               <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
                 <h2 className="text-sm sm:text-base font-semibold text-white whitespace-nowrap shrink-0">
-                  Signature Escapes
+                  Where to next
                 </h2>
               </div>
               <a
                 href="/destinations/"
-                className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-[#E2CC96] hover:text-white whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1 text-xs sm:text-sm font-medium text-[#FFFFFF] hover:text-white whitespace-nowrap shrink-0"
               >
                 <span>All 16</span>
                 <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
@@ -307,7 +310,7 @@ export function HomeView() {
                         <CountryFlag code={dest.countryCode} className="w-4 h-[11px] ring-white/50" />
                         <p className="text-sm font-semibold text-white truncate">{dest.shortName}</p>
                       </div>
-                      <p className="text-[11px] font-medium text-[#E2CC96] tabular-nums truncate">
+                      <p className="text-[11px] font-medium text-[#FFFFFF] tabular-nums truncate">
                         {dest.startingPriceAed
                           ? `AED ${dest.startingPriceAed.toLocaleString('en-US')}`
                           : dest.slug === 'uae'
@@ -328,27 +331,27 @@ export function HomeView() {
 
       {/* Docked Floating App Search & Region Filter Console */}
       <div className="relative z-20 -mt-7 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[22px] bg-white text-[#1B1718] p-3.5 sm:p-4 shadow-[0_18px_44px_rgba(27,23,24,0.08)] border border-[#EFEAE8]">
+        <div className="rounded-[22px] bg-white text-[#111318] p-3.5 sm:p-4 shadow-[0_18px_44px_rgba(27,23,24,0.08)] border border-[#ECEEF2]">
           <div className="flex flex-col lg:flex-row lg:items-center gap-3.5">
             <div className="lg:w-[360px] shrink-0">
               <label htmlFor="home-search" className="sr-only">
                 Search destinations or packages
               </label>
-              <div className="relative flex items-center bg-[#F8F6F5] rounded-full border border-[#EAE3DF] px-4 h-11 focus-within:bg-white focus-within:border-[#C31A20] transition-all">
-                <Search className="w-4 h-4 text-[#766D71] shrink-0 mr-2.5" aria-hidden="true" />
+              <div className="relative flex items-center bg-[#F6F7F9] rounded-full border border-[#E8EAEE] px-4 h-11 focus-within:bg-white focus-within:border-[#C31A20] transition-all">
+                <Search className="w-4 h-4 text-[#7A808C] shrink-0 mr-2.5" aria-hidden="true" />
                 <input
                   id="home-search"
                   type="search"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   placeholder="Search destinations, suites, or packages"
-                  className="w-full bg-transparent text-sm text-[#1B1718] placeholder:text-[#766D71] focus:outline-none py-1.5"
+                  className="w-full bg-transparent text-sm text-[#111318] placeholder:text-[#7A808C] focus:outline-none py-1.5"
                 />
                 {query && (
                   <button
                     type="button"
                     onClick={() => setQuery('')}
-                    className="text-xs font-semibold text-[#C31A20] px-2 py-1 rounded-full hover:bg-[#EFEAE8] shrink-0"
+                    className="text-xs font-semibold text-[#111318] px-2 py-1 rounded-full hover:bg-[#ECEEF2] shrink-0"
                   >
                     Clear
                   </button>
@@ -371,8 +374,8 @@ export function HomeView() {
                     aria-pressed={isSelected}
                     className={`h-11 px-4 rounded-full text-sm font-medium whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
                       isSelected
-                        ? 'bg-[#1B1718] text-white'
-                        : 'bg-[#F8F6F5] text-[#4A4245] hover:bg-[#EFEAE8] hover:text-[#1B1718]'
+                        ? 'bg-[#111318] text-white'
+                        : 'bg-[#F6F7F9] text-[#4B5160] hover:bg-[#ECEEF2] hover:text-[#111318]'
                     }`}
                   >
                     {region}
@@ -385,7 +388,7 @@ export function HomeView() {
       </div>
 
       {/* Round Category Icons Row */}
-      <section className="py-6 bg-white border-b border-[#EFEAE8]" aria-label="Travel service categories">
+      <section className="py-6 bg-white border-b border-[#ECEEF2]" aria-label="Travel service categories">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-start gap-4 sm:gap-5 overflow-x-auto no-scrollbar pb-1 md:grid md:grid-cols-9">
             {categoryIcons.map((item) => {
@@ -396,10 +399,10 @@ export function HomeView() {
                   href={item.href}
                   className="group flex flex-col items-center gap-2 min-w-[68px] shrink-0 text-center focus-visible:outline-2 focus-visible:outline-[#C31A20] rounded-2xl py-1"
                 >
-                  <span className="w-12 h-12 rounded-full bg-[#F8F6F5] group-hover:bg-[#1B1718] text-[#1B1718] group-hover:text-white flex items-center justify-center transition-colors">
+                  <span className="w-12 h-12 rounded-full bg-[#F6F7F9] group-hover:bg-[#111318] text-[#111318] group-hover:text-white flex items-center justify-center transition-colors">
                     <Icon className="w-5 h-5" aria-hidden="true" />
                   </span>
-                  <span className="text-xs font-medium text-[#4A4245] group-hover:text-[#1B1718] whitespace-nowrap">
+                  <span className="text-xs font-medium text-[#4B5160] group-hover:text-[#111318] whitespace-nowrap">
                     {item.label}
                   </span>
                 </a>
@@ -413,19 +416,19 @@ export function HomeView() {
       <section className="py-12 sm:py-14 bg-white" aria-labelledby="destinations-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-7">
-            <h2 id="destinations-heading" className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
-              Signature Destinations
+            <h2 id="destinations-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+              Destinations
             </h2>
             <a
               href="/destinations/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
             >
               View all 16 <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
 
           {visibleDestinationsCount === 0 && (
-            <p className="text-sm text-[#574F52] bg-[#F8F6F5] rounded-[18px] p-5 mb-4">
+            <p className="text-sm text-[#5B6170] bg-[#F6F7F9] rounded-[18px] p-5 mb-4">
               No destinations matched &ldquo;{query}&rdquo; in {activeRegion}.
             </p>
           )}
@@ -447,22 +450,22 @@ export function HomeView() {
       </section>
 
       {/* Featured Holiday Packages Grid */}
-      <section className="py-14 bg-[#F8F6F5]" aria-labelledby="packages-heading">
+      <section className="py-14 bg-[#F6F7F9]" aria-labelledby="packages-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-7">
-            <h2 id="packages-heading" className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
-              Curated Holidays From Dubai
+            <h2 id="packages-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+              Holiday packages from Dubai
             </h2>
             <a
               href="/packages/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
             >
               All packages <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
 
           {visiblePackagesCount === 0 && (
-            <p className="text-sm text-[#574F52] bg-white rounded-[18px] p-5 mb-4">
+            <p className="text-sm text-[#5B6170] bg-white rounded-[18px] p-5 mb-4">
               No packages matched &ldquo;{query}&rdquo; in {activeRegion}. Message our Business Bay desk for custom itineraries.
             </p>
           )}
@@ -482,14 +485,14 @@ export function HomeView() {
           </div>
 
           {/* UAE National Day 2026 Departures */}
-          <div className="mt-14 pt-12 border-t border-[#E6DFDC]">
+          <div className="mt-14 pt-12 border-t border-[#E5E7EB]">
             <div className="flex items-baseline justify-between gap-4 mb-7">
-              <h2 className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-[#111318]">
                 UAE National Day 2026 Escapes
               </h2>
               <a
                 href="/offers/"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
               >
                 View offers <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
@@ -513,15 +516,15 @@ export function HomeView() {
       </section>
 
       {/* Luxury Hotels & Signature Stays Showcase */}
-      <section className="py-14 bg-white border-b border-[#EFEAE8]" aria-labelledby="hotels-heading">
+      <section className="py-14 bg-white border-b border-[#ECEEF2]" aria-labelledby="hotels-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-7">
-            <h2 id="hotels-heading" className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
-              World-Class Hotels &amp; Suites
+            <h2 id="hotels-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+              Hotels we book
             </h2>
             <a
               href="/services/hotel-bookings/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
             >
               Explore hotels <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -534,7 +537,7 @@ export function HomeView() {
                 href="/services/hotel-bookings/"
                 className="group flex flex-col"
               >
-                <div className="aspect-[4/3] rounded-[20px] overflow-hidden bg-[#F8F6F5]">
+                <div className="aspect-[4/3] rounded-[20px] overflow-hidden bg-[#F6F7F9]">
                   <img
                     src={hotel.image}
                     alt={hotel.imageAlt}
@@ -545,10 +548,10 @@ export function HomeView() {
                   />
                 </div>
                 <div className="pt-3.5 px-0.5">
-                  <h3 className="text-base font-semibold text-[#1B1718] group-hover:text-[#C31A20] transition-colors line-clamp-1">
+                  <h3 className="text-base font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors line-clamp-1">
                     {hotel.brandGroup}
                   </h3>
-                  <p className="text-xs text-[#6B6266] mt-0.5 truncate">{hotel.locationLabel}</p>
+                  <p className="text-xs text-[#6B7180] mt-0.5 truncate">{hotel.locationLabel}</p>
                 </div>
               </a>
             ))}
@@ -557,15 +560,15 @@ export function HomeView() {
       </section>
 
       {/* Dubai Experiences & Full-Service Travel Portfolio */}
-      <section className="py-14 bg-[#F8F6F5]" aria-labelledby="services-spotlight-heading">
+      <section className="py-14 bg-[#F6F7F9]" aria-labelledby="services-spotlight-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-7">
-            <h2 id="services-spotlight-heading" className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
-              Private Concierge &amp; Dubai Experiences
+            <h2 id="services-spotlight-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+              Experiences in Dubai and the UAE
             </h2>
             <a
               href="/services/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
             >
               All 15 services <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -576,7 +579,7 @@ export function HomeView() {
               <a
                 key={service.slug}
                 href={service.url}
-                className="group relative rounded-[20px] overflow-hidden aspect-[4/3] bg-[#1B1718] shadow-[0_6px_22px_rgba(27,23,24,0.06)]"
+                className="group relative rounded-[20px] overflow-hidden aspect-[4/3] bg-[#111318] shadow-[0_6px_22px_rgba(27,23,24,0.06)]"
               >
                 <img
                   src={service.image}
@@ -601,22 +604,22 @@ export function HomeView() {
           </div>
 
           {/* Al Basel Group Car Rental Integration Strip */}
-          <div className="mt-10 rounded-[22px] bg-white border border-[#EFEAE8] p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+          <div className="mt-10 rounded-[22px] bg-white border border-[#ECEEF2] p-6 sm:p-8 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
             <div className="space-y-1.5 max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#8C6822]">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C]">
                 Al Basel Group Mobility Partner
               </p>
-              <h3 className="text-xl font-semibold text-[#1B1718]">
+              <h3 className="text-xl font-semibold text-[#111318]">
                 Travelling to Dubai and Need a Car?
               </h3>
-              <p className="text-sm text-[#574F52] leading-relaxed">
+              <p className="text-sm text-[#5B6170] leading-relaxed">
                 Arrange self-drive sedans, 4x4 SUVs, luxury cars, or uniformed chauffeurs through our sister company Najd Rent a Car alongside your flights and hotel stay.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-3 shrink-0">
               <a
                 href="/dubai-car-rental-najd/"
-                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-[#1B1718] hover:bg-[#C31A20] text-white text-sm font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-[#111318] hover:bg-[#C31A20] text-white text-sm font-semibold transition-colors"
               >
                 <span>Dubai Car Rental Guide</span>
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -625,7 +628,7 @@ export function HomeView() {
                 href="https://najdrentacar.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full border border-[#D8D0CC] text-[#1B1718] hover:border-[#1B1718] text-sm font-semibold transition-colors"
+                className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full border border-[#D9DCE1] text-[#111318] hover:border-[#111318] text-sm font-semibold transition-colors"
               >
                 <span>Visit najdrentacar.com</span>
                 <ExternalLink className="w-4 h-4" aria-hidden="true" />
@@ -636,22 +639,22 @@ export function HomeView() {
       </section>
 
       {/* Seasonal Calendar & Hospitality Heritage Band */}
-      <section className="py-14 bg-white border-b border-[#EFEAE8]" aria-labelledby="seasonal-heading">
+      <section className="py-14 bg-white border-b border-[#ECEEF2]" aria-labelledby="seasonal-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
           <div>
             <div className="flex items-baseline justify-between gap-4 mb-7">
-              <h2 id="seasonal-heading" className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
+              <h2 id="seasonal-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
                 Where to Travel by Season
               </h2>
               <a
                 href="/guides/best-time-to-visit-our-16-destinations/"
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
               >
                 Seasonal guide <ArrowRight className="w-4 h-4" aria-hidden="true" />
               </a>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[#EFEAE8] divide-y sm:divide-y-0 lg:divide-x divide-[#EFEAE8]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[#ECEEF2] divide-y sm:divide-y-0 lg:divide-x divide-[#ECEEF2]">
               {SEASONAL_PLANNER.map((slot) => (
                 <a
                   key={slot.season}
@@ -659,17 +662,17 @@ export function HomeView() {
                   className="group pt-6 pb-4 lg:py-6 lg:px-6 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-4 hover:bg-[#FAF9F8] transition-colors"
                 >
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#8C6822]">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C]">
                       {slot.season}
                     </p>
-                    <h3 className="mt-1.5 text-lg font-semibold text-[#1B1718] group-hover:text-[#C31A20] transition-colors">
+                    <h3 className="mt-1.5 text-lg font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors">
                       {slot.title}
                     </h3>
-                    <p className="mt-2.5 text-sm text-[#574F52] leading-relaxed">
+                    <p className="mt-2.5 text-sm text-[#5B6170] leading-relaxed">
                       {slot.destinations.slice(0, 3).join(' · ')}
                     </p>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1B1718] group-hover:text-[#C31A20]">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#111318] group-hover:text-[#C31A20]">
                     Explore season <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                   </span>
                 </a>
@@ -678,30 +681,37 @@ export function HomeView() {
           </div>
 
           {/* Hospitality Heritage & Leadership Overview */}
-          <div className="rounded-[24px] bg-[#F8F6F5] p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="rounded-[24px] bg-[#F6F7F9] p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7 space-y-5">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-[#8C6822] mb-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-2">
                   Al Basel Group · Est. 2007
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
-                  Founded in Five-Star Dubai Hospitality
+                <h2 className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+                  Built on Dubai hospitality
                 </h2>
-                <p className="mt-2.5 text-sm sm:text-base text-[#574F52] leading-relaxed max-w-xl">
+                <p className="mt-2.5 text-sm sm:text-base text-[#5B6170] leading-relaxed max-w-xl">
                   Established in 2014 by Basel Al Kasem, former Business Development Manager at Burj Al Arab, delivering private leisure, corporate, and VIP travel from Business Bay.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 border-y border-[#E6DFDC] divide-y sm:divide-y-0">
-                {LEADERSHIP.map((leader, idx) => (
-                  <div
-                    key={leader.name}
-                    className={`py-3.5 ${idx % 2 === 0 ? 'sm:pr-6' : 'sm:pl-6'} ${
-                      idx < 2 ? 'sm:border-b sm:border-[#E6DFDC]' : ''
-                    }`}
-                  >
-                    <p className="text-sm font-semibold text-[#1B1718]">{leader.name}</p>
-                    <p className="text-xs text-[#6B6266] mt-0.5">{leader.role}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {LEADERSHIP.map((leader) => (
+                  <div key={leader.name} className="flex items-center gap-3 rounded-2xl bg-white p-3 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
+                    {LEADER_PHOTOS[leader.name] && (
+                      <img
+                        src={LEADER_PHOTOS[leader.name].src}
+                        alt={LEADER_PHOTOS[leader.name].alt}
+                        width={LEADER_PHOTOS[leader.name].width}
+                        height={LEADER_PHOTOS[leader.name].height}
+                        loading="lazy"
+                        className="w-11 h-11 rounded-full object-cover shrink-0"
+                      />
+                    )}
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-[#111318] truncate">{leader.name}</p>
+                      <p className="text-xs text-[#6B7180] mt-0.5 truncate">{leader.role}</p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -709,21 +719,21 @@ export function HomeView() {
               <div className="pt-1 flex flex-wrap items-center gap-3">
                 <a
                   href="/about/"
-                  className="inline-flex items-center justify-center h-11 px-6 rounded-full bg-[#1B1718] hover:bg-[#C31A20] text-white text-sm font-semibold transition-colors"
+                  className="inline-flex items-center justify-center h-11 px-6 rounded-full bg-[#111318] hover:bg-[#C31A20] text-white text-sm font-semibold transition-colors"
                 >
                   About Tuwaiq
                 </a>
                 <a
                   href="/partnerships/"
-                  className="inline-flex items-center justify-center h-11 px-6 rounded-full border border-[#D8D0CC] text-[#1B1718] hover:border-[#1B1718] text-sm font-semibold transition-colors"
+                  className="inline-flex items-center justify-center h-11 px-6 rounded-full border border-[#D9DCE1] text-[#111318] hover:border-[#111318] text-sm font-semibold transition-colors"
                 >
                   Partnerships
                 </a>
                 <a
                   href={`tel:${COMPANY.contact.officeTel}`}
-                  className="inline-flex items-center gap-1.5 h-11 px-4 text-[#1B1718] hover:text-[#C31A20] text-sm font-medium transition-colors"
+                  className="inline-flex items-center gap-1.5 h-11 px-4 text-[#111318] hover:text-[#C31A20] text-sm font-medium transition-colors"
                 >
-                  <Phone className="w-3.5 h-3.5 text-[#C31A20]" aria-hidden="true" />
+                  <Phone className="w-3.5 h-3.5 text-[#111318]" aria-hidden="true" />
                   <span>{COMPANY.contact.officeDisplay}</span>
                 </a>
               </div>
@@ -731,21 +741,37 @@ export function HomeView() {
 
             <div className="lg:col-span-5 grid grid-cols-2 gap-3">
               <img
-                src="/images/hero/luxury-hotel-lobby.webp"
-                alt="Grand marble hotel lobby chandelier representing Dubai hospitality concierge"
-                width={781}
-                height={1280}
+                src={GROUP_TEAM_PHOTO.src}
+                alt={GROUP_TEAM_PHOTO.alt}
+                width={GROUP_TEAM_PHOTO.width}
+                height={GROUP_TEAM_PHOTO.height}
                 loading="lazy"
-                className="rounded-[18px] w-full h-56 sm:h-64 object-cover"
+                className="col-span-2 rounded-[18px] w-full h-44 sm:h-52 object-cover"
               />
-              <img
-                src="/images/hero/dubai-highways-night.webp"
-                alt="Dubai evening skyline and Business Bay expressway"
-                width={1800}
-                height={1012}
-                loading="lazy"
-                className="rounded-[18px] w-full h-56 sm:h-64 object-cover"
-              />
+              <a href="/partnerships/" className="group block rounded-[18px] bg-white p-3 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
+                <img
+                  src={FOUR_SEASONS_LETTER.image.src}
+                  alt={FOUR_SEASONS_LETTER.image.alt}
+                  width={FOUR_SEASONS_LETTER.image.width}
+                  height={FOUR_SEASONS_LETTER.image.height}
+                  loading="lazy"
+                  className="w-full h-28 object-cover object-top rounded-lg"
+                />
+                <p className="mt-2 text-xs font-semibold text-[#111318] group-hover:text-[#C31A20]">Four Seasons Washington DC, 2015</p>
+                <p className="text-[11px] text-[#6B7180]">VIP delegation booking letter</p>
+              </a>
+              <a href="/press/" className="group block rounded-[18px] bg-white p-3 shadow-[0_1px_2px_rgba(16,24,40,0.04)]">
+                <img
+                  src={PRESS_ITEMS[0].image.src}
+                  alt={PRESS_ITEMS[0].image.alt}
+                  width={PRESS_ITEMS[0].image.width}
+                  height={PRESS_ITEMS[0].image.height}
+                  loading="lazy"
+                  className="w-full h-28 object-cover object-top rounded-lg"
+                />
+                <p className="mt-2 text-xs font-semibold text-[#111318] group-hover:text-[#C31A20]">Arabian Travel News, 2014</p>
+                <p className="text-[11px] text-[#6B7180]">Cover story on our founder</p>
+              </a>
             </div>
           </div>
         </div>
@@ -755,18 +781,18 @@ export function HomeView() {
       <section className="py-14 bg-white" aria-labelledby="styles-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-7">
-            <h2 id="styles-heading" className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
-              Crafted Around Your Travel Style
+            <h2 id="styles-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+              Trips for every kind of traveller
             </h2>
             <a
               href="/packages/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
             >
-              Compare collections <ArrowRight className="w-4 h-4" aria-hidden="true" />
+              See all <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[#EFEAE8] divide-y sm:divide-y-0 lg:divide-x divide-[#EFEAE8]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[#ECEEF2] divide-y sm:divide-y-0 lg:divide-x divide-[#ECEEF2]">
             {TRAVEL_STYLES.map((style) => (
               <a
                 key={style.slug}
@@ -774,12 +800,12 @@ export function HomeView() {
                 className="group pt-6 pb-4 lg:py-6 lg:px-6 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-4 hover:bg-[#FAF9F8] transition-colors"
               >
                 <div>
-                  <h3 className="text-lg font-semibold text-[#1B1718] group-hover:text-[#C31A20] transition-colors">
+                  <h3 className="text-lg font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors">
                     {style.title}
                   </h3>
-                  <p className="mt-2 text-sm text-[#574F52] leading-relaxed">{style.summary}</p>
+                  <p className="mt-2 text-sm text-[#5B6170] leading-relaxed">{style.summary}</p>
                 </div>
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1B1718] group-hover:text-[#C31A20]">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#111318] group-hover:text-[#C31A20]">
                   Explore options <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
                 </span>
               </a>
@@ -787,17 +813,17 @@ export function HomeView() {
           </div>
 
           {/* Clean Editorial 3-Column Directory */}
-          <div className="mt-14 pt-10 border-t border-[#EFEAE8]">
-            <h3 className="text-lg font-semibold text-[#1B1718] mb-5">Popular Collections &amp; Services</h3>
+          <div className="mt-14 pt-10 border-t border-[#ECEEF2]">
+            <h3 className="text-lg font-semibold text-[#111318] mb-5">Popular searches</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10">
               {activeBuyers.map((buyer) => (
                 <a
                   key={buyer.url}
                   href={buyer.url}
-                  className="group flex items-center justify-between gap-3 py-3.5 border-b border-[#EFEAE8] text-sm font-medium text-[#1B1718] hover:text-[#C31A20] transition-colors"
+                  className="group flex items-center justify-between gap-3 py-3.5 border-b border-[#ECEEF2] text-sm font-medium text-[#111318] hover:text-[#C31A20] transition-colors"
                 >
                   <span className="truncate">{buyer.h1}</span>
-                  <ArrowRight className="w-4 h-4 text-[#B8B0AD] group-hover:text-[#C31A20] group-hover:translate-x-0.5 shrink-0 transition-all" aria-hidden="true" />
+                  <ArrowRight className="w-4 h-4 text-[#B4B8BF] group-hover:text-[#C31A20] group-hover:translate-x-0.5 shrink-0 transition-all" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -806,15 +832,15 @@ export function HomeView() {
       </section>
 
       {/* Architectural Concierge Booking Process */}
-      <section className="py-14 bg-[#141011] text-white border-t-4 border-[#C31A20]" aria-labelledby="booking-heading">
+      <section className="py-14 bg-[#0E0F12] text-white" aria-labelledby="booking-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-10">
             <h2 id="booking-heading" className="text-2xl sm:text-3xl font-semibold">
-              The Private Concierge Process
+              How booking works
             </h2>
             <a
               href="/how-booking-works/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#E2CC96] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#FFFFFF] hover:underline whitespace-nowrap shrink-0"
             >
               Booking guide <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
@@ -826,7 +852,7 @@ export function HomeView() {
                 key={item.step}
                 className="py-6 lg:px-6 first:lg:pl-0 last:lg:pr-0 space-y-2.5"
               >
-                <p className="text-xs font-semibold tracking-widest text-[#E2CC96] tabular-nums">
+                <p className="text-xs font-semibold tracking-widest text-[#FFFFFF] tabular-nums">
                   0{item.step}
                 </p>
                 <h3 className="text-lg font-semibold text-white">{item.title}</h3>
@@ -848,7 +874,7 @@ export function HomeView() {
             <p>Or visit our travel consultants in person at Business Bay, Dubai.</p>
             <a
               href="/contact/"
-              className="inline-flex items-center gap-1.5 text-white hover:text-[#E2CC96] font-medium transition-colors"
+              className="inline-flex items-center gap-1.5 text-white hover:text-[#FFFFFF] font-medium transition-colors"
             >
               <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
               <span>Fifty One Tower, Office 301</span>
@@ -861,12 +887,12 @@ export function HomeView() {
       <section className="py-14 bg-white" aria-labelledby="guides-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-7">
-            <h2 id="guides-heading" className="text-2xl sm:text-3xl font-semibold text-[#1B1718]">
-              Insider Travel &amp; Visa Guides
+            <h2 id="guides-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
+              Travel and visa guides
             </h2>
             <a
               href="/guides/"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#C31A20] hover:underline whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] hover:underline whitespace-nowrap shrink-0"
             >
               All {GUIDES.length} guides <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </a>
