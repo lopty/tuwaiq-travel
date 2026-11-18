@@ -206,9 +206,9 @@ export function FaqSection({ faqs, id = 'faqs' }: { faqs: PackageFaq[]; id?: str
       <h2 className="text-2xl font-semibold text-[#111318] mb-2">Frequently Asked Questions</h2>
       <div className="divide-y divide-[#ECEEF2]">
         {faqs.map((faq) => (
-          <div key={faq.question} className="py-5">
-            <h3 className="text-base font-semibold text-[#111318] mb-1.5">{faq.question}</h3>
-            <p className="text-sm text-[#5B6170] leading-relaxed">{faq.answer}</p>
+          <div key={faq.question} className="py-6">
+            <h3 className="text-[16px] sm:text-[17px] font-semibold text-[#111318]">{faq.question}</h3>
+            <p className="mt-2 text-[15px] sm:text-base text-[#4B5160] leading-[1.75] max-w-[68ch]">{faq.answer}</p>
           </div>
         ))}
       </div>

@@ -1,4 +1,6 @@
 import type { PackageFaq } from './packages';
+import { GUIDE_BODIES_1 } from './guideBodies1';
+import { GUIDE_BODIES_2 } from './guideBodies2';
 
 export interface GuideArticle {
   slug: string;
@@ -10,7 +12,7 @@ export interface GuideArticle {
   seoDescription: string;
   h1: string;
   summary: string;
-  sections: { heading: string; paragraphs: string[] }[];
+  sections: { heading: string; paragraphs: string[]; list?: string[] }[];
   relatedPackageSlugs: string[];
   relatedDestinationSlugs: string[];
   relatedServiceSlugs: string[];
@@ -659,3 +661,13 @@ export const GUIDES: GuideArticle[] = [
     ],
   },
 ];
+
+// Replace the short AI Studio drafts with the detailed article bodies and set read times.
+const GUIDE_BODIES = { ...GUIDE_BODIES_1, ...GUIDE_BODIES_2 };
+for (const guide of GUIDES) {
+  const body = GUIDE_BODIES[guide.slug];
+  if (!body) continue;
+  guide.sections = body;
+  const words = body.reduce((n, s) => n + [...s.paragraphs, ...(s.list ?? [])].join(' ').split(/\s+/).length, 0);
+  guide.readTime = `${Math.max(3, Math.round(words / 200))} min read`;
+}

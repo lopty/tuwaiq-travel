@@ -10,7 +10,7 @@ export interface BuyerQueryPage {
   seoDescription: string;
   h1: string;
   intro: string;
-  bodySections: { heading: string; paragraphs: string[] }[];
+  bodySections: { heading: string; paragraphs: string[]; list?: string[] }[];
   featuredPackageSlugs: string[];
   featuredDestinationSlugs: string[];
   featuredServiceSlugs: string[];

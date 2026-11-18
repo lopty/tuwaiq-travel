@@ -3,6 +3,7 @@ import { Layout } from './Layout';
 import { Breadcrumbs, FaqSection, GuideCard, PackageCard, StatChips } from './Cards';
 import { CountryFlag } from './CountryFlag';
 import { WhatsAppEnquiryBuilder } from './WhatsAppEnquiryBuilder';
+import { ArticleBody } from './ArticleBody';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { COMPANY, FEATURE_FLAGS, HOTEL_SHOWCASE, whatsAppUrl } from '../data/siteConfig';
 import { getActivePackages } from '../data/routes';
@@ -114,13 +115,13 @@ export function PackageDetailView({
           {/* Section 1: Overview */}
           <section id="overview" className="scroll-mt-24 space-y-5">
             <h2 className="text-xl font-semibold text-[#111318]">Overview</h2>
-            <p className="text-base text-[#2F3440] leading-relaxed">{pkg.overview}</p>
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">{pkg.overview}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
-              <div className="rounded-[18px] bg-[#F6F7F9] p-5 text-sm text-[#4B5160] leading-relaxed">
+              <div className="rounded-[18px] bg-[#F6F7F9] p-5 text-[15px] text-[#4B5160] leading-[1.75]">
                 <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-1.5">Consultant note</p>
                 <p>{pkg.consultantNote}</p>
               </div>
-              <div className="rounded-[18px] border border-[#ECEEF2] p-5 text-sm text-[#4B5160] leading-relaxed">
+              <div className="rounded-[18px] border border-[#ECEEF2] p-5 text-[15px] text-[#4B5160] leading-[1.75]">
                 <p className="text-xs font-semibold uppercase tracking-wider text-[#111318] mb-1.5">UAE resident visas</p>
                 <p>{pkg.visaNote}</p>
               </div>
@@ -141,7 +142,7 @@ export function PackageDetailView({
                   </p>
                   <div className="sm:col-span-10">
                     <h3 className="text-base font-semibold text-[#111318]">{item.title}</h3>
-                    <p className="mt-1.5 text-sm text-[#5B6170] leading-relaxed">{item.details}</p>
+                    <p className="mt-2 text-[15px] text-[#4B5160] leading-[1.7]">{item.details}</p>
                   </div>
                 </div>
               ))}
@@ -150,7 +151,7 @@ export function PackageDetailView({
 
           {/* Section 3: Included / Not Included */}
           <section id="included" className="scroll-mt-24 pt-9 mt-9 border-t border-[#ECEEF2]">
-            <h2 className="text-xl font-semibold text-[#111318] mb-5">Inclusions &amp; Exclusions</h2>
+            <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">Inclusions &amp; Exclusions</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="rounded-[20px] bg-[#F6F7F9] p-6">
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-[#111318] mb-4">Included</h3>
@@ -176,7 +177,7 @@ export function PackageDetailView({
               </div>
             </div>
 
-            <div className="mt-8">
+            <div className="mt-12">
               <WhatsAppEnquiryBuilder
                 defaultSubject={`${pkg.name} (From AED ${pkg.priceAed.toLocaleString('en-US')})`}
                 contextLabel="Selected Holiday Package"
@@ -187,12 +188,12 @@ export function PackageDetailView({
           </section>
 
           {/* Section 4: FAQs */}
-          <div className="mt-8">
+          <div className="mt-12">
             <FaqSection faqs={pkg.faqs} />
           </div>
 
           {/* Sideways & Upward Internal Links */}
-          <section className="pt-8 mt-8 border-t border-[#ECEEF2] space-y-8">
+          <section className="pt-12 mt-12 border-t border-[#ECEEF2] space-y-8">
             <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-sm font-semibold">
               {matchingDestination && (
                 <a href={matchingDestination.url} className="inline-flex items-center gap-1.5 text-[#111318] hover:underline">
@@ -212,7 +213,7 @@ export function PackageDetailView({
 
             {matchingGuides.length > 0 && (
               <div>
-                <h2 className="text-xl font-semibold text-[#111318] mb-5">Planning Guides</h2>
+                <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">Planning Guides</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {matchingGuides.map((g) => (
                     <GuideCard key={g.slug} guide={g} />
@@ -222,7 +223,7 @@ export function PackageDetailView({
             )}
 
             <div>
-              <h2 className="text-xl font-semibold text-[#111318] mb-5">Related Packages</h2>
+              <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">Related Packages</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
                 {relatedPackages.map((rel) => (
                   <PackageCard key={rel.slug} pkg={rel} />
@@ -349,8 +350,8 @@ export function DestinationDetailView({
 
           <section id="overview" className="scroll-mt-24 space-y-5">
             <h2 className="text-xl font-semibold text-[#111318]">Destination Overview</h2>
-            <p className="text-base text-[#2F3440] leading-relaxed">{destination.overview}</p>
-            <div className="rounded-[18px] bg-[#F6F7F9] p-5 text-sm text-[#4B5160] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">{destination.overview}</p>
+            <div className="rounded-[18px] bg-[#F6F7F9] p-5 text-[15px] text-[#4B5160] leading-[1.75]">
               <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-1.5">Consultant note</p>
               <p>{destination.consultantNote}</p>
             </div>
@@ -369,7 +370,7 @@ export function DestinationDetailView({
           </section>
 
           <section id="packages" className="scroll-mt-24 pt-9 mt-9 border-t border-[#ECEEF2]">
-            <h2 className="text-xl font-semibold text-[#111318] mb-5">
+            <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">
               {matchingPackages.length > 0
                 ? `Matching ${destination.name} Packages`
                 : `Tailored ${destination.name} Holidays`}
@@ -401,7 +402,7 @@ export function DestinationDetailView({
               </div>
             )}
 
-            <div className="mt-8">
+            <div className="mt-12">
               <WhatsAppEnquiryBuilder
                 defaultSubject={`${destination.name} Tailored Holiday`}
                 contextLabel="Destination Selected"
@@ -411,13 +412,13 @@ export function DestinationDetailView({
             </div>
           </section>
 
-          <div className="mt-8">
+          <div className="mt-12">
             <FaqSection faqs={destination.faqs} />
           </div>
 
           {matchingGuides.length > 0 && (
-            <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
-              <h2 className="text-xl font-semibold text-[#111318] mb-5">Related Travel Guides</h2>
+            <section className="pt-12 mt-12 border-t border-[#ECEEF2]">
+              <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">Related Travel Guides</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {matchingGuides.map((g) => (
                   <GuideCard key={g.slug} guide={g} />
@@ -426,8 +427,8 @@ export function DestinationDetailView({
             </section>
           )}
 
-          <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
-            <h2 className="text-lg font-semibold text-[#111318] mb-4">Other Destinations</h2>
+          <section className="pt-12 mt-12 border-t border-[#ECEEF2]">
+            <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">Other Destinations</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
               {otherDestinations.map((d) => (
                 <a
@@ -516,7 +517,7 @@ export function ServiceDetailView({
           <p className="mt-2 text-base text-[#5B6170]">{service.tagline}</p>
 
           <div className="mt-6 space-y-6">
-            <p className="text-base text-[#2F3440] leading-relaxed">{service.overview}</p>
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">{service.overview}</p>
 
             <div className="rounded-[18px] bg-[#F6F7F9] p-6">
               <h2 className="text-base font-semibold text-[#111318] mb-3">What We Arrange</h2>
@@ -530,14 +531,14 @@ export function ServiceDetailView({
               </ul>
             </div>
 
-            <div className="rounded-[18px] border border-[#ECEEF2] p-5 text-sm text-[#4B5160] leading-relaxed">
+            <div className="rounded-[18px] border border-[#ECEEF2] p-5 text-[15px] text-[#4B5160] leading-[1.75]">
               <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-1.5">Consultant note</p>
               <p>{service.consultantNote}</p>
             </div>
 
             {service.slug === 'hotel-bookings' && (
               <section className="pt-4">
-                <h2 className="text-xl font-semibold text-[#111318] mb-5">
+                <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">
                   Hotels we book
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -631,12 +632,12 @@ export function ServiceDetailView({
             </div>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-12">
             <FaqSection faqs={service.faqs} />
           </div>
 
-          <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
-            <h2 className="text-lg font-semibold text-[#111318] mb-4">More Services</h2>
+          <section className="pt-12 mt-12 border-t border-[#ECEEF2]">
+            <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">More Services</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
               {otherServices.map((s) => (
                 <a
@@ -726,24 +727,15 @@ export function BuyerQueryView({
           <h1 className="mt-1 text-2xl sm:text-4xl font-semibold text-[#111318] leading-tight">
             {page.h1}
           </h1>
-          <p className="mt-3 text-base text-[#2F3440] leading-relaxed">{page.intro}</p>
+          <p className="mt-3 text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">{page.intro}</p>
 
-          <div className="mt-8 divide-y divide-[#ECEEF2] border-t border-[#ECEEF2]">
-            {page.bodySections.map((sec) => (
-              <section key={sec.heading} className="py-6">
-                <h2 className="text-lg font-semibold text-[#111318] mb-2">{sec.heading}</h2>
-                <div className="space-y-3 text-sm sm:text-base text-[#4B5160] leading-relaxed">
-                  {sec.paragraphs.map((p) => (
-                    <p key={p}>{p}</p>
-                  ))}
-                </div>
-              </section>
-            ))}
+          <div className="mt-12">
+            <ArticleBody sections={page.bodySections} />
           </div>
 
           {matchedPackages.length > 0 && (
-            <section className="pt-8 mt-4 border-t border-[#ECEEF2]">
-              <h2 className="text-xl font-semibold text-[#111318] mb-5">Available Packages</h2>
+            <section className="pt-12 mt-12 border-t border-[#ECEEF2]">
+              <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">Available Packages</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {matchedPackages.map((pkg) => (
                   <PackageCard key={pkg.slug} pkg={pkg} />
@@ -753,8 +745,8 @@ export function BuyerQueryView({
           )}
 
           {(matchedDestinations.length > 0 || matchedServices.length > 0) && (
-            <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
-              <h2 className="text-lg font-semibold text-[#111318] mb-4">Related Destinations &amp; Services</h2>
+            <section className="pt-12 mt-12 border-t border-[#ECEEF2]">
+              <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">Related Destinations &amp; Services</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
                 {matchedDestinations.map((d) => (
                   <a
@@ -781,7 +773,7 @@ export function BuyerQueryView({
           )}
 
           {page.slug === 'dubai-car-rental-najd' && (
-            <section className="mt-8 rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 border-t-4 border-[#C31A20] flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+            <section className="mt-8 rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
               <div className="space-y-2 max-w-xl">
                 <p className="text-xs font-semibold uppercase tracking-wider text-[#FFFFFF]">
                   Al Basel Group Mobility Partner
@@ -805,7 +797,7 @@ export function BuyerQueryView({
             </section>
           )}
 
-          <div className="mt-8">
+          <div className="mt-12">
             <WhatsAppEnquiryBuilder
               defaultSubject={page.whatsappSubject}
               contextLabel="Enquiry Focus"
@@ -815,13 +807,13 @@ export function BuyerQueryView({
             />
           </div>
 
-          <div className="mt-8">
+          <div className="mt-12">
             <FaqSection faqs={page.faqs} />
           </div>
 
           {matchedGuides.length > 0 && (
-            <section className="pt-8 mt-8 border-t border-[#ECEEF2]">
-              <h2 className="text-xl font-semibold text-[#111318] mb-5">Planning Guides</h2>
+            <section className="pt-12 mt-12 border-t border-[#ECEEF2]">
+              <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">Planning Guides</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {matchedGuides.map((g) => (
                   <GuideCard key={g.slug} guide={g} />
@@ -893,22 +885,13 @@ export function GuideDetailView({
           />
         </div>
 
-        <div className="mt-8 space-y-6">
-          {guide.sections.map((sec) => (
-            <section key={sec.heading} className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-semibold text-[#111318]">{sec.heading}</h2>
-              {sec.paragraphs.map((p) => (
-                <p key={p} className="text-base text-[#2F3440] leading-relaxed">
-                  {p}
-                </p>
-              ))}
-            </section>
-          ))}
+        <div className="mt-12">
+          <ArticleBody sections={guide.sections} />
         </div>
 
         {(matchedDestinations.length > 0 || matchedServices.length > 0) && (
-          <section className="mt-8 pt-6 border-t border-[#ECEEF2]">
-            <h2 className="text-lg font-semibold text-[#111318] mb-3">Relevant Services &amp; Destinations</h2>
+          <section className="mt-16 pt-8 border-t border-[#ECEEF2]">
+            <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">Relevant Services &amp; Destinations</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-8">
               {matchedDestinations.map((d) => (
                 <a
@@ -935,8 +918,8 @@ export function GuideDetailView({
         )}
 
         {matchedPackages.length > 0 && (
-          <section className="mt-8 pt-6 border-t border-[#ECEEF2]">
-            <h2 className="text-xl font-semibold text-[#111318] mb-5">Matching Packages</h2>
+          <section className="mt-12 pt-10 border-t border-[#ECEEF2]">
+            <h2 className="text-[22px] font-semibold tracking-[-0.02em] text-[#111318] mb-6">Matching Packages</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {matchedPackages.map((pkg) => (
                 <PackageCard key={pkg.slug} pkg={pkg} />
@@ -945,11 +928,11 @@ export function GuideDetailView({
           </section>
         )}
 
-        <div className="mt-8">
+        <div className="mt-12">
           <FaqSection faqs={guide.faqs} />
         </div>
 
-        <div className="mt-10 rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t-4 border-[#C31A20]">
+        <div className="mt-10 rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h2 className="text-xl font-semibold">Need advice on your travel dates?</h2>
             <p className="text-sm text-white/75 mt-1">

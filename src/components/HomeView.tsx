@@ -49,6 +49,13 @@ const FEATURED_EXPERIENCE_SLUGS = [
   'vip-concierge',
 ];
 
+const SEASON_IMAGES = [
+  { src: '/images/destinations/maldives.webp', width: 880, height: 1080, alt: 'Overwater villas in the Maldives' },
+  { src: '/images/destinations/japan.webp', width: 1043, height: 1280, alt: 'Mount Fuji in Japan' },
+  { src: '/images/destinations/georgia-azerbaijan.webp', width: 1043, height: 1280, alt: 'Green valleys and old town in Tbilisi, Georgia' },
+  { src: '/images/destinations/uzbekistan.webp', width: 1600, height: 949, alt: 'Registan Square in Samarkand, Uzbekistan' },
+];
+
 export function HomeView() {
   const [query, setQuery] = useState('');
   const [activeRegion, setActiveRegion] = useState<(typeof REGIONS)[number]>('All');
@@ -654,29 +661,44 @@ export function HomeView() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-t border-[#ECEEF2] divide-y sm:divide-y-0 lg:divide-x divide-[#ECEEF2]">
-              {SEASONAL_PLANNER.map((slot) => (
-                <a
-                  key={slot.season}
-                  href={slot.href}
-                  className="group pt-6 pb-4 lg:py-6 lg:px-6 first:lg:pl-0 last:lg:pr-0 flex flex-col justify-between gap-4 hover:bg-[#FAF9F8] transition-colors"
-                >
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C]">
-                      {slot.season}
-                    </p>
-                    <h3 className="mt-1.5 text-lg font-semibold text-[#111318] group-hover:text-[#C31A20] transition-colors">
-                      {slot.title}
-                    </h3>
-                    <p className="mt-2.5 text-sm text-[#5B6170] leading-relaxed">
-                      {slot.destinations.slice(0, 3).join(' · ')}
-                    </p>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#111318] group-hover:text-[#C31A20]">
-                    Explore season <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
-                  </span>
-                </a>
-              ))}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {SEASONAL_PLANNER.map((slot, idx) => {
+                const image = SEASON_IMAGES[idx % SEASON_IMAGES.length];
+                return (
+                  <a
+                    key={slot.season}
+                    href={slot.href}
+                    className="group flex flex-col rounded-[24px] bg-white overflow-hidden shadow-[0_1px_2px_rgba(16,24,40,0.04),0_8px_24px_rgba(16,24,40,0.06)] hover:shadow-[0_2px_4px_rgba(16,24,40,0.06),0_16px_40px_rgba(16,24,40,0.10)] transition-shadow"
+                  >
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        width={image.width}
+                        height={image.height}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
+                      />
+                      <span className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-[#111318]">
+                        {slot.season}
+                      </span>
+                    </div>
+                    <div className="flex flex-col flex-1 p-5">
+                      <h3 className="text-lg font-semibold text-[#111318]">{slot.title}</h3>
+                      <ul className="mt-3 flex flex-wrap gap-1.5">
+                        {slot.destinations.slice(0, 3).map((d) => (
+                          <li key={d} className="rounded-full bg-[#F6F7F9] px-2.5 py-1 text-xs text-[#4B5160]">
+                            {d}
+                          </li>
+                        ))}
+                      </ul>
+                      <span className="mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-[#111318] group-hover:text-[#C31A20]">
+                        Explore season <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" aria-hidden="true" />
+                      </span>
+                    </div>
+                  </a>
+                );
+              })}
             </div>
           </div>
 

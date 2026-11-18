@@ -101,7 +101,7 @@ export function PackagesIndexView({ breadcrumbs }: { breadcrumbs: BreadcrumbItem
       )}
 
       <section className="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t-4 border-[#C31A20]">
+        <div className="rounded-[22px] bg-[#0E0F12] text-white p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h2 className="text-xl font-semibold">Looking for Maldives, Europe, Japan, or custom trips?</h2>
             <p className="text-sm text-white/75 mt-1">
@@ -340,10 +340,10 @@ export function TrustPageView({
                 <h2 className="text-2xl font-semibold text-[#111318]">
                   Dubai Travel House Built on Hospitality
                 </h2>
-                <p className="text-base text-[#2F3440] leading-relaxed">
+                <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
                   Tuwaiq Travel &amp; Tourism LLC was founded in 2014 in Dubai by Basel Al Kasem, former Business Development Manager at Burj Al Arab. Operating within Al Basel Group (established in 2007), the agency connects GCC residents, international visitors, and corporate delegations with coordinated flights, hotels, holiday packages across 70+ countries, visas, and VIP concierge services.
                 </p>
-                <p className="text-base text-[#2F3440] leading-relaxed">
+                <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
                   From Fifty One Tower in Business Bay, our consultants handle both ready-made regional getaways and tailor-made long-haul trips directly on WhatsApp and telephone rather than automated call centres.
                 </p>
               </div>
@@ -370,7 +370,7 @@ export function TrustPageView({
             )}
 
             <div className="pt-8 border-t border-[#ECEEF2]">
-              <h2 className="text-lg font-semibold text-[#111318] mb-4">Popular Trips &amp; Services</h2>
+              <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">Popular Trips &amp; Services</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                 {buyerPages.slice(0, 8).map((b) => (
                   <a
@@ -404,7 +404,7 @@ export function TrustPageView({
                 <p className="text-sm font-semibold text-[#7A808C]">
                   Founder, Tuwaiq Travel &amp; Tourism LLC · Founder, Al Basel Group (est. 2007)
                 </p>
-                <p className="text-base text-[#2F3440] leading-relaxed">
+                <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
                   Before founding Al Basel Group in 2007 and Tuwaiq Travel &amp; Tourism in 2014, Basel Al Kasem was Business Development Manager at Burj Al Arab from 1999 to 2007. He has lived in Dubai for more than 40 years, and the group he built now spans travel, car rental, consultancy, real estate, investments and recruitment.
                 </p>
                 <ul className="space-y-3 pt-2">
@@ -430,7 +430,7 @@ export function TrustPageView({
                     loading="lazy"
                     className="w-full rounded-[18px] border border-[#ECEEF2] shadow-sm bg-white"
                   />
-                  <figcaption className="text-sm text-[#4B5160] leading-relaxed">
+                  <figcaption className="text-[15px] text-[#4B5160] leading-[1.75]">
                     <span className="block font-semibold text-[#111318]">{FOUR_SEASONS_LETTER.from}, {FOUR_SEASONS_LETTER.date}</span>
                     {FOUR_SEASONS_LETTER.summary}
                   </figcaption>
@@ -445,7 +445,7 @@ export function TrustPageView({
                       loading="lazy"
                       className="w-full rounded-[18px] shadow-sm"
                     />
-                    <figcaption className="text-sm text-[#4B5160] leading-relaxed">
+                    <figcaption className="text-[15px] text-[#4B5160] leading-[1.75]">
                       <span className="block font-semibold text-[#111318]">{ROYAL_COLLABORATION.year}</span>
                       {ROYAL_COLLABORATION.caption}
                     </figcaption>
@@ -480,7 +480,7 @@ export function TrustPageView({
                         loading="lazy"
                         className="w-full rounded-[18px] shadow-sm"
                       />
-                      <figcaption className="text-sm text-[#4B5160] leading-relaxed">
+                      <figcaption className="text-[15px] text-[#4B5160] leading-[1.75]">
                         <span className="block font-semibold text-[#111318]">{item.title}</span>
                         {item.caption}
                       </figcaption>
@@ -512,7 +512,7 @@ export function TrustPageView({
                     <h2 className="text-xl font-semibold text-[#111318] mt-0.5">{leader.name}</h2>
                   </div>
                 </div>
-                <p className="text-sm text-[#4B5160] leading-relaxed">{leader.bio}</p>
+                <p className="text-[15px] text-[#4B5160] leading-[1.75]">{leader.bio}</p>
                 <ul className="space-y-2 pt-1">
                   {leader.highlights.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-xs text-[#5B6170]">
@@ -528,7 +528,7 @@ export function TrustPageView({
 
         {slug === 'al-basel-group' && (
           <div className="space-y-6">
-            <p className="text-base text-[#2F3440] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
               Founded in 2007 by Basel Al Kasem, Al Basel Group operates across travel, mobility, consultancy, real estate, investments, and executive talent acquisition in the UAE and wider region.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-[#ECEEF2]">
@@ -558,7 +558,7 @@ export function TrustPageView({
 
         {slug === 'partnerships' && (
           <div className="space-y-6">
-            <p className="text-base text-[#2F3440] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
               Across Tuwaiq Travel &amp; Tourism LLC and Al Basel Group, long-standing hospitality relationships support VIP suites, regional advisory, and GCC travellers.
             </p>
             <figure className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start rounded-[22px] bg-[#F6F7F9] border border-[#ECEEF2] p-5 sm:p-6">
@@ -573,7 +573,7 @@ export function TrustPageView({
               <figcaption className="md:col-span-7 space-y-2">
                 <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C]">Four Seasons Hotel Washington, DC · {FOUR_SEASONS_LETTER.date}</p>
                 <h2 className="text-xl font-semibold text-[#111318]">A million-dollar VIP delegation booking</h2>
-                <p className="text-sm text-[#4B5160] leading-relaxed">{FOUR_SEASONS_LETTER.summary}</p>
+                <p className="text-[15px] text-[#4B5160] leading-[1.75]">{FOUR_SEASONS_LETTER.summary}</p>
               </figcaption>
             </figure>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-[#ECEEF2]">
@@ -581,13 +581,13 @@ export function TrustPageView({
                 <div key={item.name} className="py-6 border-b border-[#ECEEF2]">
                   <p className="text-xs font-semibold uppercase tracking-wider text-[#7A808C] mb-1">{item.entity}</p>
                   <h2 className="text-lg font-semibold text-[#111318]">{item.name}</h2>
-                  <p className="mt-2 text-sm text-[#4B5160] leading-relaxed">{item.summary}</p>
+                  <p className="mt-2 text-[15px] text-[#4B5160] leading-[1.75]">{item.summary}</p>
                 </div>
               ))}
             </div>
 
             <div className="pt-4">
-              <h2 className="text-lg font-semibold text-[#111318] mb-4">At trade events and partner meetings</h2>
+              <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">At trade events and partner meetings</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {EVENT_PHOTOS.map((photo) => (
                   <figure key={photo.src} className="space-y-2">
@@ -616,7 +616,7 @@ export function TrustPageView({
 
         {slug === 'press' && (
           <div className="space-y-6">
-            <p className="text-base text-[#2F3440] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
               Press coverage of the launch of Tuwaiq Travel &amp; Tourism LLC and the hospitality track record of Al Basel Group.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -635,7 +635,7 @@ export function TrustPageView({
                   <figcaption>
                     <p className="text-xs font-semibold text-[#7A808C]">{item.date} · {item.outlet}</p>
                     <h2 className="mt-1 text-lg font-semibold text-[#111318]">{item.headline}</h2>
-                    <p className="mt-1.5 text-sm text-[#4B5160] leading-relaxed">{item.summary}</p>
+                    <p className="mt-1.5 text-[15px] text-[#4B5160] leading-[1.75]">{item.summary}</p>
                   </figcaption>
                 </figure>
               ))}
@@ -686,7 +686,7 @@ export function TrustPageView({
 
         {slug === 'how-booking-works' && (
           <div className="space-y-8">
-            <p className="text-base text-[#2F3440] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
               We check availability with airlines, hotels and transfer companies before you confirm anything.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-y border-[#ECEEF2] divide-y sm:divide-y-0 lg:divide-x divide-[#ECEEF2]">
@@ -788,7 +788,7 @@ export function TrustPageView({
         )}
 
         {slug === 'ai-visibility' && (
-          <div className="space-y-10 text-base text-[#2F3440] leading-relaxed">
+          <div className="space-y-10 text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
             <section className="space-y-3">
               <h2 className="text-2xl font-semibold text-[#111318]">Why this matters to travellers</h2>
               <p>
@@ -845,7 +845,7 @@ export function TrustPageView({
 
         {slug === 'photo-credits' && (
           <div className="space-y-6">
-            <p className="text-base text-[#2F3440] leading-relaxed">
+            <p className="text-[16px] sm:text-[17px] text-[#2F3440] leading-[1.8]">
               Photographs of our team, letters and press coverage come from the Tuwaiq and Al Basel Group archive. Destination and hotel photographs are either from our company materials or openly licensed images from Wikimedia Commons, credited below as their licences require.
             </p>
             <ul className="divide-y divide-[#ECEEF2] border-y border-[#ECEEF2]">
