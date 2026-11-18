@@ -11,6 +11,7 @@ import {
 import { Layout } from './Layout';
 import { Breadcrumbs, DestinationCard, GuideCard, PackageCard, ServiceCard } from './Cards';
 import { WhatsAppEnquiryBuilder } from './WhatsAppEnquiryBuilder';
+import { LogoMarquee } from './LogoMarquee';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import {
   BOOKING_STEPS,
@@ -35,6 +36,9 @@ import {
   OFFICE_ARCHIVE,
   PHOTO_CREDITS,
   PRESS_ITEMS,
+  PARTNER_LOGOS,
+  RECENT_EVENTS,
+  RECENT_MEETINGS,
   ROYAL_COLLABORATION,
 } from '../data/trustMedia';
 
@@ -419,7 +423,7 @@ export function TrustPageView({
             </div>
 
             <section className="space-y-6 pt-8 border-t border-[#ECEEF2]">
-              <h2 className="text-2xl font-semibold text-[#111318]">On the record</h2>
+              <h2 className="text-2xl font-semibold text-[#111318]">Partnerships and press</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 <figure className="space-y-3">
                   <img
@@ -468,8 +472,23 @@ export function TrustPageView({
                 </div>
               </div>
 
+              <div className="pt-6">
+                <h3 className="text-xl font-semibold tracking-[-0.02em] text-[#111318]">Network</h3>
+                <p className="mt-2 text-[15px] text-[#4B5160] leading-[1.75] max-w-[68ch]">{RECENT_MEETINGS.caption}</p>
+                <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+                  {RECENT_MEETINGS.photos.map((p) => (
+                    <img key={p.src} src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" className="w-full aspect-[3/4] object-cover rounded-[18px] shadow-sm" />
+                  ))}
+                </div>
+              </div>
+
               {OFFICE_ARCHIVE.length > 0 && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4">
+                <>
+                <div className="pt-6">
+                  <h3 className="text-xl font-semibold tracking-[-0.02em] text-[#111318]">Recognition</h3>
+                  
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                   {OFFICE_ARCHIVE.map((item) => (
                     <figure key={item.src} className="space-y-3">
                       <img
@@ -487,6 +506,7 @@ export function TrustPageView({
                     </figure>
                   ))}
                 </div>
+                </>
               )}
             </section>
           </>
@@ -576,6 +596,21 @@ export function TrustPageView({
                 <p className="text-[15px] text-[#4B5160] leading-[1.75]">{FOUR_SEASONS_LETTER.summary}</p>
               </figcaption>
             </figure>
+            <div className="space-y-8">
+              {(['Hotel', 'Airline'] as const).map((kind) => (
+                <div key={kind}>
+                  <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">{kind === 'Hotel' ? 'Hotel partners' : 'Airline partners'}</h2>
+                  <ul className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    {PARTNER_LOGOS.filter((l) => l.kind === kind).map((logo) => (
+                      <li key={logo.name} className="flex h-24 items-center justify-center rounded-2xl bg-white border border-[#ECEEF2] px-6">
+                        <img src={logo.src} alt={`${logo.name} logo`} width={logo.width} height={logo.height} loading="lazy" className="max-h-12 w-auto max-w-[75%] object-contain" />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-[#ECEEF2]">
               {PARTNERSHIPS.map((item) => (
                 <div key={item.name} className="py-6 border-b border-[#ECEEF2]">
@@ -587,7 +622,7 @@ export function TrustPageView({
             </div>
 
             <div className="pt-4">
-              <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">At trade events and partner meetings</h2>
+              <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">Trade events and partner meetings</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {EVENT_PHOTOS.map((photo) => (
                   <figure key={photo.src} className="space-y-2">
@@ -605,10 +640,25 @@ export function TrustPageView({
               </div>
             </div>
 
+            <div className="pt-8">
+              <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-5">Recent appearances</h2>
+              <ul className="divide-y divide-[#ECEEF2] border-y border-[#ECEEF2]">
+                {RECENT_EVENTS.map((e) => (
+                  <li key={e.url} className="py-5 grid grid-cols-1 sm:grid-cols-12 gap-2 sm:gap-6">
+                    <p className="sm:col-span-3 text-sm font-semibold text-[#7A808C]">{e.date}</p>
+                    <div className="sm:col-span-9">
+                      <h3 className="text-[17px] font-semibold text-[#111318]">{e.title}</h3>
+                      <p className="mt-1.5 text-[15px] text-[#4B5160] leading-[1.75]">{e.summary}{' '}<a href={e.url} target="_blank" rel="noopener" className="font-semibold text-[#111318] underline underline-offset-2 hover:text-[#C31A20]">View on Instagram</a></p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
             {FEATURE_FLAGS.enableClientLogoWall && (
               <div className="pt-4">
-                <h2 className="text-lg font-semibold text-[#111318] mb-2">Hospitality &amp; Brand Highlights</h2>
-                <p className="text-sm text-[#5B6170]">Mandarin Oriental · One&amp;Only · Chopard · Stantec</p>
+                <h2 className="text-xl font-semibold tracking-[-0.02em] text-[#111318] mb-3">Clients</h2>
+                <p className="text-[16px] text-[#4B5160] leading-[1.75]">Brands we have worked with include Mandarin Oriental, One&amp;Only, Chopard and Stantec.</p>
               </div>
             )}
           </div>
@@ -675,10 +725,40 @@ export function TrustPageView({
                 </dd>
               </div>
               <div className="py-4 border-b border-[#E5E7EB]">
-                <dt className="text-xs text-[#6B7180]">Trade Licence Number &amp; Authority</dt>
-                <dd className="font-semibold text-sm text-[#5B6170] mt-1">
-                  {COMPANY.verification.licenceNumber} ({COMPANY.verification.issuingAuthority})
+                <dt className="text-xs text-[#6B7180]">Trade Licence Number</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1 tabular-nums">
+                  {COMPANY.verification.licenceNumber}
                 </dd>
+              </div>
+              <div className="py-4 border-b border-[#E5E7EB]">
+                <dt className="text-xs text-[#6B7180]">Issuing Authority</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1">{COMPANY.verification.issuingAuthority}</dd>
+              </div>
+              <div className="py-4 border-b border-[#E5E7EB]">
+                <dt className="text-xs text-[#6B7180]">Name on Licence</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1">{COMPANY.verification.licensedName}</dd>
+              </div>
+              <div className="py-4 border-b border-[#E5E7EB]">
+                <dt className="text-xs text-[#6B7180]">Legal Form</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1">{COMPANY.verification.legalForm}</dd>
+              </div>
+              <div className="py-4 border-b border-[#E5E7EB]">
+                <dt className="text-xs text-[#6B7180]">Licensed Activity</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1">{COMPANY.verification.licensedActivity}</dd>
+              </div>
+              <div className="py-4 border-b border-[#E5E7EB]">
+                <dt className="text-xs text-[#6B7180]">First Issued &amp; Valid Until</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1">
+                  {COMPANY.verification.licenceIssued} · valid until {COMPANY.verification.licenceExpiry}
+                </dd>
+              </div>
+              <div className="py-4 border-b border-[#E5E7EB]">
+                <dt className="text-xs text-[#6B7180]">Dubai Chamber Membership</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1 tabular-nums">{COMPANY.verification.chamberNumber}</dd>
+              </div>
+              <div className="py-4 border-b border-[#E5E7EB]">
+                <dt className="text-xs text-[#6B7180]">Commercial Register Number</dt>
+                <dd className="font-semibold text-sm text-[#111318] mt-1 tabular-nums">{COMPANY.verification.registerNumber}</dd>
               </div>
             </dl>
           </div>

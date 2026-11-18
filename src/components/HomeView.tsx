@@ -20,6 +20,7 @@ import { Layout } from './Layout';
 import { DestinationCard, GuideCard, PackageCard } from './Cards';
 import { CountryFlag, type FlagCode } from './CountryFlag';
 import { WhatsAppEnquiryBuilder } from './WhatsAppEnquiryBuilder';
+import { LogoMarquee } from './LogoMarquee';
 import {
   BOOKING_STEPS,
   COMPANY,
@@ -644,6 +645,8 @@ export function HomeView() {
           </div>
         </div>
       </section>
+
+      <LogoMarquee />
 
       {/* Seasonal Calendar & Hospitality Heritage Band */}
       <section className="py-14 bg-white border-b border-[#ECEEF2]" aria-labelledby="seasonal-heading">

@@ -62,16 +62,23 @@ export function buildTravelAgencySchema(): Record<string, unknown> {
     ],
   };
 
-  if (
-    COMPANY.verification.licenceNumber &&
-    COMPANY.verification.licenceNumber !== 'Pending confirmation'
-  ) {
-    base.identifier = {
+  base.identifier = [
+    {
       '@type': 'PropertyValue',
-      name: COMPANY.verification.issuingAuthority,
+      name: `Trade Licence (${COMPANY.verification.issuingAuthority})`,
       value: COMPANY.verification.licenceNumber,
-    };
-  }
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Dubai Chamber Membership',
+      value: COMPANY.verification.chamberNumber,
+    },
+    {
+      '@type': 'PropertyValue',
+      name: 'Commercial Register Number',
+      value: COMPANY.verification.registerNumber,
+    },
+  ];
 
   return base;
 }

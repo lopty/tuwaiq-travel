@@ -123,7 +123,7 @@ export const TRUST_PAGES: Record<
   licence: {
     url: '/licence/',
     title: 'Licence & Company Verification | Tuwaiq Travel Dubai',
-    description: 'Verify Tuwaiq Travel & Tourism LLC office address in Business Bay, Dubai landline, official WhatsApp, email domains, and regulatory disclosures.',
+    description: 'Tuwaiq Travel & Tourism Co. L.L.C holds Dubai trade licence 713611 from the Department of Economy and Tourism. Verify the licence, office, phone and email details.',
     h1: 'Licence & Verification Details',
     image: '/images/hero/dubai-skyline-twilight.webp',
     imageAlt: 'Business Bay Dubai commercial district at dusk',

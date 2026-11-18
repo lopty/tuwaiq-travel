@@ -1,7 +1,7 @@
 export const FEATURE_FLAGS = {
   enableUmrahPages: false,
   enableUnconfirmedStats: false,
-  enableClientLogoWall: false,
+  enableClientLogoWall: true,
   enablePresidentialLetters: false,
   nationalDayDeparted: false,
 } as const;
@@ -67,8 +67,15 @@ export const COMPANY = {
     facebook: 'https://www.facebook.com/profile.php?id=61575210390069',
   },
   verification: {
-    licenceNumber: 'Pending confirmation',
-    issuingAuthority: 'Department of Economy and Tourism (Dubai)',
+    licenceNumber: '713611',
+    issuingAuthority: 'Department of Economy and Tourism, Dubai',
+    licensedName: 'Tuwaiq Travel & Tourism Co. L.L.C',
+    legalForm: 'Limited Liability Company, Single Owner',
+    licensedActivity: 'In Bound Tour Operator',
+    licenceIssued: '7 July 2014',
+    licenceExpiry: '6 July 2027',
+    chamberNumber: '237412',
+    registerNumber: '1359266',
     openingHours: 'Pending confirmation',
   },
   logos: {

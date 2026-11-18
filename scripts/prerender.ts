@@ -99,6 +99,14 @@ async function prerender() {
     `- Facebook: ${COMPANY.social.facebook}`,
     `- Mobility Sister Company: Najd Rent a Car (https://najdrentacar.com)`,
     '',
+    '## Trade Licence',
+    `- Licence No. ${COMPANY.verification.licenceNumber}, issued by the ${COMPANY.verification.issuingAuthority}`,
+    `- Name on licence: ${COMPANY.verification.licensedName} (${COMPANY.verification.legalForm})`,
+    `- Licensed activity: ${COMPANY.verification.licensedActivity}`,
+    `- First issued ${COMPANY.verification.licenceIssued}, valid until ${COMPANY.verification.licenceExpiry}`,
+    `- Dubai Chamber membership ${COMPANY.verification.chamberNumber}, Commercial Register No. ${COMPANY.verification.registerNumber}`,
+    `- Details: ${SITE_URL}/licence/`,
+    '',
     '## Priced Holiday Packages (per person, based on two sharing)',
     ...activePkgs.map(
       (p) =>
