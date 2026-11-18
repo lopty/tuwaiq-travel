@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && tsx scripts/prerender.ts && rm -rf dist-ssr && tsx scripts/audit.ts",
+    "build": "vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && tsx scripts/prerender.ts && node scripts/clean-output.mjs ssr && tsx scripts/audit.ts",
     "preview": "vite preview",
-    "clean": "rm -rf dist dist-ssr server.js",
+    "clean": "node scripts/clean-output.mjs all",
     "lint": "tsc --noEmit"
   },
   "dependencies": {

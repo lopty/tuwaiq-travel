@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import type { ReactNode } from 'react';
-import { Briefcase, Compass, Home, Phone, Tag, MapPin, Mail, Instagram, Facebook } from 'lucide-react';
+import { Briefcase, Compass, Home, Phone, Tag, MapPin, Mail, Instagram, Facebook, Menu, X } from 'lucide-react';
 import { COMPANY, FEATURE_FLAGS, whatsAppUrl } from '../data/siteConfig';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
@@ -10,6 +11,7 @@ interface LayoutProps {
 }
 
 export function Layout({ currentPath, hideBottomNav = false, children }: LayoutProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
     { label: 'Packages', href: '/packages/' },
     { label: 'Offers', href: '/offers/' },
@@ -42,10 +44,10 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
   ];
 
   return (
-    <div className="min-h-screen flex flex-col bg-white text-[#111318]">
+    <div className="travel-shell min-h-screen flex flex-col bg-white text-[#111318]">
       {/* Top Bar */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#ECEEF2]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-4 sm:gap-8">
+      <header className="travel-header sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#ECEEF2]">
+        <div className="travel-header-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-4 sm:gap-8">
           <a
             href="/"
             className="inline-flex items-center shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C31A20] rounded-lg"
@@ -56,11 +58,11 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
               alt="Tuwaiq Travel and Tourism LLC"
               width={COMPANY.logos.width}
               height={COMPANY.logos.height}
-              className="block h-8 sm:h-9 w-auto"
+              className="travel-header-logo block h-8 sm:h-9 w-auto"
             />
           </a>
 
-          <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-6 text-sm font-medium text-[#4B5160]">
+          <nav aria-label="Primary navigation" id="primary-navigation" className={`travel-primary-nav hidden md:flex items-center gap-6 text-sm font-medium text-[#4B5160] ${menuOpen ? 'is-open' : ''}`}>
             {navLinks.map((link) => {
               const isActive =
                 currentPath === link.href ||
@@ -69,6 +71,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
                 <a
                   key={link.href}
                   href={link.href}
+                  aria-current={isActive ? 'page' : undefined}
                   className={`whitespace-nowrap shrink-0 py-2 transition-colors border-b-2 ${
                     isActive
                       ? 'text-[#C31A20] border-[#C31A20] font-semibold'
@@ -84,7 +87,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
           <div className="flex items-center gap-3 shrink-0">
             <a
               href={`tel:${COMPANY.contact.officeTel}`}
-              className="hidden lg:inline-flex items-center gap-1.5 text-xs font-medium text-[#5B6170] hover:text-[#C31A20] whitespace-nowrap shrink-0 px-3 py-2 rounded-full transition-colors"
+              className="travel-header-contact hidden lg:inline-flex items-center gap-1.5 text-xs font-medium text-[#5B6170] hover:text-[#C31A20] whitespace-nowrap shrink-0 px-3 py-2 rounded-full transition-colors"
             >
               <Phone className="w-3.5 h-3.5" aria-hidden="true" />
               <span>{COMPANY.contact.officeDisplay}</span>
@@ -93,11 +96,12 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
               href={whatsAppUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-1.5 h-9 sm:h-10 px-3.5 sm:px-4 rounded-full bg-[#118444] hover:bg-[#0D6B37] text-white text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#118444]"
+              className="travel-header-cta inline-flex items-center justify-center gap-1.5 h-9 sm:h-10 px-3.5 sm:px-4 rounded-full bg-[#118444] hover:bg-[#0D6B37] text-white text-xs sm:text-sm font-semibold whitespace-nowrap shrink-0 shadow-sm transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#118444]"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               <span>WhatsApp</span>
             </a>
+<button className="travel-menu-toggle" type="button" aria-label={menuOpen ? 'Close navigation' : 'Open navigation'} aria-expanded={menuOpen} aria-controls="primary-navigation" onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X size={20} aria-hidden="true" /> : <Menu size={20} aria-hidden="true" />}</button>
           </div>
         </div>
       </header>
@@ -105,7 +109,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
       <main className="flex-1">{children}</main>
 
       {/* Footer */}
-      <footer className={`bg-[#0E0F12] text-white mt-20 ${hideBottomNav ? 'pb-24 md:pb-12' : 'pb-24 md:pb-12'}`}>
+      <footer className={`travel-footer bg-[#0E0F12] text-white mt-20 ${hideBottomNav ? 'pb-24 md:pb-12' : 'pb-24 md:pb-12'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/15">
             <div>
@@ -233,7 +237,7 @@ export function Layout({ currentPath, hideBottomNav = false, children }: LayoutP
       {!hideBottomNav && (
         <nav
           aria-label="Mobile navigation"
-          className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECEEF2]"
+          className="travel-mobile-nav md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-[#ECEEF2]"
         >
           <div className="grid grid-cols-4 h-15">
             {mobileTabs.map((tab) => {

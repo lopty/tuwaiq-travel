@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, ChevronRight } from 'lucide-react';
 import { CountryFlag } from './CountryFlag';
 import type { TravelPackage, PackageFaq } from '../data/packages';
 import type { DestinationItem } from '../data/destinations';
@@ -37,7 +37,7 @@ export function PackageCard({ pkg, lazy = true }: { pkg: TravelPackage; lazy?: b
       data-filter-card="package"
       data-region={pkg.region}
       data-search={`${pkg.name} ${pkg.destinationName} ${pkg.cities} ${pkg.region} ${pkg.idealFor}`.toLowerCase()}
-      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.035)] hover:shadow-[0_14px_34px_rgba(27,23,24,0.08)] hover:border-[#DCDFE4] transition-all duration-300"
+      className="travel-card travel-package-card group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.035)] hover:shadow-[0_14px_34px_rgba(27,23,24,0.08)] hover:border-[#DCDFE4] transition-all duration-300"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-[#F6F7F9]">
         <img
@@ -93,7 +93,7 @@ export function DestinationCard({ destination, compact = false, lazy = true }: {
       data-filter-card="destination"
       data-region={destination.filterRegion}
       data-search={`${destination.name} ${destination.regionLabel} ${destination.filterRegion} ${destination.idealFor} ${destination.highlights.join(' ')}`.toLowerCase()}
-      className={`group relative block rounded-[20px] overflow-hidden shadow-[0_6px_24px_rgba(27,23,24,0.06)] bg-[#111318] ${
+      className={`travel-card travel-destination-card group relative block rounded-[20px] overflow-hidden shadow-[0_6px_24px_rgba(27,23,24,0.06)] bg-[#111318] ${
         compact ? 'w-[240px] sm:w-[264px] shrink-0 snap-start aspect-[4/5]' : 'aspect-[4/5]'
       }`}
     >
@@ -136,7 +136,7 @@ export function ServiceCard({ service, lazy = true }: { service: ServiceItem; la
   return (
     <a
       href={service.url}
-      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCDFE4] transition-all duration-300"
+      className="travel-card travel-service-card group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCDFE4] transition-all duration-300"
     >
       <div className="aspect-[16/10] overflow-hidden bg-[#F6F7F9]">
         <img
@@ -170,7 +170,7 @@ export function GuideCard({ guide, lazy = true }: { guide: GuideArticle; lazy?: 
   return (
     <a
       href={guide.url}
-      className="group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCDFE4] transition-all duration-300"
+      className="travel-card travel-guide-card group flex flex-col bg-white rounded-[20px] overflow-hidden border border-[#ECEEF2] shadow-[0_4px_20px_rgba(27,23,24,0.03)] hover:shadow-[0_12px_30px_rgba(27,23,24,0.07)] hover:border-[#DCDFE4] transition-all duration-300"
     >
       <div className="aspect-[16/10] overflow-hidden bg-[#F6F7F9]">
         <img
@@ -200,21 +200,7 @@ export function GuideCard({ guide, lazy = true }: { guide: GuideArticle; lazy?: 
   );
 }
 
-export function FaqSection({ faqs, id = 'faqs' }: { faqs: PackageFaq[]; id?: string }) {
-  return (
-    <section id={id} className="scroll-mt-24 pt-8 border-t border-[#ECEEF2]">
-      <h2 className="text-2xl font-semibold text-[#111318] mb-2">Frequently Asked Questions</h2>
-      <div className="divide-y divide-[#ECEEF2]">
-        {faqs.map((faq) => (
-          <div key={faq.question} className="py-6">
-            <h3 className="text-[16px] sm:text-[17px] font-semibold text-[#111318]">{faq.question}</h3>
-            <p className="mt-2 text-[15px] sm:text-base text-[#4B5160] leading-[1.75] max-w-[68ch]">{faq.answer}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
+export function FaqSection({faqs,id='faqs'}:{faqs:PackageFaq[];id?:string}) { return <section id={id} className="travel-faq scroll-mt-24 pt-8 border-t border-[#ECEEF2]"><h2 className="text-2xl font-semibold text-[#111318] mb-2">Questions, answered.</h2><div>{faqs.map(faq=><details key={faq.question}><summary><span>{faq.question}</span><ChevronDown aria-hidden="true" /></summary><p>{faq.answer}</p></details>)}</div></section>; }
 
 export function StatChips({
   duration,

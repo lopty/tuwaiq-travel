@@ -86,10 +86,12 @@ export const COMPANY = {
   },
 } as const;
 
+export const WHATSAPP_GREETING = 'Hi, I am from your website.';
+
 export function whatsAppUrl(subject?: string): string {
   const text = subject
-    ? `Hello Tuwaiq Travel, I would like to enquire about: ${subject}`
-    : 'Hello Tuwaiq Travel, I would like to plan a trip from Dubai.';
+    ? `${WHATSAPP_GREETING}\nI would like to enquire about: ${subject}`
+    : `${WHATSAPP_GREETING}\nI would like to plan a trip from Dubai.`;
   return `https://wa.me/${COMPANY.contact.whatsappDigits}?text=${encodeURIComponent(text)}`;
 }
 

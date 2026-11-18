@@ -7,3 +7,5 @@ coverage/
 .env*
 !.env.example
 photos-incoming/
+
+design-backup-2026-11-18/

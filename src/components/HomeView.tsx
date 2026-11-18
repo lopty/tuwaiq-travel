@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Anchor,
   ArrowRight,
@@ -168,16 +168,24 @@ export function HomeView() {
     },
   ];
   const [heroTab, setHeroTab] = useState(0);
+  const [heroPaused, setHeroPaused] = useState(false);
   const activeSpotlight = heroSpotlights[heroTab] ?? heroSpotlights[0];
 
-  const heroPopularDestinations = ['uae', 'turkiye', 'maldives', 'europe', 'japan']
-    .map((slug) => DESTINATIONS.find((d) => d.slug === slug))
-    .filter((d): d is NonNullable<typeof d> => Boolean(d));
+  // Rotate the spotlight every few seconds; pauses on hover/focus and for reduced motion.
+  useEffect(() => {
+    if (heroPaused) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const timer = window.setTimeout(() => setHeroTab((t) => (t + 1) % heroSpotlights.length), 5000);
+    return () => window.clearTimeout(timer);
+  }, [heroTab, heroPaused, heroSpotlights.length]);
+
+  const heroReel = DESTINATIONS;
 
   return (
     <Layout currentPath="/">
+    <div className="travel-home">
       {/* Rich Twilight Dubai Skyline Hero */}
-      <section className="relative bg-[#0A1020] text-white overflow-hidden">
+      <section className="travel-hero-original relative bg-[#0A1020] text-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <img
             src="/images/hero/palm-jumeirah-aerial.webp"
@@ -222,46 +230,73 @@ export function HomeView() {
               </div>
 
               {/* Interactive Mood Switcher */}
-              <div className="pt-2 hidden lg:flex items-center gap-2" role="group" aria-label="Preview featured vibe">
+              <div
+                className="pt-2 hidden lg:flex items-center gap-2"
+                role="group"
+                aria-label="Preview featured vibe"
+                onMouseEnter={() => setHeroPaused(true)}
+                onMouseLeave={() => setHeroPaused(false)}
+                onFocus={() => setHeroPaused(true)}
+                onBlur={() => setHeroPaused(false)}
+              >
                 {heroSpotlights.map((spot, idx) => (
                   <button
                     key={spot.id}
                     type="button"
                     onClick={() => setHeroTab(idx)}
                     aria-pressed={heroTab === idx}
-                    className={`h-9 px-4 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                    className={`relative overflow-hidden h-9 px-4 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                       heroTab === idx
                         ? 'bg-[#C31A20] text-white shadow-md'
                         : 'bg-black/40 backdrop-blur-md border border-white/20 text-white/85 hover:bg-black/60'
                     }`}
                   >
                     {spot.label}
+                    {heroTab === idx && (
+                      <span
+                        key={`progress-${heroTab}`}
+                        aria-hidden="true"
+                        className={`hero-pill-progress absolute left-0 bottom-0 h-[2px] bg-white/80 ${heroPaused ? 'is-paused' : ''}`}
+                      />
+                    )}
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Desktop Interactive Framed Spotlight Card */}
-            <div className="hidden lg:flex lg:col-span-5 justify-end">
+            <div
+              className="hidden lg:flex lg:col-span-5 justify-end"
+              onMouseEnter={() => setHeroPaused(true)}
+              onMouseLeave={() => setHeroPaused(false)}
+              onFocus={() => setHeroPaused(true)}
+              onBlur={() => setHeroPaused(false)}
+            >
               <a
                 href={activeSpotlight.href}
                 className="group block w-full max-w-[300px] rounded-[24px] bg-white p-1.5 shadow-[0_24px_60px_rgba(0,0,0,0.45)] transition-transform duration-300 hover:-translate-y-1"
               >
                 <div className="relative rounded-[18px] overflow-hidden aspect-[4/4.2] bg-[#111318]">
-                  <img
-                    src={activeSpotlight.image}
-                    alt={activeSpotlight.alt}
-                    width={1200}
-                    height={896}
-                    loading="eager"
-                    className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
-                  />
+                  {heroSpotlights.map((spot, idx) => (
+                    <img
+                      key={spot.id}
+                      src={spot.image}
+                      alt={idx === heroTab ? spot.alt : `${spot.title} preview`}
+                      aria-hidden={idx === heroTab ? undefined : true}
+                      width={1200}
+                      height={896}
+                      loading={idx === 0 ? 'eager' : 'lazy'}
+                      className={`absolute inset-0 w-full h-full object-cover transition-[opacity,transform] duration-[900ms] ease-out ${
+                        idx === heroTab ? 'opacity-100 scale-100' : 'opacity-0 scale-[1.06]'
+                      } group-hover:scale-[1.04]`}
+                    />
+                  ))}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                   <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/50 backdrop-blur-md text-[11px] font-semibold text-[#FFFFFF]">
                     {activeSpotlight.price}
                   </span>
                 </div>
-                <div className="px-3 pt-3 pb-2 flex items-center justify-between gap-2">
+                <div key={activeSpotlight.id} className="hero-spot-caption px-3 pt-3 pb-2 flex items-center justify-between gap-2">
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
                       <CountryFlag code={activeSpotlight.countryCode} className="w-4 h-3" />
@@ -296,19 +331,23 @@ export function HomeView() {
               </a>
             </div>
 
-            <div className="flex gap-3.5 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-1 -mx-4 px-4 sm:mx-0 sm:px-0 lg:grid lg:grid-cols-5">
-              {heroPopularDestinations.map((dest) => (
+            <div className="dest-reel -mx-4 sm:-mx-6 lg:-mx-8 overflow-hidden">
+              <div className="dest-reel-track flex w-max">
+              {[0, 1].map((copy) => (
+              <div key={copy} className="flex shrink-0 gap-3.5 pr-3.5 pb-1" aria-hidden={copy === 1 || undefined}>
+              {heroReel.map((dest, i) => (
                 <a
-                  key={dest.slug}
+                  key={`${copy}-${dest.slug}`}
                   href={dest.url}
-                  className="group relative w-[165px] sm:w-[210px] lg:w-auto aspect-[3/4] lg:aspect-[4/3] rounded-[20px] overflow-hidden border border-white/25 shadow-[0_12px_28px_rgba(0,0,0,0.3)] shrink-0 snap-start"
+                  tabIndex={copy === 1 ? -1 : undefined}
+                  className="group relative w-[165px] sm:w-[210px] lg:w-[240px] aspect-[3/4] lg:aspect-[4/3] rounded-[20px] overflow-hidden border border-white/25 shadow-[0_12px_28px_rgba(0,0,0,0.3)] shrink-0"
                 >
                   <img
                     src={dest.image}
                     alt={dest.imageAlt}
                     width={dest.imageWidth}
                     height={dest.imageHeight}
-                    loading="eager"
+                    loading={copy === 0 && i < 6 ? 'eager' : 'lazy'}
                     className="w-full h-full object-cover group-hover:scale-[1.05] transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
@@ -332,6 +371,9 @@ export function HomeView() {
                   </div>
                 </a>
               ))}
+              </div>
+              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -462,7 +504,7 @@ export function HomeView() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-baseline justify-between gap-4 mb-7">
             <h2 id="packages-heading" className="text-2xl sm:text-3xl font-semibold text-[#111318]">
-              Holiday packages from Dubai
+              A little further from the everyday.
             </h2>
             <a
               href="/packages/"
@@ -930,6 +972,7 @@ export function HomeView() {
           </div>
         </div>
       </section>
+    </div>
     </Layout>
   );
 }
