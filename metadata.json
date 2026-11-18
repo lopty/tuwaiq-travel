@@ -1,0 +1,6 @@
+{
+  "name": "Tuwaiq Travel & Tourism LLC",
+  "description": "Dubai travel agency (member of Al Basel Group) offering holiday packages, flights, hotels, visas, tours, yacht charters, and VIP concierge services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
