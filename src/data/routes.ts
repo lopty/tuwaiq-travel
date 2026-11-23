@@ -142,7 +142,7 @@ export const TRUST_PAGES: Record<
   contact: {
     url: '/contact/',
     title: 'Contact Tuwaiq Travel Dubai | WhatsApp & Business Bay',
-    description: 'Contact Tuwaiq Travel & Tourism LLC at Fifty One Tower, Office 301, Business Bay, Dubai on WhatsApp +971 55 915 8517 or +971 4 276 1133.',
+    description: 'Contact Tuwaiq Travel & Tourism LLC at Fifty One Tower, Office 301, Business Bay, Dubai on WhatsApp +971 54 460 8771 or +971 4 276 1133.',
     h1: 'Contact Tuwaiq Travel Dubai',
     image: '/images/hero/palm-jumeirah-aerial.webp',
     imageAlt: 'Business Bay and Sheikh Zayed Road illuminated in Dubai',

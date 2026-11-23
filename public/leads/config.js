@@ -8,10 +8,10 @@ window.SITE_LEADS = {
   site: 'tuwaiq',
   siteName: 'Tuwaiq Travel',
   kind: 'travel',
-  whatsapp: '971559158517',
+  whatsapp: '971544608771',
   greeting: 'Hi, I am from your website.',
-  phoneDisplay: '+971 4 276 1133',
-  phoneTel: '+97142761133',
+  phoneDisplay: '+971 54 460 8771',
+  phoneTel: '+971544608771',
   privacyUrl: '/privacy/',
   sites: { tuwaiq: 'Tuwaiq Travel', albasel: 'Al Basel Real Estate' }
 };

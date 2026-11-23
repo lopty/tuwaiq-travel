@@ -72,7 +72,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
       { question: 'Do all priced packages include airport transfers and breakfast?', answer: 'Yes, every general package in our current lineup includes return flights, hotel stay, daily breakfast, and return airport transfers.' },
       { question: 'Can I tailor dates outside standard 4-night or 5-night durations?', answer: 'Yes. Message your travel dates on WhatsApp and our Business Bay consultants will quote custom durations across 70+ countries.' },
       { question: 'Are single travellers or families of five accommodated?', answer: 'Yes. While headline rates reflect two adults sharing one room, we quote single supplements and family suites directly.' },
-      { question: 'How fast can I confirm a holiday booking?', answer: 'Tap Book on WhatsApp to confirm live airfare seats and receive a single itinerary proposal from +971 55 915 8517.' },
+      { question: 'How fast can I confirm a holiday booking?', answer: 'Tap Book on WhatsApp to confirm live airfare seats and receive a single itinerary proposal from +971 54 460 8771.' },
     ],
   },
   {
@@ -436,7 +436,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
       {
         heading: 'One Point of Contact for Executive & Group Mobility',
         paragraphs: [
-          'Our corporate desk, reached directly via Business Development Manager Ahmed Mohsen (+971 55 915 8517), coordinates fast ticketing, hotels near business districts, corporate visa packs, and coach transfers.',
+          'Our corporate desk, reached directly via Business Development Manager Ahmed Mohsen (+971 54 460 8771), coordinates fast ticketing, hotels near business districts, corporate visa packs, and coach transfers.',
           'For team offsites and VIP client hosting, we combine Dubai yacht charters, private desert dinners, and major sports or concert hospitality.',
         ],
       },
@@ -452,7 +452,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
     imageAlt: 'Dubai Business Bay and Downtown skyline at twilight',
     faqs: [
       { question: 'What corporate travel services does Tuwaiq Travel provide?', answer: 'We manage corporate flight accounts, last-minute itinerary changes, hotel room blocks, delegation visa tracking, and airport/coach transfers.' },
-      { question: 'Who handles corporate partnerships and group enquiries?', answer: 'Ahmed Mohsen leads corporate and group enquiries directly on +971 55 915 8517 and Holidays@tuwaiq.ae.' },
+      { question: 'Who handles corporate partnerships and group enquiries?', answer: 'Ahmed Mohsen leads corporate and group enquiries directly on +971 54 460 8771 and Holidays@tuwaiq.ae.' },
       { question: 'Can you organize Dubai team days or client hospitality?', answer: 'Yes, we arrange private yacht charters, desert safari camps, restaurant group bookings, and event tickets.' },
       { question: 'Do you support outbound trade-fair travel such as China Canton Fair?', answer: 'Yes, including flights, nearby hotel rooms, and visa checklist support.' },
       { question: 'Are group airport coaches available in Dubai and Abu Dhabi?', answer: 'Yes, coordinated with our Al Basel Group sister company Najd Rent a Car across DXB, DWC, and AUH.' },
@@ -627,7 +627,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
       { question: 'What basic documents are usually required for a UAE visit visa?', answer: 'A clear colour passport scan (6+ months validity), passport-style photo, and supporting details depending on nationality.' },
       { question: 'Do you also assist UAE residents with eVisas abroad?', answer: 'Yes, including guided online applications for Azerbaijan, Uzbekistan, Armenia, and select international destinations.' },
       { question: 'How long does visa processing usually take?', answer: 'Processing timelines vary by immigration authority and season; contact us early so flights and visas align cleanly.' },
-      { question: 'How do I check current eligibility for my guest?', answer: 'Message +971 55 915 8517 on WhatsApp with the traveller\'s nationality and intended arrival date.' },
+      { question: 'How do I check current eligibility for my guest?', answer: 'Message +971 54 460 8771 on WhatsApp with the traveller\'s nationality and intended arrival date.' },
     ],
   },
   {
@@ -661,7 +661,7 @@ export const BUYER_QUERY_PAGES: BuyerQueryPage[] = [
       { question: 'What services are included under VIP concierge?', answer: 'Airport fast-track meet-and-greet, luxury suites and private villas, chauffeured vehicles via Najd Rent a Car, yacht access, and event hospitality.' },
       { question: 'Can Tuwaiq coordinate multi-vehicle convoys for delegations?', answer: 'Yes, sedans, luxury SUVs, and executive vans can be staged together for airport arrivals and full-day schedules.' },
       { question: 'Do you arrange luxury stays outside Dubai as well?', answer: 'Yes, including Europe, London (Corinthia Hotel London partnership), Maldives, and global Mandarin Oriental properties.' },
-      { question: 'How do VIP coordinators initiate a discreet brief?', answer: 'Contact our senior desk directly on +971 55 915 8517 or +971 4 276 1133.' },
+      { question: 'How do VIP coordinators initiate a discreet brief?', answer: 'Contact our senior desk directly on +971 54 460 8771 or +971 4 276 1133.' },
     ],
   },
   {

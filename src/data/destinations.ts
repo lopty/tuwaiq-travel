@@ -310,7 +310,7 @@ export const DESTINATIONS: DestinationItem[] = [
       { question: 'How long is the flight from Dubai to Male?', answer: 'Direct flights from Dubai (DXB) to Velana International Airport (MLE) take around 4 hours and 15 minutes.' },
       { question: 'When is the driest weather in the Maldives?', answer: 'November through April provides abundant sunshine and calm lagoon visibility.' },
       { question: 'Are Maldives resorts good for families as well as honeymooners?', answer: 'Yes, many resorts feature two-bedroom beach villas, kids clubs, and gentle house-reef lagoons.' },
-      { question: 'Can I request a tailored Maldives quote on WhatsApp?', answer: 'Yes, message +971 55 915 8517 with your travel dates, villa preference, and meal plan for a custom proposal.' },
+      { question: 'Can I request a tailored Maldives quote on WhatsApp?', answer: 'Yes, message +971 54 460 8771 with your travel dates, villa preference, and meal plan for a custom proposal.' },
     ],
   },
   {

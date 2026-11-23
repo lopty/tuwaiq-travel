@@ -849,7 +849,7 @@ export function TrustPageView({
               <div className="p-6 space-y-2">
                 <h2 className="text-lg font-semibold text-[#111318]">Fifty One Tower, Business Bay</h2>
                 <p className="text-sm text-[#5B6170]">
-                  Office 301 on Marasi Drive, Business Bay, Dubai. Corporate account enquiries reach Ahmed Mohsen directly on +971 55 915 8517.
+                  Office 301 on Marasi Drive, Business Bay, Dubai. Corporate account enquiries reach Ahmed Mohsen directly on +971 54 460 8771.
                 </p>
                 <p className="text-xs text-[#7A808C]">
                   Office hours: {COMPANY.verification.openingHours}

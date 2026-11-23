@@ -104,7 +104,7 @@ export const GENERAL_PACKAGES: TravelPackage[] = [
       { question: 'Do UAE residents need a visa for Georgia?', answer: 'Many UAE residents can enter Georgia visa-free depending on passport nationality and UAE residence validity, though rules change periodically. Check current requirements with our desk before departure.' },
       { question: 'Can we add a day trip to Gudauri and Kazbegi?', answer: 'Yes. We can add private or shared mountain excursions to Ananuri Fortress, Gudauri, and Gergeti Trinity Church in Kazbegi to your booking.' },
       { question: 'When is the best time to visit Tbilisi and Batumi?', answer: 'May through October brings mild green mountains and pleasant Black Sea weather, while December through March suits travellers seeking snow around Gudauri.' },
-      { question: 'How do I book this Georgia package with Tuwaiq Travel?', answer: 'Tap Book on WhatsApp to message +971 55 915 8517 with your travel dates and passenger count, and a Dubai consultant will confirm live flight and hotel availability.' },
+      { question: 'How do I book this Georgia package with Tuwaiq Travel?', answer: 'Tap Book on WhatsApp to message +971 54 460 8771 with your travel dates and passenger count, and a Dubai consultant will confirm live flight and hotel availability.' },
     ],
   },
   {
@@ -576,7 +576,7 @@ export const NATIONAL_DAY_OFFERS: TravelPackage[] = [
       { question: 'Does the AED 3,849 National Day rate include sightseeing?', answer: 'Yes, unlike standard packages, our National Day getaway includes flights, hotel, breakfast, transfers, and guided sightseeing in Gudauri, Kazbegi, Ananuri, Tbilisi, and Mtskheta.' },
       { question: 'Is there snow in Gudauri in early December?', answer: 'Early December typically brings crisp mountain air and early winter snow around Gudauri and Kazbegi, though exact snowfall varies by year.' },
       { question: 'What happens to this offer after 2 December 2026?', answer: 'Seats are strictly for the 2 December 2026 departure window and close once capacity is reached or departure passes.' },
-      { question: 'How do I reserve seats for my family?', answer: 'Tap Book on WhatsApp to send passenger names and room count to +971 55 915 8517 before National Day allocation sells out.' },
+      { question: 'How do I reserve seats for my family?', answer: 'Tap Book on WhatsApp to send passenger names and room count to +971 54 460 8771 before National Day allocation sells out.' },
     ],
   },
   {
@@ -696,7 +696,7 @@ export const NATIONAL_DAY_OFFERS: TravelPackage[] = [
       { question: 'What is the departure date and duration?', answer: 'The trip departs 2 December 2026 for 4 nights and 5 days.' },
       { question: 'How much does the National Day Armenia getaway cost?', answer: 'It is priced From AED 3,849 per person, based on two sharing.' },
       { question: 'Are flights and airport transfers included in AED 3,849?', answer: 'Yes, return flights, hotel stay, daily breakfast, airport transfers, and the scheduled sightseeing tours are included.' },
-      { question: 'How can I lock in limited National Day seats?', answer: 'Message Tuwaiq Travel on WhatsApp at +971 55 915 8517 with your passport details to confirm seats before the 2 December departure fills.' },
+      { question: 'How can I lock in limited National Day seats?', answer: 'Message Tuwaiq Travel on WhatsApp at +971 54 460 8771 with your passport details to confirm seats before the 2 December departure fills.' },
     ],
   },
   {
@@ -813,7 +813,7 @@ export const UMRAH_PACKAGES: TravelPackage[] = [
       { question: 'Are Premium 4-star and Luxury 5-star options available?', answer: 'Yes, Premium (4-star) starts From AED 2,699 and Luxury (5-star) starts From AED 3,299 per person on two sharing.' },
       { question: 'Are Ziyarat tours or Madinah stays included?', answer: 'No, this 3-night Makkah package covers direct flights, Makkah hotel with breakfast, and airport transfers only.' },
       { question: 'What documents are required for Umrah from Dubai?', answer: 'Valid passport, UAE residency, and applicable Saudi Umrah visa or Nusuk registration. Check current requirements before travel.' },
-      { question: 'How do I enquire about Umrah dates?', answer: 'Message +971 55 915 8517 on WhatsApp with your preferred departure dates and room occupancy.' },
+      { question: 'How do I enquire about Umrah dates?', answer: 'Message +971 54 460 8771 on WhatsApp with your preferred departure dates and room occupancy.' },
     ],
   },
   {

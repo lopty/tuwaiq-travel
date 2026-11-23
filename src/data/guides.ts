@@ -66,7 +66,7 @@ export const GUIDES: GuideArticle[] = [
       { question: 'Does Tuwaiq Travel handle Azerbaijan ASAN eVisas?', answer: 'Yes, our visa team supports guided ASAN eVisa applications alongside Baku holiday bookings. Check current requirements first.' },
       { question: 'Should I carry printed hotel and flight confirmations?', answer: 'Yes, immigration officers in Tbilisi, Baku, Yerevan, and Tashkent frequently ask to see printed return tickets and hotel vouchers.' },
       { question: 'Are UAE residence permit renewals affected if less than 3 months remain?', answer: 'Some countries require three to six months remaining on your UAE residence permit as well as your passport, so verify both dates early.' },
-      { question: 'Can Tuwaiq confirm my exact eligibility before I pay?', answer: 'Message your passport nationality and UAE visa expiry on WhatsApp (+971 55 915 8517) before confirming seats.' },
+      { question: 'Can Tuwaiq confirm my exact eligibility before I pay?', answer: 'Message your passport nationality and UAE visa expiry on WhatsApp (+971 54 460 8771) before confirming seats.' },
     ],
   },
   {
@@ -150,7 +150,7 @@ export const GUIDES: GuideArticle[] = [
       { question: 'Should I pack Ihram in checked luggage or cabin baggage?', answer: 'Keep your Ihram set in carry-on luggage so it is easily accessible before crossing the Miqat in flight.' },
       { question: 'What footwear works best around Masjid al-Haram?', answer: 'Lightweight, cushioned sandals for men (leaving ankles uncovered in Ihram) and supportive walking shoes inside a small drawstring shoe bag.' },
       { question: 'Are direct flights from Dubai or Sharjah better for short 3-night trips?', answer: 'Yes, direct flights maximize prayer time in Makkah without exhausting airport layovers.' },
-      { question: 'Does Tuwaiq arrange family and group hotel bookings in Saudi Arabia?', answer: 'Yes, reach our team on WhatsApp (+971 55 915 8517) for flight and Makkah hotel enquiries.' },
+      { question: 'Does Tuwaiq arrange family and group hotel bookings in Saudi Arabia?', answer: 'Yes, reach our team on WhatsApp (+971 54 460 8771) for flight and Makkah hotel enquiries.' },
     ],
   },
   {
@@ -306,7 +306,7 @@ export const GUIDES: GuideArticle[] = [
       { question: 'How long has Tuwaiq Travel been operating?', answer: 'Tuwaiq Travel & Tourism LLC was founded in 2014 by Basel Al Kasem within Al Basel Group (est. 2007).' },
       { question: 'What questions should I ask before paying for a package?', answer: 'Verify room sharing basis, flight baggage allowance, airport transfer type, meal plan, and visa rules for your passport.' },
       { question: 'Why book via a consultant rather than an overseas app?', answer: 'When flights reschedule or visa checklists need checking, a local Dubai consultant resolves changes directly instead of automated chatbots.' },
-      { question: 'Can I speak directly with Tuwaiq by phone as well as WhatsApp?', answer: 'Yes, call our Business Bay office at +971 4 276 1133 or WhatsApp +971 55 915 8517.' },
+      { question: 'Can I speak directly with Tuwaiq by phone as well as WhatsApp?', answer: 'Yes, call our Business Bay office at +971 4 276 1133 or WhatsApp +971 54 460 8771.' },
     ],
   },
   {
@@ -345,7 +345,7 @@ export const GUIDES: GuideArticle[] = [
       { question: 'Which National Day getaway has the lowest starting rate?', answer: 'Uzbekistan starts From AED 3,449 per person on two sharing; Georgia, Azerbaijan, and Armenia are From AED 3,849.' },
       { question: 'Why are National Day rates higher than off-peak weeks?', answer: 'They reflect peak long-weekend flight demand plus full guided sightseeing excursions already bundled into the package.' },
       { question: 'How fast should seats be booked before 2 December?', answer: 'Seats are limited and eVisas for destinations like Azerbaijan need submission ahead of travel, so reserve as early as possible.' },
-      { question: 'How do I reserve on WhatsApp?', answer: 'Message +971 55 915 8517 stating your chosen country and number of travellers.' },
+      { question: 'How do I reserve on WhatsApp?', answer: 'Message +971 54 460 8771 stating your chosen country and number of travellers.' },
     ],
   },
   {
@@ -507,7 +507,7 @@ export const GUIDES: GuideArticle[] = [
       { question: 'Does a morning safari include BBQ dinner?', answer: 'No, BBQ dinner and live evening shows belong to the afternoon-to-evening safari format.' },
       { question: 'Are private 4x4 cars safer for young children?', answer: 'Private cars let your driver keep dune driving gentle or drive straight to camp for sunset and camels.' },
       { question: 'Can we add quad biking to any safari?', answer: 'Yes, optional quad bike or buggy sessions can be arranged at the desert entrance.' },
-      { question: 'How do I reserve via Tuwaiq Travel?', answer: 'Message +971 55 915 8517 on WhatsApp with your hotel and preferred slot.' },
+      { question: 'How do I reserve via Tuwaiq Travel?', answer: 'Message +971 54 460 8771 on WhatsApp with your hotel and preferred slot.' },
     ],
   },
   {
@@ -618,7 +618,7 @@ export const GUIDES: GuideArticle[] = [
       { question: 'Can phone-camera photos of passports cause delays?', answer: 'Glare, cropped corners, or shadows can trigger rejections; flat high-resolution colour scans work best.' },
       { question: 'Does Tuwaiq check hotel and flight timing consistency?', answer: 'Yes, we align arrival/departure dates across your tickets, hotel bookings, and visa forms.' },
       { question: 'Do visa rules change without long notice?', answer: 'Yes, immigration policies evolve regularly, so always check current requirements before booking.' },
-      { question: 'How do I send documents securely for review?', answer: 'Start an enquiry on WhatsApp (+971 55 915 8517) or email info@tuwaiq.ae.' },
+      { question: 'How do I send documents securely for review?', answer: 'Start an enquiry on WhatsApp (+971 54 460 8771) or email info@tuwaiq.ae.' },
     ],
   },
   {

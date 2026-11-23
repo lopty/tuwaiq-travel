@@ -151,7 +151,7 @@ export const SERVICES: ServiceItem[] = [
       { question: 'Which outbound eVisas do you support?', answer: 'We guide eVisa applications for popular UAE resident destinations including Azerbaijan, Armenia, Uzbekistan, Kyrgyzstan, and select Asian countries.' },
       { question: 'Do you provide document checklists for corporate delegations?', answer: 'Yes, our team prepares consolidated document checklists and tracks submission milestones for business groups.' },
       { question: 'Do you guarantee visa approvals?', answer: 'Final visa issuance rests solely with the relevant immigration authorities, so we ensure applications are accurate and advise checking current requirements first.' },
-      { question: 'How do I start a visa enquiry?', answer: 'Send your passport nationality, UAE residence status (if applicable), and destination via WhatsApp to +971 55 915 8517.' },
+      { question: 'How do I start a visa enquiry?', answer: 'Send your passport nationality, UAE residence status (if applicable), and destination via WhatsApp to +971 54 460 8771.' },
     ],
   },
   {
@@ -508,7 +508,7 @@ export const SERVICES: ServiceItem[] = [
       { question: 'What does airport meet-and-greet include?', answer: 'Personal escorts through fast-track immigration and baggage assistance paired with waiting chauffeured vehicles.' },
       { question: 'Do you arrange luxury suites at top Dubai and London hotels?', answer: 'Yes, including partner properties such as Mandarin Oriental Hotel Group and Corinthia Hotel London.' },
       { question: 'Can you coordinate multi-vehicle convoys, yachts, and dining?', answer: 'Yes, one dedicated VIP account manager arranges suites, limousines, private yachts, and event access.' },
-      { question: 'How do I reach the VIP concierge desk discreetly?', answer: 'Contact us directly via WhatsApp (+971 55 915 8517) or our Business Bay office (+971 4 276 1133).' },
+      { question: 'How do I reach the VIP concierge desk discreetly?', answer: 'Contact us directly via WhatsApp (+971 54 460 8771) or our Business Bay office (+971 4 276 1133).' },
     ],
   },
 ];

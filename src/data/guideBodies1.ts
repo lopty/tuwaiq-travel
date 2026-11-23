@@ -50,7 +50,7 @@ export const GUIDE_BODIES_1: Record<string, ArticleSection[]> = {
       heading: 'How Tuwaiq helps with visas',
       paragraphs: [
         'When you book a package with us, our visa desk checks your passport and residence details against the current rules and tells you plainly whether you can travel visa free, need an e-visa, or need something else. Where an e-visa is needed, we guide you through the application and check the details before you submit.',
-        'Send a photo of your passport and Emirates ID on WhatsApp to +971 55 915 8517 and we will confirm your options. Entry rules are set by each country and can change without notice, so always treat them as something to check rather than something to assume.',
+        'Send a photo of your passport and Emirates ID on WhatsApp to +971 54 460 8771 and we will confirm your options. Entry rules are set by each country and can change without notice, so always treat them as something to check rather than something to assume.',
       ],
     },
   ],
@@ -100,7 +100,7 @@ export const GUIDE_BODIES_1: Record<string, ArticleSection[]> = {
     {
       heading: 'Not sure which month suits you?',
       paragraphs: [
-        'Tell us who is travelling, what you want to do and roughly when you can go. Our consultants will suggest two or three destinations that fit, with honest notes on weather and price for your dates. Message us on WhatsApp at +971 55 915 8517.',
+        'Tell us who is travelling, what you want to do and roughly when you can go. Our consultants will suggest two or three destinations that fit, with honest notes on weather and price for your dates. Message us on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -155,7 +155,7 @@ export const GUIDE_BODIES_1: Record<string, ArticleSection[]> = {
     {
       heading: 'Planning your Umrah with Tuwaiq',
       paragraphs: [
-        'We can help you compare flight options, hotel distances and transfer arrangements so that your time in Makkah is spent on worship rather than logistics. Contact us on WhatsApp at +971 55 915 8517 with your preferred dates and the number of travellers.',
+        'We can help you compare flight options, hotel distances and transfer arrangements so that your time in Makkah is spent on worship rather than logistics. Contact us on WhatsApp at +971 54 460 8771 with your preferred dates and the number of travellers.',
       ],
     },
   ],
@@ -205,7 +205,7 @@ export const GUIDE_BODIES_1: Record<string, ArticleSection[]> = {
       heading: 'Honeymoon touches we can arrange',
       paragraphs: [
         'Tell the resort it is your honeymoon when you book. Many offer a welcome gesture, a decorated villa or a special dinner. We can also arrange a sandbank picnic, a sunset cruise or a couples spa treatment in advance.',
-        'Share your dates and budget on WhatsApp at +971 55 915 8517, and our consultants will shortlist resorts that suit your style.',
+        'Share your dates and budget on WhatsApp at +971 54 460 8771, and our consultants will shortlist resorts that suit your style.',
       ],
     },
   ],
@@ -252,7 +252,7 @@ export const GUIDE_BODIES_1: Record<string, ArticleSection[]> = {
     {
       heading: 'Planning your Türkiye trip',
       paragraphs: [
-        'Tell us your budget and the experience you want. We will suggest a value route and a premium route side by side so you can see exactly what the extra spend buys. Message us on WhatsApp at +971 55 915 8517.',
+        'Tell us your budget and the experience you want. We will suggest a value route and a premium route side by side so you can see exactly what the extra spend buys. Message us on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -301,7 +301,7 @@ export const GUIDE_BODIES_1: Record<string, ArticleSection[]> = {
       heading: 'When to go',
       paragraphs: [
         'November to April is the dry season on the Andaman coast, with calm seas for island trips. May to October brings rain and rougher water around Phuket, but lower prices. Bangkok is hot all year, so plan outdoor sightseeing for mornings and late afternoons.',
-        'Ask us for current departures on WhatsApp at +971 55 915 8517.',
+        'Ask us for current departures on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -398,7 +398,7 @@ export const GUIDE_BODIES_1: Record<string, ArticleSection[]> = {
     {
       heading: 'Book early for the best seats',
       paragraphs: [
-        'Holiday departures have a fixed number of seats, and the best value goes first. Check your visa requirement as soon as you choose a destination, because e-visas take time. Message us on WhatsApp at +971 55 915 8517 to hold your place.',
+        'Holiday departures have a fixed number of seats, and the best value goes first. Check your visa requirement as soon as you choose a destination, because e-visas take time. Message us on WhatsApp at +971 54 460 8771 to hold your place.',
       ],
     },
   ],

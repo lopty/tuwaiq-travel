@@ -45,7 +45,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
     {
       heading: 'When to go and what to check',
       paragraphs: [
-        'May to October is the main season, with green valleys and mild days. December to March brings snow to the mountains and ski resorts. Visa rules differ between the three countries and depend on your passport, so check your requirement before you book. Our visa desk can confirm it on WhatsApp at +971 55 915 8517.',
+        'May to October is the main season, with green valleys and mild days. December to March brings snow to the mountains and ski resorts. Visa rules differ between the three countries and depend on your passport, so check your requirement before you book. Our visa desk can confirm it on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -85,7 +85,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
       heading: 'Practical information',
       paragraphs: [
         'The local currencies are the Uzbek som and the Kyrgyz som, and cash is still widely used outside large hotels and malls. Many nationalities can enter both countries visa free or with a simple e-visa, but the rules depend on your passport, so check before booking.',
-        'Spring and autumn are ideal for sightseeing in Uzbekistan, while Kyrgyzstan is best from June to September. Ask our consultants for current dates on WhatsApp at +971 55 915 8517.',
+        'Spring and autumn are ideal for sightseeing in Uzbekistan, while Kyrgyzstan is best from June to September. Ask our consultants for current dates on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -130,7 +130,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
     {
       heading: 'Planning your family trip',
       paragraphs: [
-        'Tell us the ages of your children and what they enjoy, and we will suggest hotels with family rooms, pools and easy access to the attractions you want. Message us on WhatsApp at +971 55 915 8517.',
+        'Tell us the ages of your children and what they enjoy, and we will suggest hotels with family rooms, pools and easy access to the attractions you want. Message us on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -176,7 +176,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
     {
       heading: 'Booking your safari',
       paragraphs: [
-        'Tell us how many guests, which format and whether you want a private vehicle. We confirm the pick-up time and location in advance. Contact us on WhatsApp at +971 55 915 8517.',
+        'Tell us how many guests, which format and whether you want a private vehicle. We confirm the pick-up time and location in advance. Contact us on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -216,7 +216,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
     {
       heading: 'Booking your cruise',
       paragraphs: [
-        'We can add hotel pick-up and drop-off for either route. Message us on WhatsApp at +971 55 915 8517 with your preferred date and number of guests.',
+        'We can add hotel pick-up and drop-off for either route. Message us on WhatsApp at +971 54 460 8771 with your preferred date and number of guests.',
       ],
     },
   ],
@@ -264,7 +264,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
     {
       heading: 'Booking your charter',
       paragraphs: [
-        'Tell us the date, the number of guests and the occasion, and we will suggest suitable yachts with clear pricing. Contact us on WhatsApp at +971 55 915 8517.',
+        'Tell us the date, the number of guests and the occasion, and we will suggest suitable yachts with clear pricing. Contact us on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],
@@ -304,7 +304,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
     {
       heading: 'How Tuwaiq can help',
       paragraphs: [
-        'Our visa desk checks the requirement for each traveller, prepares the application and tracks it until it is issued. Send the passport copy on WhatsApp to +971 55 915 8517 to start. Visa approval is always the decision of the issuing authority, and processing times vary.',
+        'Our visa desk checks the requirement for each traveller, prepares the application and tracks it until it is issued. Send the passport copy on WhatsApp to +971 54 460 8771 to start. Visa approval is always the decision of the issuing authority, and processing times vary.',
       ],
     },
   ],
@@ -347,7 +347,7 @@ export const GUIDE_BODIES_2: Record<string, ArticleSection[]> = {
     {
       heading: 'Booking your stopover',
       paragraphs: [
-        'Send us your flight numbers and how long you have, and we will suggest a hotel, transfers and a short itinerary. Contact us on WhatsApp at +971 55 915 8517.',
+        'Send us your flight numbers and how long you have, and we will suggest a hotel, transfers and a short itinerary. Contact us on WhatsApp at +971 54 460 8771.',
       ],
     },
   ],

@@ -54,8 +54,8 @@ export const COMPANY = {
     full: 'Fifty One Tower, Office 301, Marasi Drive, Business Bay, Dubai, UAE',
   },
   contact: {
-    whatsappDisplay: '+971 55 915 8517',
-    whatsappDigits: '971559158517',
+    whatsappDisplay: '+971 54 460 8771',
+    whatsappDigits: '971544608771',
     officeDisplay: '+971 4 276 1133',
     officeTel: '+97142761133',
     bookingsEmail: 'Holidays@tuwaiq.ae',
@@ -141,7 +141,7 @@ export const LEADERSHIP: LeaderProfile[] = [
     name: 'Ahmed Mohsen',
     role: 'Business Development & Sales Contact',
     roleNote: 'Business Development Manager (final title pending confirmation)',
-    bio: 'Primary contact for corporate travel accounts, agency partnerships, group bookings, and holiday enquiries via +971 55 915 8517.',
+    bio: 'Primary contact for corporate travel accounts, agency partnerships, group bookings, and holiday enquiries via +971 54 460 8771.',
     highlights: [
       'Leads commercial partnerships and corporate travel solutions',
       'Direct WhatsApp and mobile desk for tailored proposals',
