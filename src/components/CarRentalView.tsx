@@ -7,7 +7,7 @@ import type { BreadcrumbItem } from '../lib/seo';
 import type { BuyerQueryPage } from '../data/buyerPages';
 import { FLEET_GROUPS, NAJD, NAJD_FLEET, fleetImage, headlineRate, najdCarUrl, type FleetGroup } from '../data/najdFleet';
 
-const aed = (n: number) => `AED ${n.toLocaleString('en-US')}`;
+const aed = (n: number) => `From AED ${n.toLocaleString('en-US')}`;
 
 export function CarRentalView({ page, breadcrumbs }: { page: BuyerQueryPage; breadcrumbs: BreadcrumbItem[] }) {
   const [group, setGroup] = useState<FleetGroup | 'all'>('all');
@@ -121,7 +121,7 @@ export function CarRentalView({ page, breadcrumbs }: { page: BuyerQueryPage; bre
                         <>
                           <p className="text-[11px] text-[#70756f]">From</p>
                           <p className="text-[18px] font-medium text-[#111318] tabular-nums">
-                            {aed(rate.amount)} <span className="text-[13px] font-normal text-[#70756f]">/ {rate.unit}</span>
+                            <span className="whitespace-nowrap">{aed(rate.amount)}</span> <span className="text-[13px] font-normal text-[#70756f]">/ {rate.unit}</span>
                           </p>
                         </>
                       ) : (

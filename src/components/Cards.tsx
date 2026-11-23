@@ -69,7 +69,7 @@ export function PackageCard({ pkg, lazy = true }: { pkg: TravelPackage; lazy?: b
 
         <div className="pt-3.5 border-t border-[#F3F4F6] flex items-center justify-between gap-2">
           <div>
-            <p className="text-base font-semibold text-[#111318] tabular-nums">
+            <p className="text-base font-semibold text-[#111318] tabular-nums whitespace-nowrap">
               From AED {pkg.priceAed.toLocaleString('en-US')}
             </p>
             <p className="text-[11px] text-[#7A808C]">per person</p>

@@ -16,5 +16,5 @@ export function BookingContactButton({subject,className='',label='Book'}:{subjec
   if (window.SiteLeads) { window.SiteLeads.open({ subject, source: `${label} button`, choose: true }); return; }
   window.open(whatsAppUrl(subject), '_blank', 'noopener');
  };
- return <button type="button" className={`booking-contact-trigger ${className}`} aria-haspopup="dialog" onClick={onClick}>{label}<ArrowUpRight aria-hidden="true" /></button>;
+ return <button type="button" className={`booking-contact-trigger ${className}`} aria-haspopup="dialog" data-lead-open data-lead-subject={subject} data-lead-source={`${label} button`} onClick={(event)=>{ event.preventDefault(); onClick(); }}>{label}<ArrowUpRight aria-hidden="true" /></button>;
 }

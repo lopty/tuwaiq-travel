@@ -359,7 +359,7 @@ export function HomeView() {
                       </div>
                       <p className="text-[11px] font-medium text-[#FFFFFF] tabular-nums truncate">
                         {dest.startingPriceAed
-                          ? `AED ${dest.startingPriceAed.toLocaleString('en-US')}`
+                          ? `From AED ${dest.startingPriceAed.toLocaleString('en-US')}`
                           : dest.slug === 'uae'
                           ? 'Inbound & Transfers'
                           : dest.filterRegion}

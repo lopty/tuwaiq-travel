@@ -85,3 +85,7 @@
   .sl-dialog h2 { font-size: 24px; }
   .sl-row { grid-template-columns: 1fr; }
 }
+
+/* Author display rules must never override form/choice visibility. */
+.sl-dialog [hidden], .sl-dialog[hidden], .sl-dialog:not([open]) { display: none !important; }
+.sl-dialog[open] { display: block; z-index: 2147483000; }

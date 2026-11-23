@@ -52,7 +52,7 @@ export function PackageBookingView({pkg,breadcrumbs}:{pkg:TravelPackage;breadcru
 
    <div className="booking-container booking-more">{guides.length>0&&<section><div className="booking-section-heading"><div><span className="booking-eyebrow">A LITTLE LOCAL KNOWLEDGE</span><h2>Read before you go.</h2></div><a className="booking-text-link" href="/guides/">All travel guides <ArrowRight aria-hidden="true" /></a></div><div className="booking-guide-grid">{guides.map(guide=><GuideCard key={guide.slug} guide={guide} />)}</div></section>}<section><div className="booking-section-heading"><div><span className="booking-eyebrow">KEEP EXPLORING</span><h2>Somewhere else in mind?</h2></div><a className="booking-text-link" href="/packages/">All holiday packages <ArrowRight aria-hidden="true" /></a></div><div className="booking-related-grid">{related.map(item=><PackageCard key={item.slug} pkg={item} />)}</div></section></div>
 
-   <div className="booking-mobile-bar"><div>{departed?<strong>Find another departure</strong>:<><small>From · per person</small><strong>AED {pkg.priceAed.toLocaleString('en-US')}</strong></>}</div><BookingContactButton subject={pkg.name} /></div>
+   <div className="booking-mobile-bar"><div>{departed?<strong>Find another departure</strong>:<><small>per person</small><strong>From AED {pkg.priceAed.toLocaleString('en-US')}</strong></>}</div><BookingContactButton subject={pkg.name} /></div>
   </div>
  </Layout>;
 }

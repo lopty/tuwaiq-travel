@@ -61,30 +61,33 @@
   // ---------- Saving ----------
   function sendLead(record) {
     if (!configured) return Promise.reject(new Error('Lead storage is not configured'));
-    // Google Apps Script web app. text/plain + no-cors avoids a CORS preflight; the row is written
-    // when the request arrives, so the opaque response is enough. keepalive lets it finish while
-    // the visitor moves on to WhatsApp. The script ignores repeated client_ref values.
+    // A readable positive acknowledgement is required before removing the queued lead.
     return fetch(C.endpoint, {
       method: 'POST',
-      mode: 'no-cors',
+      mode: 'cors',
       keepalive: true,
       headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ action: 'add', lead: record })
-    }).then(function () { /* opaque response: delivered */ });
+    }).then(function (response) {
+      if (!response.ok || response.type === 'opaque') throw new Error('Lead receipt not confirmed');
+      return response.json();
+    }).then(function (result) {
+      if (!result || result.ok !== true) throw new Error('Lead could not be saved');
+    });
   }
 
   function saveLead(record) {
     if (!configured) {
-      if (window.console) console.warn('[SiteLeads] No Google Sheet endpoint in /leads/config.js. Lead not stored.', record);
-      return;
+      return Promise.resolve(false);
     }
     var queue = readJson('localStorage', QUEUE_KEY, []);
     queue.push(record);
     writeJson('localStorage', QUEUE_KEY, queue.slice(-20));
-    sendLead(record).then(function () {
+    return sendLead(record).then(function () {
       var q = readJson('localStorage', QUEUE_KEY, []).filter(function (r) { return r.client_ref !== record.client_ref; });
       writeJson('localStorage', QUEUE_KEY, q);
-    }).catch(function () { /* kept in the queue and retried on the next page view */ });
+      return true;
+    }).catch(function () { return false; /* retain for retry */ });
   }
 
   // Retry any lead that could not be sent earlier (for example, the connection dropped).
@@ -138,8 +141,13 @@
     };
   }
 
-  function waUrl(text) {
-    return 'https://wa.me/' + C.whatsapp + '?text=' + encodeURIComponent(text);
+  // number: the WhatsApp number from the clicked link (for example an agent's own number); defaults to the office.
+  function waUrl(text, number) {
+    return 'https://wa.me/' + (number || C.whatsapp) + '?text=' + encodeURIComponent(text);
+  }
+  function numberFromLink(href) {
+    var m = /wa\.me\/(\d{7,15})/.exec(href || '') || /[?&]phone=(\d{7,15})/.exec(href || '');
+    return m ? m[1] : '';
   }
 
   function composeMessage(f, waText) {
@@ -280,29 +288,43 @@
     showError('');
 
     writeJson('localStorage', CONTACT_KEY, { name: f.name, phone: f.phone, email: f.email });
-    if (!isDuplicate(f.phone, clean(f.subject, 300))) saveLead(buildRecord(f, state.source));
+    var savedLead = saveLead(buildRecord(f, state.source));
 
-    var url = waUrl(composeMessage(f, state.waText));
+    var url = waUrl(composeMessage(f, state.waText), state.whatsapp);
     var done = dialog.querySelector('.sl-done');
     var tel = done.querySelector('[data-sl-tel]');
+    if (state.tel) {
+      tel.setAttribute('href', 'tel:' + state.tel);
+      tel.querySelector('strong').textContent = state.telDisplay || state.tel;
+    } else {
+      tel.setAttribute('href', 'tel:' + (C.phoneTel || ''));
+      tel.querySelector('strong').textContent = C.phoneDisplay || '';
+    }
     var waBtn = done.querySelector('[data-sl-wa]');
     waBtn.setAttribute('href', url);
     done.querySelector('[data-sl-thanks]').textContent = 'Thank you, ' + f.name.split(' ')[0] + '.';
 
-    if (state.choose) {
-      // "Book" buttons: the visitor picks how to continue.
-      done.querySelector('[data-sl-done-text]').textContent = 'How would you like to continue? Your details are already with our team.';
-      waBtn.querySelector('span').textContent = 'Continue on WhatsApp';
-      tel.hidden = false;
-    } else {
-      // WhatsApp buttons: go straight to WhatsApp.
-      openWhatsApp(url);
-      done.querySelector('[data-sl-done-text]').textContent = 'WhatsApp has opened with your details. Press send there and our team will reply shortly.';
-      waBtn.querySelector('span').textContent = 'Open WhatsApp again';
-      tel.hidden = true;
-    }
+    var status = done.querySelector('[data-sl-done-text]');
+    status.setAttribute('role', 'status');
+    status.textContent = 'Saving your enquiry. You can choose WhatsApp or call below.';
+    waBtn.querySelector('span').textContent = 'Continue on WhatsApp';
+    tel.hidden = false;
     form.hidden = true;
     done.hidden = false;
+    dialog.scrollTop = 0;
+    waBtn.focus();
+    var currentSubmission = {};
+    state.submission = currentSubmission;
+    var timer = setTimeout(function () {
+      if (state.submission === currentSubmission) status.textContent = 'We have not confirmed receipt yet. Please send your enquiry on WhatsApp or call us.';
+    }, 10000);
+    savedLead.then(function (saved) {
+      clearTimeout(timer);
+      if (state.submission !== currentSubmission) return;
+      status.textContent = saved
+        ? 'Your enquiry has been saved. How would you like to contact us?'
+        : 'We could not confirm your enquiry was saved. Please continue on WhatsApp and press Send, or call us.';
+    });
   }
 
   function open(opts) {
@@ -313,7 +335,10 @@
       waText: opts.waText || '',
       source: opts.source || 'WhatsApp button',
       details: opts.details || {},
-      choose: Boolean(opts.choose)
+      choose: true,
+      whatsapp: /^\d{7,15}$/.test(opts.whatsapp || '') ? opts.whatsapp : '',
+      tel: clean(opts.tel, 20),
+      telDisplay: clean(opts.telDisplay, 30)
     };
     form.reset();
     form.querySelector('[data-sl-submit]').innerHTML = '<span>' + (state.choose ? 'Continue' : 'Continue to WhatsApp') +
@@ -364,6 +389,7 @@
       subject: ds.leadSubject || subjectFromText(text),
       waText: text,
       source: ds.leadSource || buttonLabel(a, 'WhatsApp button'),
+      whatsapp: numberFromLink(a.href),
       details: {
         timeframe: ds.leadTimeframe || '',
         travellers: ds.leadTravellers || '',
@@ -376,12 +402,21 @@
 
   // Buttons can open the form directly: <button data-lead-open data-lead-subject="...">
   document.addEventListener('click', function (e) {
+    if (e.defaultPrevented) return;
     var b = e.target.closest && e.target.closest('[data-lead-open]');
     if (!b) return;
     e.preventDefault();
     var parent = b.closest('dialog');
     if (parent && parent.open) parent.close();
-    open({ subject: b.getAttribute('data-lead-subject') || '', source: b.getAttribute('data-lead-source') || buttonLabel(b, 'Book button'), choose: true });
+    // Optional per-button contact (an agent's own WhatsApp and phone): data-lead-whatsapp, data-lead-tel, data-lead-tel-display.
+    open({
+      subject: b.getAttribute('data-lead-subject') || '',
+      source: b.getAttribute('data-lead-source') || buttonLabel(b, 'Book button'),
+      choose: true,
+      whatsapp: b.getAttribute('data-lead-whatsapp') || '',
+      tel: b.getAttribute('data-lead-tel') || '',
+      telDisplay: b.getAttribute('data-lead-tel-display') || ''
+    });
   });
 
   window.SiteLeads = { open: open, capture: capture, configured: configured };
