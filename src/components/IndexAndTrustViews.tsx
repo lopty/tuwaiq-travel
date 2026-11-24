@@ -362,6 +362,38 @@ export function TrustPageView({
               </div>
             </div>
 
+<section id="leadership-gallery" aria-labelledby="leadership-gallery-heading">
+          <h2 id="leadership-gallery-heading" className="text-2xl font-semibold">Photographs from our founder’s engagements</h2>
+          <p className="mt-3 text-sm leading-relaxed">See Basel Al Kasem, founder of Tuwaiq Travel and Al Basel Group, at gatherings and meetings documented in the group’s photo archive.</p>
+          <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <img src="/assets/leadership/event-al-abbar.webp" width={640} height={853} loading="lazy" decoding="async" alt="Basel Al Kasem at a gathering with Mohamed Al Abbar" className="block h-auto w-full" />
+              <figcaption className="px-3 py-3 text-sm text-slate-700">Basel Al Kasem at a gathering with Mohamed Al Abbar</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <img src="/assets/leadership/event-al-shafar.webp" width={640} height={853} loading="lazy" decoding="async" alt="Basel Al Kasem with Ali Al Shafar" className="block h-auto w-full" />
+              <figcaption className="px-3 py-3 text-sm text-slate-700">Basel Al Kasem with Ali Al Shafar</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <img src="/assets/leadership/event-al-serkal.webp" width={640} height={853} loading="lazy" decoding="async" alt="Basel Al Kasem with Al Serkal" className="block h-auto w-full" />
+              <figcaption className="px-3 py-3 text-sm text-slate-700">Basel Al Kasem with Al Serkal</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <img src="/assets/leadership/event-arif-amiri.webp" width={640} height={853} loading="lazy" decoding="async" alt="Basel Al Kasem with Arif Amiri" className="block h-auto w-full" />
+              <figcaption className="px-3 py-3 text-sm text-slate-700">Basel Al Kasem with Arif Amiri</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <img src="/assets/leadership/event-reception.webp" width={640} height={853} loading="lazy" decoding="async" alt="Basel Al Kasem with a guest at a reception" className="block h-auto w-full" />
+              <figcaption className="px-3 py-3 text-sm text-slate-700">Basel Al Kasem with a guest at a reception</figcaption>
+            </figure>
+            <figure className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+              <img src="/assets/leadership/meeting-binghatti.webp" width={640} height={853} loading="lazy" decoding="async" alt="Basel Al Kasem with Mohamed Binghatti" className="block h-auto w-full" />
+              <figcaption className="px-3 py-3 text-sm text-slate-700">Basel Al Kasem with Mohamed Binghatti</figcaption>
+            </figure>
+          </div>
+          <p className="mt-5"><a className="font-semibold underline underline-offset-4" href="/contact/">Contact the Tuwaiq Travel team</a></p>
+        </section>
+
             {FEATURE_FLAGS.enableUnconfirmedStats && (
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {UNCONFIRMED_STATS_HOLDER.map((s) => (
