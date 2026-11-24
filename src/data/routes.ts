@@ -1,3 +1,4 @@
+import { INDIA_TRAVEL } from '../components/IndiaTravelResource';
 import { FEATURE_FLAGS } from './siteConfig';
 import { GENERAL_PACKAGES, NATIONAL_DAY_OFFERS, UMRAH_PACKAGES, type TravelPackage } from './packages';
 import { DESTINATIONS, type DestinationItem } from './destinations';
@@ -27,6 +28,7 @@ export function getActiveBuyerPages(): BuyerQueryPage[] {
 }
 
 export type ResolvedRoute =
+  | { kind: 'india-travel-resource'; meta: PageMeta }
   | { kind: 'home'; meta: PageMeta }
   | { kind: 'packages-index'; meta: PageMeta }
   | { kind: 'offers-index'; meta: PageMeta }
@@ -185,6 +187,10 @@ export function normalizePathname(raw: string): string {
 
 export function resolveRoute(rawPath: string): ResolvedRoute {
   const path = normalizePathname(rawPath);
+  if (path === INDIA_TRAVEL.path) {
+    const breadcrumbs = [{ name: 'Home', url: '/' }, { name: 'India travel planning', url: path }];
+    return { kind: 'india-travel-resource', meta: { path, title: INDIA_TRAVEL.title, description: INDIA_TRAVEL.description, image: '/images/hero/dubai-skyline-twilight.webp', imageAlt: 'Dubai skyline at twilight', breadcrumbs, schemas: [buildTravelAgencySchema(), buildBreadcrumbSchema(breadcrumbs), buildFaqSchema(INDIA_TRAVEL.faqs.map(({q,a}) => ({question:q,answer:a})))] } };
+  }
 
   if (path === '/') {
     return {
@@ -500,6 +506,7 @@ export function resolveRoute(rawPath: string): ResolvedRoute {
 
 export function getAllStaticRoutes(): string[] {
   const routes = [
+    INDIA_TRAVEL.path,
     '/',
     '/packages/',
     '/offers/',

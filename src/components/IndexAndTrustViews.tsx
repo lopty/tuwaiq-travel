@@ -394,6 +394,8 @@ export function TrustPageView({
           <p className="mt-5"><a className="font-semibold underline underline-offset-4" href="/contact/">Contact the Tuwaiq Travel team</a></p>
         </section>
 
+            <p className="underline"><a href="/resources/travel-to-india-for-legal-matter-from-uae/">Planning travel to India for a legal matter from the UAE</a></p>
+
             {FEATURE_FLAGS.enableUnconfirmedStats && (
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                 {UNCONFIRMED_STATS_HOLDER.map((s) => (

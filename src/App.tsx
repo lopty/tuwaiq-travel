@@ -1,3 +1,4 @@
+import { IndiaTravelResource } from './components/IndiaTravelResource';
 import { useEffect } from 'react';
 import { resolveRoute } from './data/routes';
 import { HomeView } from './components/HomeView';
@@ -31,6 +32,7 @@ export default function App({ initialPath }: { initialPath?: string }) {
   }, [route.meta.title]);
 
   switch (route.kind) {
+    case 'india-travel-resource': return <IndiaTravelResource />;
     case 'home':
       return <HomeView />;
     case 'packages-index':
